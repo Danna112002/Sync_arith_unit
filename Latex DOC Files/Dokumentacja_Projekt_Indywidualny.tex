@@ -1,0 +1,119 @@
+\documentclass[12pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{bookmark}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{tocloft}
+
+
+\title{Projekt Indywidualny, Systemy Cyfrowe i Komputerowe
+\\
+
+\large Projekt wykonawczy modułu \textbf{sync\_arith\_unit\_12} 
+operującej na liczbach w kodzie \textbf{ZM} }
+\author{
+  \begin{tabular}{c}
+    Wykonująca: Anna Dzieżyk \\
+    Opiekun: Bartosz Dec
+  \end{tabular}
+}
+\date{Semestr zima 2023/2024}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsubsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\contentsname}{Spis treści}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Cel i opis projektu}
+
+Celem projektu jest implementacja synchronicznej
+jednostki arytmetyczno-logicznej 
+\textbf{sync\_arith\_unit\_12} 
+realizującej operacje arytmetyczne, logiczne i inne zapisane na liczbach całkowitych zapisanych w kodzie 
+\textbf{ZM}.
+
+\setlength{\indent}{}
+
+W skład realizacji projektu wchodzi:
+
+\begin{itemize}
+  \item Model układu cyfrowego opisany za pomocą języka opisu sprzętu 
+  \textit{SystemVerilog}
+  \item Synteza układu przy użyciu narzędzia open-source 
+  \textit{yosys}
+  \item Realizacja modułu(-ów) testowych 
+  \textit{testbench} w celu weryfikacji poprawności działania zaimplementowanego modelu wraz z zamiejszczonymi 
+  w niej raportami zawierającymi wyniki działania przed i po syntezie, jak również dane statystyczne
+  dotyczące syntezy (dostarczone przez program 
+  \textit{yosys}).
+\end{itemize}
+
+\section{Realizowane przez układ operacje}
+Implementowany model ma zostać zaprojektowany tak, aby realizował poniżej
+zapisane operacje na dwóch 
+\textit{m-bitowych} wektorch wejściowych
+\textbf{A} i \textbf{B}:
+\begin{itemize}
+  \item \textbf\and\textit{A} $>>$ \textbf\and\textit{\raisebox{-0.5ex}{\textasciitilde} B}
+   
+  Przesunięcie wektora \textbf\and\textit{A} o \textbf\and\textit{\raisebox{-0.5ex}{\textasciitilde} B}
+  bitów w prawo. Jeżeli \textbf\and\textit{\raisebox{-0.5ex}{\textasciitilde} B} jest mniejsze
+  od zera, układ ma zgłosiś błąd, a wartość wyjściowa ma zostać nieokreślona.
+  \item \textbf\and\textit{A} $>$ \textbf\and\textit{\raisebox{-0.5ex}{\textasciitilde} B}
+  
+  Sprawdzenie, czy zaprzecona liczba \textbf{B} jest mniejsza od liczby \textbf{A}.
+  Gdy warunek jest spełniony, układ ma wystawić na wyjściu liczbę dodatnią, w przeciwnym
+  wypadku ma to być liczba równa 0.
+
+  \item \raisebox{-0.5ex}{\textasciitilde} A[B] = 1
+  
+  Wynikiem operacji jest ustawienie bitu w liczbie \textbf\and\textit{\raisebox{-0.5ex}{\textasciitilde} A}
+  o index \textbf\and\textit{B} (licząc od bitu najmniej znaczącego) ustawionym na wartość 1.
+  Jeżeli liczba \textbf\and\textit{B} jest mniejsza od 0 lub większa od szerokości wektora \textbf\and\textit{A},
+  układ ma zgłaszać błąd.
+
+  
+  \item \textbf\and\textit{ZM(A)=> U2(A)}  
+  
+  Zmiana liczby \textbf{A} zapisanej w kodzie ZM na zapis w kodzie U2. Jeżeli nie można
+  dokonać poprawnej konwersji należy zgłosić błąd, a wyjście układu ma pozostać nieokreślone.
+
+\end{itemize}
+
+\section{Porty układu}
+
+Układ ma mieć określone porty wejściowe i wyjściowe.
+\begin{itemize}
+  \item \textbf{i\textunderscore op} - n-bitowe wejście określające kod operacji
+  \item \textbf{i\textunderscore arg\textunderscore A} - m-bitowe wejście argumentu A
+  \item \textbf{i\textunderscore arg\textunderscore B} - m-bitowe wejście argumentu B
+  \item \textbf{i\textunderscore clk} - wejście zegarowe układu
+  \item \textbf{i\textunderscore reset} - wejście resetu synchronicznego wyzwalanego stanem niskim
+  \item \textbf{o\textunderscore result} - wyjście synchroniczne z układu
+\end{itemize}
+Dodatkowo, jednostka arytmetyczna posiada 4-bitowe wyjście   synchroniczne \textbf{o\textunderscore status}
+informujące określonymi bitami o statusie powiązanym z wynikiem operacji:
+
+\begin{itemize}
+  \item \textbf{bit ERROR} - sygnalizacja o tym, iż wynik operacji został określony niepoprawnie.
+  \item \textbf{bit NOT\textunderscore  EVEN\textunderscore 0} - sygnalizuje nieparzystą liczbę zer w wyniku.
+  Bit ten ma być ustawiany na 0 zawsze, gdy jest sygnalizowany błąd operacji.
+  \item \textbf{bit ZEROS} - sygnalizuje, że wszystkie bity wyniku ustawione są na 0. Bit ten ma być
+  ustawiony na 0 zawsze, gdy sygnalizowany jest błąd operacji.
+  \item \textbf{bit OVERFLOW} - bit ten sygnalizuje, że nastąpiło przepełnienie i wynik 
+  operacji wykracza poza szerokość wektora wyjściowego.
+\end{itemize}
+
+\section{Sprawozdanie z syntezy i realizacji jednostki 
+\\ \textbf{sync\_arith\_unit\_12} }
+
+\subsection{}
+\end{document}
