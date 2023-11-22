@@ -1,5 +1,0 @@
-module przesuniecie (
-    ports
-);
-    
-endmodule

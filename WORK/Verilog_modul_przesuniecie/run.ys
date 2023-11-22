@@ -1,0 +1,23 @@
+# Wczytywanie pliku modelu
+    read_verilog -sv przesuniecie.sv
+
+# Utworzenie kopii modelu z inną nazwą
+    copy przesuniecie przesuniecie_rtl
+
+# Ustawienie hierarchii projektu na nowy moduł
+    hierarchy -top przesuniecie_rtl
+
+# synteza logiczna 
+    synth
+     
+# Mapowaie na bramki
+    abc -g AND,OR,XOR
+
+# Optymalizacja po mapowaniu
+    opt_clean
+
+#zapis wyniku symulacji 
+    write_verilog -noattr przesuniecie_rtl.sv
+
+# Wypisywanie statystyki użytych bramek
+    stat -tech cmos

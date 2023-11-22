@@ -1,0 +1,9 @@
+przesuniecie_tb.sv:84: error: Cannot assign to array testcases_examplary.A. Did you forget a word index?
+przesuniecie_tb.sv:86: error: Cannot assign to array testcases_examplary.B. Did you forget a word index?
+przesuniecie_tb.sv:89: error: Array testcases_examplary needs an array index here.
+przesuniecie_tb.sv:91: error: Scope index expression is not constant: i
+przesuniecie_tb.sv:91: XXXXX: Errors evaluating scope index
+przesuniecie_tb.sv:91: error: Scope index expression is not constant: i
+przesuniecie_tb.sv:91: XXXXX: Errors evaluating scope index
+przesuniecie_tb.sv:91: assert: elab_expr.cc:2201: failed assertion base_index.size()+1 == net->packed_dimensions()
+Aborted (core dumped)
