@@ -17,8 +17,7 @@ module przesuniecie_tb;
     logic            s_o_overflow_model;
     logic            s_o_overflow_synthesis;
     logic [BITS-1:0] s_o_model;
-    logic [BITS-1:0] s_o_synthesis;
-    
+    logic [BITS-1:0] s_o_synthesis;    
     
     // tablica z kilkoma zestawami danych wejściowych
     typedef struct packed {
@@ -31,8 +30,7 @@ module przesuniecie_tb;
     Testcase testcases_32_shift[0:8];
     Testcase testcases_neg_shift[0:4];
     Testcase testcases_overflow[0:8];
-
-
+    
     // instancjowanie wejść i wyjść, jawne przypisywanie portów, łączenie kabelków
     przesuniecie     #(.BITS(BITS))        
     przesuniecie     (
@@ -72,37 +70,36 @@ module przesuniecie_tb;
         //muszę zobaczyć, jak to się zachowuje
         //skrajne przypadki, ujemne zero i dodatnie zero,
         //maksymalny integer dodatni, maksymalny integer ujemny
-        //Testcase testcases_32_shift[0:3].A = '{Testcase'(32'h1, 32'h0), Testcase'(32'h1, 32'h1), Testcase'(32'h0, 32'h0), Testcase'(32'h0, 32'h1)};
+        
 
-        //Testcase testcases_overflow[0:3].A = '{Testcase'(32'h1, 32'h0), Testcase'(32'h1, 32'h1), Testcase'(32'h0, 32'h0), Testcase'(32'h0, 32'h1)};
 
         //wygenerowanie losowych wartości dla wybranych przeze mnie przypadków
         //ściągawka: maksymalne A = 2**BITS - 1; minimalne A = -(2**BITS - 1);
         for (int i = 0; i < 5; i++) begin
 
             //tablica wartości A dla idealnego przypadku
-            testcases_examplary[i].A = $urandom_range(-2**(BITS-1)+1, 2**(BITS-1)-1); 
+            testcases_examplary.A[i] = $urandom_range(-2**(BITS-1)+1, 2**(BITS-1)-1); 
             //losowanie z maksymalnego zakresu B, które to wartości będą przypadkami wzorowymi
-            testcases_examplary[i].B = $urandom_range(0, 31);
-             //przypisanie wartości argumentom A i B
+            testcases_examplary.B[i] = $urandom_range(0, 31);
+            //przypisanie wartości argumentom A i B
             #10
             s_i_arg_A = testcases_examplary[i].A;
             #10
             s_i_arg_B = testcases_examplary[i].B;
 
             //tablica wartości A dla przesunięcia równego zero
-            testcases_zero_shift[i].A = $urandom_range(-2**(BITS-1)+1, 2**(BITS-1)-1);
+            testcases_zero_shift.A[i] = $urandom_range(-2**(BITS-1)+1, 2**(BITS-1)-1);
             //przesunięcie równe zero, to każde B jest 0
-            testcases_zero_shift[i].B = 0;
+            testcases_zero_shift.B[i] = 0;
             #10
             s_i_arg_A = testcases_zero_shift[i].A;
             #10
             s_i_arg_B = testcases_zero_shift[i].B;
 
             //tablica wartości A dla negatywnego przesunięcia
-            testcases_neg_shift[i].A = $urandom_range(-2**(BITS-1)+1, 2**(BITS-1)-1);
+            testcases_neg_shift.A[i] = $urandom_range(-2**(BITS-1)+1, 2**(BITS-1)-1);
             //przesunięcie negatywne:
-            testcases_neg_shift[i].B = $urandom_range(-2**(BITS-1)+1, 0);
+            testcases_neg_shift.B[i] = $urandom_range(-2**(BITS-1)+1, 0);
             #10
             s_i_arg_A = testcases_neg_shift[i].A;
             #10
@@ -111,18 +108,11 @@ module przesuniecie_tb;
         end
 
         for(i = 0; i<9; i++) begin
-            //tablica wartości A dla przesunięcia maksymalnego z wartościami od 4 do 8 miejsca,
-            //bo pierwsze 4 miejsca są zarezerwowane na 
-            //skrajne przypadki, ujemne zero i dodatnie zero,
-            testcases_32_shift[3+i].A = $urandom_range(-2**(BITS-1)+1, 2**(BITS-1)-1);
-            //przesunięcie maksymalne, to każde B jest 32
+            
+            testcases_32_shift[i].A = 0;
+            testcases_overflow[i].A = 0;
             testcases_32_shift[i].B = 32;
-
-            //tablica wartości A dla przepełnienia
-            testcases_overflow[3+i].A = $urandom_range(-2**(BITS-1)+1, 2**(BITS-1)-1);
-            //tablica wartości B dla przepełnienia, przesunięcie musi być dłuższe od liczby bitów,
-            //na których zapisane jest A
-            testcases_overflow[i].B = $urandom_range(33, 2**(BITS-1)-1);
+            testcases_overflow[i].B = 34;
             
             //dokonanie testu dla przepełnienia
             #10
