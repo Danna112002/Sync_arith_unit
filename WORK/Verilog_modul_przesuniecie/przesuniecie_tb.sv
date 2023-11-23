@@ -57,7 +57,7 @@ module przesuniecie_tb;
             #1
             s_i_arg_A = $urandom_range(-2**(BITS-1)+1, 2**(BITS-1)-1); 
             //losowanie z maksymalnego zakresu B, które to wartości będą przypadkami wzorowymi
-            s_i_arg_B = $urandom_range(0, 31);          
+            s_i_arg_B = ~$urandom_range(0, 31);          
         end
     
         for (int i = 0; i<5; i++) begin        
@@ -65,7 +65,7 @@ module przesuniecie_tb;
             #1
             s_i_arg_A = $urandom_range(-2**(BITS-1)+1, 2**(BITS-1)-1);
             //przesunięcie równe zero, to każde B jest 0
-            s_i_arg_B = 0;
+            s_i_arg_B = '1;
         end
 
         for (int i = 0; i<5; i++) begin       
@@ -73,7 +73,7 @@ module przesuniecie_tb;
             #1
             s_i_arg_A = $urandom_range(-2**(BITS-1)+1, 2**(BITS-1)-1);
             //przesunięcie negatywne
-            s_i_arg_B = $urandom_range(-2**(BITS-1)+1, -1);
+            s_i_arg_B = ~$urandom_range(1, 2**(BITS-1)-1);
         end
 
         for (int i = 0; i<5; i++) begin       
@@ -81,7 +81,7 @@ module przesuniecie_tb;
             #1
             s_i_arg_A = $urandom_range(2**(BITS-2), 2**(BITS-1)-1);
             //B maksymalnego przesunięcia, to zawsze 32
-            s_i_arg_B = 32;
+            s_i_arg_B = ~32;
         end
 
         for (int i = 0; i<5; i++) begin       
@@ -89,38 +89,38 @@ module przesuniecie_tb;
             #1
             s_i_arg_A = $urandom_range(-2**(BITS-1)+1, 2**(BITS-1)-1);
             //b dla przepełnienia z odpowiedniego zakresu
-            s_i_arg_B = $urandom_range(33, 2**(BITS-1)-1);
+            s_i_arg_B = ~$urandom_range(33, 2**(BITS-1)-1);
         end
 
         //skrajne przypadki, ujemne zero i dodatnie zero,
         //maksymalny integer dodatni, maksymalny integer ujemny dla maksymalnego przesunięcia
         #1
         s_i_arg_A = {1'b1, 31'b0};
-        s_i_arg_B = 32;
+        s_i_arg_B = ~32;
         #1
         s_i_arg_A = {1'b1, 31'b1};
-        s_i_arg_B = 32;
+        s_i_arg_B = ~32;
         #1
         s_i_arg_A = {1'b0, 31'b0};
-        s_i_arg_B = 32;
+        s_i_arg_B = ~32;
         #1
         s_i_arg_A = {1'b0, 31'b1};
-        s_i_arg_B = 32;
+        s_i_arg_B = ~32;
         #1
 
         //skrajne przypadki, ujemne zero i dodatnie zero,
         //maksymalny integer dodatni, maksymalny integer ujemny dla przepełnienia
         s_i_arg_A = {1'b1, 31'b0};
-        s_i_arg_B = $urandom_range(33, 2**(BITS-1)-1);
+        s_i_arg_B = ~$urandom_range(33, 2**(BITS-1)-1);
         #1
         s_i_arg_A = {1'b1, 31'b1};
-        s_i_arg_B = $urandom_range(33, 2**(BITS-1)-1);
+        s_i_arg_B = ~$urandom_range(33, 2**(BITS-1)-1);
         #1
         s_i_arg_A = {1'b0, 31'b0};
-        s_i_arg_B = $urandom_range(33, 2**(BITS-1)-1);
+        s_i_arg_B = ~$urandom_range(33, 2**(BITS-1)-1);
         #1
         s_i_arg_A = {1'b0, 31'b1};
-        s_i_arg_B = $urandom_range(33, 2**(BITS-1)-1);
+        s_i_arg_B = ~$urandom_range(33, 2**(BITS-1)-1);
         #1
         
     $finish;

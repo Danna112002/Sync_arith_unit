@@ -1,4 +1,4 @@
-// moduł przesunięcia arytmetycznego wejścia A o ~B bitów 
+// moduł przesunięcia bitowego wejścia A o ~B bitów 
 module przesuniecie (i_arg_A, i_arg_B, o_result, o_error, o_overflow);
 
 // zadeklarowanie parametru szerokości wektorów wejściowych
@@ -23,7 +23,7 @@ begin
     //przypadek wzorowy, przesunięcie nie przekracza 31 bitów
     // żadne flagi się nie zapalają
     if (~i_arg_B > 0 && ~i_arg_B < 32) begin
-        o_result = i_arg_A >> i_arg_B;
+        o_result = i_arg_A >> ~i_arg_B;
         o_error = '0;
         o_overflow = '0;
     end
@@ -41,7 +41,7 @@ begin
     // błędu nie ma, bo wartość wyjściowa jest ustawiona na ALL ONES lub ALL ZEROS w zależności od
     // znaku wektora wejściowego A: gdy A jest ujemne, wynik jest ustawiony na ALL ONES, 
     // w przeciwnym przypadku to jest ALL ZEROS
-    else if (~i_arg_B == 32) begin
+    else if (~i_arg_B == BITS) begin
         o_result = (i_arg_A < 0) ? '1 :'0;
         o_error = '0;
         o_overflow = '0;
@@ -56,7 +56,7 @@ begin
     
     // przypadek, gdy dochodzi do przepełnienia, więc zapalamy bit flagi przepełnienia, ale nie jest to
     // błąd operacji, chociaż wynik jest nieokreślony
-    else if (~i_arg_B > 32) begin
+    else if (~i_arg_B > BITS) begin
         o_error = '0;
         o_overflow = '1;
     end    
