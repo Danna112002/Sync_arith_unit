@@ -39,7 +39,7 @@ module przesuniecie_tb;
     initial begin
 
         //w tym pliku zostaną zapisane zapisane sygnały zarejestrowane w symulacji
-        $dumpfile("signals.vcd");  
+        $dumpfile("signals_przesuniecie.vcd");  
 
         //Wskazania, że wszystkie sygnały z testbencha i niżej mają być rejestrowane podczas symulacji
         $dumpvars(0, przesuniecie_tb);   

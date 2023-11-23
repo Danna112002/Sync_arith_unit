@@ -1,4 +1,4 @@
-EXAMPLE         = przesuniecie
+EXAMPLE         = porownanie
 MODEL_FILES     = ${EXAMPLE}.sv
 RTL_FILES       = ${EXAMPLE}_rtl.sv
 TB_FILES        = ${EXAMPLE}_tb.sv

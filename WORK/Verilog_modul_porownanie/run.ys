@@ -1,0 +1,23 @@
+# Wczytywanie pliku modelu
+    read_verilog -sv porownanie.sv
+
+# Utworzenie kopii modelu z inną nazwą
+    copy porownanie porownanie_rtl
+
+# Ustawienie hierarchii projektu na nowy moduł
+    hierarchy -top porownanie_rtl
+
+# synteza logiczna 
+    synth
+     
+# Mapowaie na bramki
+    abc -g AND,OR,XOR
+
+# Optymalizacja po mapowaniu
+    opt_clean
+
+#zapis wyniku symulacji 
+    write_verilog -noattr porownanie_rtl.sv
+
+# Wypisywanie statystyki użytych bramek
+    stat -tech cmos
