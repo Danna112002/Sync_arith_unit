@@ -34,7 +34,6 @@ module przesuniecie_rtl(i_arg_A, i_arg_B, o_result, o_error, o_overflow);
   wire _30_;
   wire _31_;
   wire _32_;
-  wire \$unknown ;
   input [31:0] i_arg_A;
   input [31:0] i_arg_B;
   output o_error;
@@ -106,6 +105,5 @@ module przesuniecie_rtl(i_arg_A, i_arg_B, o_result, o_error, o_overflow);
   assign o_result[29] = i_arg_A[29] & _30_;
   assign o_result[30] = i_arg_A[30] & _30_;
   assign o_result[31] = i_arg_A[31] & _30_;
-  assign \$unknown  = 1'hx;
   assign o_error = 1'h0;
 endmodule

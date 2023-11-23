@@ -1,2 +1,0 @@
-przesuniecie_tb.sv:81: assert: elab_lval.cc:1183: failed assertion reg->unpacked_dimensions() == 0
-Aborted (core dumped)

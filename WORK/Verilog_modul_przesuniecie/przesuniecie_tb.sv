@@ -1,7 +1,4 @@
 // testbench modułu przesunięcia arytmetycznego 
-
-// deklaracja skali zegarka dla tej symulacji
-`timescale 1ns/1ps
 // zaczynamy moduł ławeczki testowej
 module przesuniecie_tb;
 
@@ -18,18 +15,6 @@ module przesuniecie_tb;
     logic            s_o_overflow_synthesis;
     logic [BITS-1:0] s_o_model;
     logic [BITS-1:0] s_o_synthesis;    
-    
-    // tablica z kilkoma zestawami danych wejściowych
-    typedef struct packed {
-        int A;
-        int B;
-    } Testcase;
-
-    Testcase testcases_examplary[0:4];
-    Testcase testcases_zero_shift[0:4];
-    Testcase testcases_32_shift[0:8];
-    Testcase testcases_neg_shift[0:4];
-    Testcase testcases_overflow[0:8];
     
     // instancjowanie wejść i wyjść, jawne przypisywanie portów, łączenie kabelków
     przesuniecie     #(.BITS(BITS))        
@@ -53,9 +38,6 @@ module przesuniecie_tb;
     // Dostarczenie zmiennych do testu, rozpoczęcie bloku initial
     initial begin
 
-        //inicjalizacja ziarna losowości, żeby funkcja $urandom wyszła z progu
-        $randomseed;
-
         //w tym pliku zostaną zapisane zapisane sygnały zarejestrowane w symulacji
         $dumpfile("signals.vcd");  
 
@@ -64,68 +46,83 @@ module przesuniecie_tb;
 
         //początkowe wyzerowanie wartości sygnałów A i B
         s_i_arg_A=0;
-        s_i_arg_B=0;
-
-        //zapełnienie pierwszych czterech pól tablicy przepełnienia i maksymalnego przesunięcia
-        //muszę zobaczyć, jak to się zachowuje
-        //skrajne przypadki, ujemne zero i dodatnie zero,
-        //maksymalny integer dodatni, maksymalny integer ujemny
-        
-
+        s_i_arg_B=0;      
+        #1
 
         //wygenerowanie losowych wartości dla wybranych przeze mnie przypadków
         //ściągawka: maksymalne A = 2**BITS - 1; minimalne A = -(2**BITS - 1);
         for (int i = 0; i < 5; i++) begin
 
             //tablica wartości A dla idealnego przypadku
-            testcases_examplary.A[i] = $urandom_range(-2**(BITS-1)+1, 2**(BITS-1)-1); 
+            #1
+            s_i_arg_A = $urandom_range(-2**(BITS-1)+1, 2**(BITS-1)-1); 
             //losowanie z maksymalnego zakresu B, które to wartości będą przypadkami wzorowymi
-            testcases_examplary.B[i] = $urandom_range(0, 31);
-            //przypisanie wartości argumentom A i B
-            #10
-            s_i_arg_A = testcases_examplary[i].A;
-            #10
-            s_i_arg_B = testcases_examplary[i].B;
-
+            s_i_arg_B = $urandom_range(0, 31);          
+        end
+    
+        for (int i = 0; i<5; i++) begin        
             //tablica wartości A dla przesunięcia równego zero
-            testcases_zero_shift.A[i] = $urandom_range(-2**(BITS-1)+1, 2**(BITS-1)-1);
+            #1
+            s_i_arg_A = $urandom_range(-2**(BITS-1)+1, 2**(BITS-1)-1);
             //przesunięcie równe zero, to każde B jest 0
-            testcases_zero_shift.B[i] = 0;
-            #10
-            s_i_arg_A = testcases_zero_shift[i].A;
-            #10
-            s_i_arg_B = testcases_zero_shift[i].B;
-
-            //tablica wartości A dla negatywnego przesunięcia
-            testcases_neg_shift.A[i] = $urandom_range(-2**(BITS-1)+1, 2**(BITS-1)-1);
-            //przesunięcie negatywne:
-            testcases_neg_shift.B[i] = $urandom_range(-2**(BITS-1)+1, 0);
-            #10
-            s_i_arg_A = testcases_neg_shift[i].A;
-            #10
-            s_i_arg_B = testcases_neg_shift[i].B;
-
+            s_i_arg_B = 0;
         end
 
-        for(i = 0; i<9; i++) begin
-            
-            testcases_32_shift[i].A = 0;
-            testcases_overflow[i].A = 0;
-            testcases_32_shift[i].B = 32;
-            testcases_overflow[i].B = 34;
-            
-            //dokonanie testu dla przepełnienia
-            #10
-            s_i_arg_A = testcases_overflow[i].A;
-            #10
-            s_i_arg_B = testcases_overflow[i].B;
+        for (int i = 0; i<5; i++) begin       
+            //tablica wartości A dla negatywnego przesunięcia
+            #1
+            s_i_arg_A = $urandom_range(-2**(BITS-1)+1, 2**(BITS-1)-1);
+            //przesunięcie negatywne
+            s_i_arg_B = $urandom_range(-2**(BITS-1)+1, -1);
+        end
 
-            //dokonanie testu dla maksymalnego przesunięcia
-            #10
-            s_i_arg_A = testcases_32_shift[i].A;
-            #10
-            s_i_arg_B = testcases_32_shift[i].B;
-        end    
+        for (int i = 0; i<5; i++) begin       
+            //A dla masymalnego przesunięcia
+            #1
+            s_i_arg_A = $urandom_range(2**(BITS-2), 2**(BITS-1)-1);
+            //B maksymalnego przesunięcia, to zawsze 32
+            s_i_arg_B = 32;
+        end
+
+        for (int i = 0; i<5; i++) begin       
+            //A dla przepełnienia
+            #1
+            s_i_arg_A = $urandom_range(-2**(BITS-1)+1, 2**(BITS-1)-1);
+            //b dla przepełnienia z odpowiedniego zakresu
+            s_i_arg_B = $urandom_range(33, 2**(BITS-1)-1);
+        end
+
+        //skrajne przypadki, ujemne zero i dodatnie zero,
+        //maksymalny integer dodatni, maksymalny integer ujemny dla maksymalnego przesunięcia
+        #1
+        s_i_arg_A = {1'b1, 31'b0};
+        s_i_arg_B = 32;
+        #1
+        s_i_arg_A = {1'b1, 31'b1};
+        s_i_arg_B = 32;
+        #1
+        s_i_arg_A = {1'b0, 31'b0};
+        s_i_arg_B = 32;
+        #1
+        s_i_arg_A = {1'b0, 31'b1};
+        s_i_arg_B = 32;
+        #1
+
+        //skrajne przypadki, ujemne zero i dodatnie zero,
+        //maksymalny integer dodatni, maksymalny integer ujemny dla przepełnienia
+        s_i_arg_A = {1'b1, 31'b0};
+        s_i_arg_B = $urandom_range(33, 2**(BITS-1)-1);
+        #1
+        s_i_arg_A = {1'b1, 31'b1};
+        s_i_arg_B = $urandom_range(33, 2**(BITS-1)-1);
+        #1
+        s_i_arg_A = {1'b0, 31'b0};
+        s_i_arg_B = $urandom_range(33, 2**(BITS-1)-1);
+        #1
+        s_i_arg_A = {1'b0, 31'b1};
+        s_i_arg_B = $urandom_range(33, 2**(BITS-1)-1);
+        #1
+        
     $finish;
     end    
 endmodule
