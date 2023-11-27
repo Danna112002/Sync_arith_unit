@@ -47,5 +47,15 @@ begin
             s_i_arg_A = $urandom;
             s_i_arg_B = $urandom;
         end
+        
+        #1 
+        s_i_arg_A = '0;
+        s_i_arg_B = '0;
+        #1
+        s_i_arg_B = {1'b1, '0};
+        #1
+        s_i_arg_A = {1'b1, '0};
+        #1
+        s_i_arg_B = '0;
 end
 endmodule

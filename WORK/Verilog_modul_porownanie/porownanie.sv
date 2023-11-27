@@ -9,14 +9,17 @@ module porownanie (i_arg_A, i_arg_B, o_result);
     output logic signed o_result;
 
     //blok opisujący logikę
-    always_comb 
-    begin
+    always_comb begin
         //defaultowe zerowanie wyjścia
         o_result = 0;
         //zaczynamy porównywanie
 
         if (i_arg_A > (~i_arg_B)) begin
             o_result = 1;
+        end
+
+        else if ((i_arg_A == '0||i_arg_A == {1'b1, '0}) && (~i_arg_B == '0||~i_arg_B == {1'b1, '0})) begin
+            o_result = 0;
         end
 
         else begin

@@ -1,0 +1,23 @@
+# Wczytywanie pliku modelu
+    read_verilog -sv konwersja.sv
+
+# Utworzenie kopii modelu z inną nazwą
+    copy konwersja konwersja_rtl
+
+# Ustawienie hierarchii projektu na nowy moduł
+    hierarchy -top konwersja_rtl
+
+# synteza logiczna 
+    synth
+     
+# Mapowaie na bramki
+    abc -g AND,OR,XOR
+
+# Optymalizacja po mapowaniu
+    opt_clean
+
+#zapis wyniku symulacji 
+    write_verilog -noattr konwersja_rtl.sv
+
+# Wypisywanie statystyki użytych bramek
+    stat -tech cmos

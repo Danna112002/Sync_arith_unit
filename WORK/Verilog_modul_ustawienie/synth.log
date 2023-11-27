@@ -27,7 +27,6 @@
 1. Executing Verilog-2005 frontend: ustawienie.sv
 Parsing SystemVerilog input from `ustawienie.sv' to AST representation.
 Generating RTLIL representation for module `\ustawienie'.
-ustawienie.sv:24: Warning: Range select out of bounds on signal `\i_arg_B': Setting result bit to undef.
 Successfully finished Verilog frontend.
 
 2. Executing HIERARCHY pass (managing design hierarchy).
@@ -124,12 +123,12 @@ Cleaned up 4 empty switches.
 
 3.3. Executing OPT_EXPR pass (perform const folding).
 Optimizing module ustawienie_rtl.
-<suppressed ~42 debug messages>
+<suppressed ~2 debug messages>
 
 3.4. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \ustawienie_rtl..
-Removed 3 unused cells and 201 unused wires.
-<suppressed ~5 debug messages>
+Removed 6 unused cells and 164 unused wires.
+<suppressed ~8 debug messages>
 
 3.5. Executing CHECK pass (checking for obvious problems).
 checking module ustawienie_rtl..
@@ -149,8 +148,11 @@ Running muxtree optimizer on module \ustawienie_rtl..
   Creating internal representation of mux trees.
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
-    dead port 1/2 on $mux $procmux$893.
-Removed 1 multiplexer ports.
+    dead port 1/2 on $mux $procmux$895.
+    dead port 1/2 on $mux $procmux$898.
+    dead port 1/2 on $mux $procmux$913.
+    dead port 1/2 on $mux $procmux$919.
+Removed 4 multiplexer ports.
 <suppressed ~34 debug messages>
 
 3.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
@@ -165,7 +167,7 @@ Removed a total of 0 cells.
 
 3.6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \ustawienie_rtl..
-Removed 0 unused cells and 1 unused wires.
+Removed 0 unused cells and 4 unused wires.
 <suppressed ~1 debug messages>
 
 3.6.8. Executing OPT_EXPR pass (perform const folding).
@@ -200,114 +202,146 @@ Optimizing module ustawienie_rtl.
 3.6.16. Finished OPT passes. (There is nothing left to do.)
 
 3.7. Executing WREDUCE pass (reducing word size of cells).
-Removed top 25 bits (of 32) from port B of cell ustawienie_rtl.$gt$ustawienie.sv:29$3 ($gt).
-Removed top 31 bits (of 32) from port B of cell ustawienie_rtl.$ge$ustawienie.sv:34$4 ($ge).
-Removed top 25 bits (of 32) from port B of cell ustawienie_rtl.$lt$ustawienie.sv:34$5 ($lt).
-Removed top 25 bits (of 32) from port A of cell ustawienie_rtl.$sub$ustawienie.sv:35$7 ($sub).
-Removed cell ustawienie_rtl.$procmux$13 ($mux).
-Removed top 27 bits (of 32) from port B of cell ustawienie_rtl.$procmux$12_CMP0 ($eq).
-Removed cell ustawienie_rtl.$procmux$16 ($mux).
-Removed top 27 bits (of 32) from port B of cell ustawienie_rtl.$procmux$27_CMP0 ($eq).
-Removed cell ustawienie_rtl.$procmux$28 ($mux).
-Removed cell ustawienie_rtl.$procmux$31 ($mux).
-Removed top 27 bits (of 32) from port B of cell ustawienie_rtl.$procmux$44_CMP0 ($eq).
-Removed cell ustawienie_rtl.$procmux$45 ($mux).
-Removed cell ustawienie_rtl.$procmux$48 ($mux).
-Removed top 27 bits (of 32) from port B of cell ustawienie_rtl.$procmux$63_CMP0 ($eq).
-Removed cell ustawienie_rtl.$procmux$64 ($mux).
-Removed cell ustawienie_rtl.$procmux$67 ($mux).
-Removed top 27 bits (of 32) from port B of cell ustawienie_rtl.$procmux$84_CMP0 ($eq).
-Removed cell ustawienie_rtl.$procmux$85 ($mux).
-Removed cell ustawienie_rtl.$procmux$88 ($mux).
-Removed top 27 bits (of 32) from port B of cell ustawienie_rtl.$procmux$107_CMP0 ($eq).
-Removed cell ustawienie_rtl.$procmux$108 ($mux).
-Removed cell ustawienie_rtl.$procmux$111 ($mux).
-Removed top 27 bits (of 32) from port B of cell ustawienie_rtl.$procmux$132_CMP0 ($eq).
-Removed cell ustawienie_rtl.$procmux$133 ($mux).
-Removed cell ustawienie_rtl.$procmux$136 ($mux).
-Removed top 27 bits (of 32) from port B of cell ustawienie_rtl.$procmux$159_CMP0 ($eq).
-Removed cell ustawienie_rtl.$procmux$160 ($mux).
-Removed cell ustawienie_rtl.$procmux$163 ($mux).
-Removed top 28 bits (of 32) from port B of cell ustawienie_rtl.$procmux$188_CMP0 ($eq).
-Removed cell ustawienie_rtl.$procmux$189 ($mux).
-Removed cell ustawienie_rtl.$procmux$192 ($mux).
-Removed top 28 bits (of 32) from port B of cell ustawienie_rtl.$procmux$219_CMP0 ($eq).
-Removed cell ustawienie_rtl.$procmux$220 ($mux).
-Removed cell ustawienie_rtl.$procmux$223 ($mux).
-Removed top 28 bits (of 32) from port B of cell ustawienie_rtl.$procmux$252_CMP0 ($eq).
-Removed cell ustawienie_rtl.$procmux$253 ($mux).
-Removed cell ustawienie_rtl.$procmux$256 ($mux).
-Removed top 28 bits (of 32) from port B of cell ustawienie_rtl.$procmux$287_CMP0 ($eq).
-Removed cell ustawienie_rtl.$procmux$288 ($mux).
-Removed cell ustawienie_rtl.$procmux$291 ($mux).
-Removed top 29 bits (of 32) from port B of cell ustawienie_rtl.$procmux$324_CMP0 ($eq).
-Removed cell ustawienie_rtl.$procmux$325 ($mux).
-Removed cell ustawienie_rtl.$procmux$328 ($mux).
-Removed top 29 bits (of 32) from port B of cell ustawienie_rtl.$procmux$363_CMP0 ($eq).
-Removed cell ustawienie_rtl.$procmux$364 ($mux).
-Removed cell ustawienie_rtl.$procmux$367 ($mux).
-Removed top 30 bits (of 32) from port B of cell ustawienie_rtl.$procmux$404_CMP0 ($eq).
-Removed cell ustawienie_rtl.$procmux$405 ($mux).
-Removed cell ustawienie_rtl.$procmux$408 ($mux).
-Removed cell ustawienie_rtl.$procmux$448 ($mux).
-Removed cell ustawienie_rtl.$procmux$451 ($mux).
-Removed top 27 bits (of 32) from port B of cell ustawienie_rtl.$procmux$460_CMP0 ($eq).
-Removed cell ustawienie_rtl.$procmux$461 ($mux).
-Removed cell ustawienie_rtl.$procmux$464 ($mux).
-Removed top 27 bits (of 32) from port B of cell ustawienie_rtl.$procmux$478_CMP0 ($eq).
-Removed cell ustawienie_rtl.$procmux$479 ($mux).
-Removed cell ustawienie_rtl.$procmux$482 ($mux).
-Removed top 27 bits (of 32) from port B of cell ustawienie_rtl.$procmux$500_CMP0 ($eq).
-Removed cell ustawienie_rtl.$procmux$501 ($mux).
-Removed cell ustawienie_rtl.$procmux$504 ($mux).
-Removed top 27 bits (of 32) from port B of cell ustawienie_rtl.$procmux$526_CMP0 ($eq).
-Removed cell ustawienie_rtl.$procmux$527 ($mux).
-Removed cell ustawienie_rtl.$procmux$530 ($mux).
-Removed top 28 bits (of 32) from port B of cell ustawienie_rtl.$procmux$556_CMP0 ($eq).
-Removed cell ustawienie_rtl.$procmux$557 ($mux).
-Removed cell ustawienie_rtl.$procmux$560 ($mux).
-Removed top 28 bits (of 32) from port B of cell ustawienie_rtl.$procmux$590_CMP0 ($eq).
-Removed cell ustawienie_rtl.$procmux$591 ($mux).
-Removed cell ustawienie_rtl.$procmux$594 ($mux).
-Removed top 29 bits (of 32) from port B of cell ustawienie_rtl.$procmux$628_CMP0 ($eq).
-Removed cell ustawienie_rtl.$procmux$629 ($mux).
-Removed cell ustawienie_rtl.$procmux$632 ($mux).
-Removed top 31 bits (of 32) from port B of cell ustawienie_rtl.$procmux$670_CMP0 ($eq).
-Removed cell ustawienie_rtl.$procmux$671 ($mux).
-Removed cell ustawienie_rtl.$procmux$674 ($mux).
-Removed top 27 bits (of 32) from port B of cell ustawienie_rtl.$procmux$686_CMP0 ($eq).
-Removed cell ustawienie_rtl.$procmux$687 ($mux).
-Removed cell ustawienie_rtl.$procmux$690 ($mux).
-Removed top 27 bits (of 32) from port B of cell ustawienie_rtl.$procmux$710_CMP0 ($eq).
-Removed cell ustawienie_rtl.$procmux$711 ($mux).
-Removed cell ustawienie_rtl.$procmux$714 ($mux).
-Removed top 28 bits (of 32) from port B of cell ustawienie_rtl.$procmux$742_CMP0 ($eq).
-Removed cell ustawienie_rtl.$procmux$743 ($mux).
-Removed cell ustawienie_rtl.$procmux$746 ($mux).
-Removed top 30 bits (of 32) from port B of cell ustawienie_rtl.$procmux$782_CMP0 ($eq).
-Removed cell ustawienie_rtl.$procmux$783 ($mux).
-Removed cell ustawienie_rtl.$procmux$786 ($mux).
-Removed top 27 bits (of 32) from port B of cell ustawienie_rtl.$procmux$802_CMP0 ($eq).
-Removed cell ustawienie_rtl.$procmux$803 ($mux).
-Removed cell ustawienie_rtl.$procmux$806 ($mux).
-Removed top 29 bits (of 32) from port B of cell ustawienie_rtl.$procmux$838_CMP0 ($eq).
-Removed cell ustawienie_rtl.$procmux$839 ($mux).
-Removed cell ustawienie_rtl.$procmux$842 ($mux).
-Removed top 28 bits (of 32) from port B of cell ustawienie_rtl.$procmux$866_CMP0 ($eq).
-Removed cell ustawienie_rtl.$procmux$867 ($mux).
-Removed cell ustawienie_rtl.$procmux$870 ($mux).
-Removed top 27 bits (of 32) from port B of cell ustawienie_rtl.$procmux$880_CMP0 ($eq).
-Removed cell ustawienie_rtl.$procmux$881 ($mux).
-Removed cell ustawienie_rtl.$procmux$884 ($mux).
-Removed cell ustawienie_rtl.$procmux$890 ($mux).
-Removed cell ustawienie_rtl.$procmux$914 ($mux).
+Removed top 26 bits (of 32) from port B of cell ustawienie_rtl.$gt$ustawienie.sv:28$3 ($gt).
+Removed top 31 bits (of 32) from port B of cell ustawienie_rtl.$ge$ustawienie.sv:33$4 ($ge).
+Removed top 25 bits (of 32) from port B of cell ustawienie_rtl.$lt$ustawienie.sv:33$7 ($lt).
+Removed cell ustawienie_rtl.$procmux$15 ($mux).
+Removed top 27 bits (of 32) from port B of cell ustawienie_rtl.$procmux$14_CMP0 ($eq).
+Removed cell ustawienie_rtl.$procmux$18 ($mux).
+Removed cell ustawienie_rtl.$procmux$21 ($mux).
+Removed top 27 bits (of 32) from port B of cell ustawienie_rtl.$procmux$29_CMP0 ($eq).
+Removed cell ustawienie_rtl.$procmux$30 ($mux).
+Removed cell ustawienie_rtl.$procmux$33 ($mux).
+Removed cell ustawienie_rtl.$procmux$36 ($mux).
+Removed top 27 bits (of 32) from port B of cell ustawienie_rtl.$procmux$46_CMP0 ($eq).
+Removed cell ustawienie_rtl.$procmux$47 ($mux).
+Removed cell ustawienie_rtl.$procmux$50 ($mux).
+Removed cell ustawienie_rtl.$procmux$53 ($mux).
+Removed top 27 bits (of 32) from port B of cell ustawienie_rtl.$procmux$65_CMP0 ($eq).
+Removed cell ustawienie_rtl.$procmux$66 ($mux).
+Removed cell ustawienie_rtl.$procmux$69 ($mux).
+Removed cell ustawienie_rtl.$procmux$72 ($mux).
+Removed top 27 bits (of 32) from port B of cell ustawienie_rtl.$procmux$86_CMP0 ($eq).
+Removed cell ustawienie_rtl.$procmux$87 ($mux).
+Removed cell ustawienie_rtl.$procmux$90 ($mux).
+Removed cell ustawienie_rtl.$procmux$93 ($mux).
+Removed top 27 bits (of 32) from port B of cell ustawienie_rtl.$procmux$109_CMP0 ($eq).
+Removed cell ustawienie_rtl.$procmux$110 ($mux).
+Removed cell ustawienie_rtl.$procmux$113 ($mux).
+Removed cell ustawienie_rtl.$procmux$116 ($mux).
+Removed top 27 bits (of 32) from port B of cell ustawienie_rtl.$procmux$134_CMP0 ($eq).
+Removed cell ustawienie_rtl.$procmux$135 ($mux).
+Removed cell ustawienie_rtl.$procmux$138 ($mux).
+Removed cell ustawienie_rtl.$procmux$141 ($mux).
+Removed top 27 bits (of 32) from port B of cell ustawienie_rtl.$procmux$161_CMP0 ($eq).
+Removed cell ustawienie_rtl.$procmux$162 ($mux).
+Removed cell ustawienie_rtl.$procmux$165 ($mux).
+Removed cell ustawienie_rtl.$procmux$168 ($mux).
+Removed top 28 bits (of 32) from port B of cell ustawienie_rtl.$procmux$190_CMP0 ($eq).
+Removed cell ustawienie_rtl.$procmux$191 ($mux).
+Removed cell ustawienie_rtl.$procmux$194 ($mux).
+Removed cell ustawienie_rtl.$procmux$197 ($mux).
+Removed top 28 bits (of 32) from port B of cell ustawienie_rtl.$procmux$221_CMP0 ($eq).
+Removed cell ustawienie_rtl.$procmux$222 ($mux).
+Removed cell ustawienie_rtl.$procmux$225 ($mux).
+Removed cell ustawienie_rtl.$procmux$228 ($mux).
+Removed top 28 bits (of 32) from port B of cell ustawienie_rtl.$procmux$254_CMP0 ($eq).
+Removed cell ustawienie_rtl.$procmux$255 ($mux).
+Removed cell ustawienie_rtl.$procmux$258 ($mux).
+Removed cell ustawienie_rtl.$procmux$261 ($mux).
+Removed top 28 bits (of 32) from port B of cell ustawienie_rtl.$procmux$289_CMP0 ($eq).
+Removed cell ustawienie_rtl.$procmux$290 ($mux).
+Removed cell ustawienie_rtl.$procmux$293 ($mux).
+Removed cell ustawienie_rtl.$procmux$296 ($mux).
+Removed top 29 bits (of 32) from port B of cell ustawienie_rtl.$procmux$326_CMP0 ($eq).
+Removed cell ustawienie_rtl.$procmux$327 ($mux).
+Removed cell ustawienie_rtl.$procmux$330 ($mux).
+Removed cell ustawienie_rtl.$procmux$333 ($mux).
+Removed top 29 bits (of 32) from port B of cell ustawienie_rtl.$procmux$365_CMP0 ($eq).
+Removed cell ustawienie_rtl.$procmux$366 ($mux).
+Removed cell ustawienie_rtl.$procmux$369 ($mux).
+Removed cell ustawienie_rtl.$procmux$372 ($mux).
+Removed top 30 bits (of 32) from port B of cell ustawienie_rtl.$procmux$406_CMP0 ($eq).
+Removed cell ustawienie_rtl.$procmux$407 ($mux).
+Removed cell ustawienie_rtl.$procmux$410 ($mux).
+Removed cell ustawienie_rtl.$procmux$413 ($mux).
+Removed cell ustawienie_rtl.$procmux$450 ($mux).
+Removed cell ustawienie_rtl.$procmux$453 ($mux).
+Removed cell ustawienie_rtl.$procmux$456 ($mux).
+Removed top 27 bits (of 32) from port B of cell ustawienie_rtl.$procmux$462_CMP0 ($eq).
+Removed cell ustawienie_rtl.$procmux$463 ($mux).
+Removed cell ustawienie_rtl.$procmux$466 ($mux).
+Removed cell ustawienie_rtl.$procmux$469 ($mux).
+Removed top 27 bits (of 32) from port B of cell ustawienie_rtl.$procmux$480_CMP0 ($eq).
+Removed cell ustawienie_rtl.$procmux$481 ($mux).
+Removed cell ustawienie_rtl.$procmux$484 ($mux).
+Removed cell ustawienie_rtl.$procmux$487 ($mux).
+Removed top 27 bits (of 32) from port B of cell ustawienie_rtl.$procmux$502_CMP0 ($eq).
+Removed cell ustawienie_rtl.$procmux$503 ($mux).
+Removed cell ustawienie_rtl.$procmux$506 ($mux).
+Removed cell ustawienie_rtl.$procmux$509 ($mux).
+Removed top 27 bits (of 32) from port B of cell ustawienie_rtl.$procmux$528_CMP0 ($eq).
+Removed cell ustawienie_rtl.$procmux$529 ($mux).
+Removed cell ustawienie_rtl.$procmux$532 ($mux).
+Removed cell ustawienie_rtl.$procmux$535 ($mux).
+Removed top 28 bits (of 32) from port B of cell ustawienie_rtl.$procmux$558_CMP0 ($eq).
+Removed cell ustawienie_rtl.$procmux$559 ($mux).
+Removed cell ustawienie_rtl.$procmux$562 ($mux).
+Removed cell ustawienie_rtl.$procmux$565 ($mux).
+Removed top 28 bits (of 32) from port B of cell ustawienie_rtl.$procmux$592_CMP0 ($eq).
+Removed cell ustawienie_rtl.$procmux$593 ($mux).
+Removed cell ustawienie_rtl.$procmux$596 ($mux).
+Removed cell ustawienie_rtl.$procmux$599 ($mux).
+Removed top 29 bits (of 32) from port B of cell ustawienie_rtl.$procmux$630_CMP0 ($eq).
+Removed cell ustawienie_rtl.$procmux$631 ($mux).
+Removed cell ustawienie_rtl.$procmux$634 ($mux).
+Removed cell ustawienie_rtl.$procmux$637 ($mux).
+Removed top 31 bits (of 32) from port B of cell ustawienie_rtl.$procmux$672_CMP0 ($eq).
+Removed cell ustawienie_rtl.$procmux$673 ($mux).
+Removed cell ustawienie_rtl.$procmux$676 ($mux).
+Removed cell ustawienie_rtl.$procmux$679 ($mux).
+Removed top 27 bits (of 32) from port B of cell ustawienie_rtl.$procmux$688_CMP0 ($eq).
+Removed cell ustawienie_rtl.$procmux$689 ($mux).
+Removed cell ustawienie_rtl.$procmux$692 ($mux).
+Removed cell ustawienie_rtl.$procmux$695 ($mux).
+Removed top 27 bits (of 32) from port B of cell ustawienie_rtl.$procmux$712_CMP0 ($eq).
+Removed cell ustawienie_rtl.$procmux$713 ($mux).
+Removed cell ustawienie_rtl.$procmux$716 ($mux).
+Removed cell ustawienie_rtl.$procmux$719 ($mux).
+Removed top 28 bits (of 32) from port B of cell ustawienie_rtl.$procmux$744_CMP0 ($eq).
+Removed cell ustawienie_rtl.$procmux$745 ($mux).
+Removed cell ustawienie_rtl.$procmux$748 ($mux).
+Removed cell ustawienie_rtl.$procmux$751 ($mux).
+Removed top 30 bits (of 32) from port B of cell ustawienie_rtl.$procmux$784_CMP0 ($eq).
+Removed cell ustawienie_rtl.$procmux$785 ($mux).
+Removed cell ustawienie_rtl.$procmux$788 ($mux).
+Removed cell ustawienie_rtl.$procmux$791 ($mux).
+Removed top 27 bits (of 32) from port B of cell ustawienie_rtl.$procmux$804_CMP0 ($eq).
+Removed cell ustawienie_rtl.$procmux$805 ($mux).
+Removed cell ustawienie_rtl.$procmux$808 ($mux).
+Removed cell ustawienie_rtl.$procmux$811 ($mux).
+Removed top 29 bits (of 32) from port B of cell ustawienie_rtl.$procmux$840_CMP0 ($eq).
+Removed cell ustawienie_rtl.$procmux$841 ($mux).
+Removed cell ustawienie_rtl.$procmux$844 ($mux).
+Removed cell ustawienie_rtl.$procmux$847 ($mux).
+Removed top 28 bits (of 32) from port B of cell ustawienie_rtl.$procmux$868_CMP0 ($eq).
+Removed cell ustawienie_rtl.$procmux$869 ($mux).
+Removed cell ustawienie_rtl.$procmux$872 ($mux).
+Removed cell ustawienie_rtl.$procmux$875 ($mux).
+Removed top 27 bits (of 32) from port B of cell ustawienie_rtl.$procmux$882_CMP0 ($eq).
+Removed cell ustawienie_rtl.$procmux$883 ($mux).
+Removed cell ustawienie_rtl.$procmux$886 ($mux).
+Removed cell ustawienie_rtl.$procmux$889 ($mux).
+Removed cell ustawienie_rtl.$procmux$892 ($mux).
+Removed cell ustawienie_rtl.$procmux$916 ($mux).
+Removed cell ustawienie_rtl.$procmux$931 ($mux).
 
 3.8. Executing PEEPOPT pass (run peephole optimizers).
 
 3.9. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \ustawienie_rtl..
-Removed 3 unused cells and 69 unused wires.
-<suppressed ~4 debug messages>
+Removed 5 unused cells and 104 unused wires.
+<suppressed ~6 debug messages>
 
 3.10. Executing TECHMAP pass (map to technology primitives).
 
@@ -322,10 +356,8 @@ No more expansions possible.
 
 3.11. Executing ALUMACC pass (create $alu and $macc cells).
 Extracting $alu and $macc cells in module ustawienie_rtl:
-  creating $macc model for $sub$ustawienie.sv:35$7 ($sub).
-  creating $alu model for $macc $sub$ustawienie.sv:35$7.
-  creating $alu model for $gt$ustawienie.sv:29$3 ($gt): merged with $sub$ustawienie.sv:35$7.
-  creating $alu cell for $sub$ustawienie.sv:35$7, $gt$ustawienie.sv:29$3: $auto$alumacc.cc:474:replace_alu$934
+  creating $alu model for $gt$ustawienie.sv:28$3 ($gt): new $alu
+  creating $alu cell for $gt$ustawienie.sv:28$3: $auto$alumacc.cc:474:replace_alu$937
   created 1 $alu and 0 $macc cells.
 
 3.12. Executing SHARE pass (SAT-based resource sharing).
@@ -423,7 +455,7 @@ Finding unused cells or wires in module \ustawienie_rtl..
 
 3.18.1. Executing OPT_EXPR pass (perform const folding).
 Optimizing module ustawienie_rtl.
-<suppressed ~33 debug messages>
+<suppressed ~34 debug messages>
 
 3.18.2. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\ustawienie_rtl'.
@@ -500,24 +532,24 @@ Generating RTLIL representation for module `\_90_lut'.
 Successfully finished Verilog frontend.
 
 3.21.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $not.
 Using extmapper simplemap for cells of type $or.
 Using extmapper simplemap for cells of type $eq.
 Using extmapper simplemap for cells of type $logic_not.
 Using extmapper simplemap for cells of type $xor.
-Using template $paramod\_90_alu\A_SIGNED=1\B_SIGNED=1\A_WIDTH=7\B_WIDTH=32\Y_WIDTH=32 for cells of type $alu.
+Using template $paramod\_90_alu\A_SIGNED=1\B_SIGNED=1\A_WIDTH=6\B_WIDTH=32\Y_WIDTH=32 for cells of type $alu.
 Using extmapper simplemap for cells of type $and.
 Using template $paramod\_90_lcu\WIDTH=32 for cells of type $lcu.
 Using extmapper simplemap for cells of type $mux.
-Using extmapper simplemap for cells of type $not.
 Using extmapper simplemap for cells of type $pos.
 No more expansions possible.
-<suppressed ~382 debug messages>
+<suppressed ~384 debug messages>
 
 3.22. Executing OPT pass (performing simple optimizations).
 
 3.22.1. Executing OPT_EXPR pass (perform const folding).
 Optimizing module ustawienie_rtl.
-<suppressed ~1090 debug messages>
+<suppressed ~1078 debug messages>
 
 3.22.2. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\ustawienie_rtl'.
@@ -528,15 +560,15 @@ Removed a total of 920 cells.
 
 3.22.4. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \ustawienie_rtl..
-Removed 0 unused cells and 204 unused wires.
-<suppressed ~1 debug messages>
+Removed 56 unused cells and 202 unused wires.
+<suppressed ~57 debug messages>
 
 3.22.5. Finished fast OPT passes.
 
 3.23. Executing ABC pass (technology mapping using ABC).
 
 3.23.1. Extracting gate netlist of module `\ustawienie_rtl' to `<abc-temp-dir>/input.blif'..
-Extracted 343 gates and 408 wires to a netlist network with 64 inputs and 33 outputs.
+Extracted 332 gates and 397 wires to a netlist network with 64 inputs and 33 outputs.
 
 3.23.1.1. Executing ABC.
 Running ABC command: berkeley-abc -s -f <abc-temp-dir>/abc.script 2>&1
@@ -553,18 +585,14 @@ ABC: + write_blif <abc-temp-dir>/output.blif
 
 3.23.1.2. Re-integrating ABC results.
 ABC RESULTS:               AND cells:        1
-ABC RESULTS:            ANDNOT cells:        5
+ABC RESULTS:            ANDNOT cells:        3
 ABC RESULTS:              AOI3 cells:        1
-ABC RESULTS:              AOI4 cells:        1
-ABC RESULTS:              NAND cells:        7
-ABC RESULTS:               NOR cells:        4
-ABC RESULTS:               NOT cells:       34
-ABC RESULTS:              OAI3 cells:       32
-ABC RESULTS:                OR cells:      143
-ABC RESULTS:             ORNOT cells:       10
-ABC RESULTS:              XNOR cells:        9
-ABC RESULTS:               XOR cells:       23
-ABC RESULTS:        internal signals:      311
+ABC RESULTS:              NAND cells:        2
+ABC RESULTS:               NOR cells:        2
+ABC RESULTS:              OAI3 cells:       33
+ABC RESULTS:                OR cells:      105
+ABC RESULTS:             ORNOT cells:        7
+ABC RESULTS:        internal signals:      300
 ABC RESULTS:           input signals:       64
 ABC RESULTS:          output signals:       33
 Removing temp directory.
@@ -582,7 +610,7 @@ Removed a total of 0 cells.
 
 3.24.4. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \ustawienie_rtl..
-Removed 0 unused cells and 255 unused wires.
+Removed 0 unused cells and 259 unused wires.
 <suppressed ~1 debug messages>
 
 3.24.5. Finished fast OPT passes.
@@ -600,26 +628,22 @@ Removed 0 unused modules.
 
 === ustawienie_rtl ===
 
-   Number of wires:                241
-   Number of wire bits:            334
+   Number of wires:                125
+   Number of wire bits:            218
    Number of public wires:           4
    Number of public wire bits:      97
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                270
-     $_ANDNOT_                       5
+   Number of cells:                154
+     $_ANDNOT_                       3
      $_AND_                          1
      $_AOI3_                         1
-     $_AOI4_                         1
-     $_NAND_                         7
-     $_NOR_                          4
-     $_NOT_                         34
-     $_OAI3_                        32
-     $_ORNOT_                       10
-     $_OR_                         143
-     $_XNOR_                         9
-     $_XOR_                         23
+     $_NAND_                         2
+     $_NOR_                          2
+     $_OAI3_                        33
+     $_ORNOT_                        7
+     $_OR_                         105
 
 3.27. Executing CHECK pass (checking for obvious problems).
 checking module ustawienie_rtl..
@@ -628,7 +652,7 @@ found and reported 0 problems.
 4. Executing ABC pass (technology mapping using ABC).
 
 4.1. Extracting gate netlist of module `\ustawienie_rtl' to `<abc-temp-dir>/input.blif'..
-Extracted 270 gates and 334 wires to a netlist network with 64 inputs and 33 outputs.
+Extracted 154 gates and 218 wires to a netlist network with 64 inputs and 33 outputs.
 
 4.1.1. Executing ABC.
 Running ABC command: berkeley-abc -s -f <abc-temp-dir>/abc.script 2>&1
@@ -652,18 +676,17 @@ ABC: + &put
 ABC: + write_blif <abc-temp-dir>/output.blif 
 
 4.1.2. Re-integrating ABC results.
-ABC RESULTS:               AND cells:      110
-ABC RESULTS:               NOT cells:       15
-ABC RESULTS:                OR cells:       69
-ABC RESULTS:               XOR cells:        4
-ABC RESULTS:        internal signals:      237
+ABC RESULTS:               AND cells:       65
+ABC RESULTS:               NOT cells:       44
+ABC RESULTS:                OR cells:       57
+ABC RESULTS:        internal signals:      121
 ABC RESULTS:           input signals:       64
 ABC RESULTS:          output signals:       33
 Removing temp directory.
 
 5. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \ustawienie_rtl..
-Removed 0 unused cells and 334 unused wires.
+Removed 0 unused cells and 218 unused wires.
 <suppressed ~1 debug messages>
 
 6. Executing Verilog backend.
