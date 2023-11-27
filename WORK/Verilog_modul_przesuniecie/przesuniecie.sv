@@ -5,11 +5,11 @@ module przesuniecie (i_arg_A, i_arg_B, o_result, o_error, o_overflow);
 parameter BITS = 32;
 
 // zadeklarowanie wektorów wejściowych wraz z ich atrybutami
-input logic  [BITS-1:0] i_arg_A;
-input logic  [BITS-1:0] i_arg_B;
+input logic signed [BITS-1:0] i_arg_A;
+input logic signed [BITS-1:0] i_arg_B;
 
 // zadeklarowanie wektora wyjściowego z jego atrybutami
-output logic [BITS-1:0] o_result;
+output logic signed [BITS-1:0] o_result;
 
 // zadeklarowanie bitów błędu i przepełnienia
 output logic o_error;
@@ -19,7 +19,11 @@ output logic o_overflow;
 
 always_comb 
 begin
+    //domyślnie ustawione wartości wyjść
     o_result [BITS-1:0] = 32'bx;
+    o_error = 0;
+    o_overflow = 0;
+
     //przypadek wzorowy, przesunięcie nie przekracza 31 bitów
     // żadne flagi się nie zapalają
     if (~i_arg_B > 0 && ~i_arg_B < 32) begin
@@ -42,23 +46,23 @@ begin
     // znaku wektora wejściowego A: gdy A jest ujemne, wynik jest ustawiony na ALL ONES, 
     // w przeciwnym przypadku to jest ALL ZEROS
     else if (~i_arg_B == BITS) begin
-        o_result = (i_arg_A < 0) ? '1 :'0;
-        o_error = '0;
-        o_overflow = '0;
+        o_result = (i_arg_A < 0) ? 32'b1 : 32'b0;
+        o_error = 0;
+        o_overflow = 0;
     end
 
     //przypadek, gdy przesunięcie jest ujemne - wynik jest nezdefiniowany i zapalony jest bit błędu
     // bit przepełnienia jest wyłączony, bo to nie jest przepełnienie, tylko błąd operacji
     else if (~i_arg_B < 0) begin
-        o_error = '1;        
-        o_overflow = '0;
+        o_error = 1;        
+        o_overflow = 0;
     end
     
     // przypadek, gdy dochodzi do przepełnienia, więc zapalamy bit flagi przepełnienia, ale nie jest to
     // błąd operacji, chociaż wynik jest nieokreślony
     else if (~i_arg_B > BITS) begin
-        o_error = '0;
-        o_overflow = '1;
+        o_error = 0;
+        o_overflow = 1;
     end    
 end
 endmodule

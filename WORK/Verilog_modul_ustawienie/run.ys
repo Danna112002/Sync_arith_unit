@@ -1,0 +1,23 @@
+# Wczytywanie pliku modelu
+    read_verilog -sv ustawienie.sv
+
+# Utworzenie kopii modelu z inną nazwą
+    copy ustawienie ustawienie_rtl
+
+# Ustawienie hierarchii projektu na nowy moduł
+    hierarchy -top ustawienie_rtl
+
+# synteza logiczna 
+    synth
+     
+# Mapowaie na bramki
+    abc -g AND,OR,XOR
+
+# Optymalizacja po mapowaniu
+    opt_clean
+
+#zapis wyniku symulacji 
+    write_verilog -noattr ustawienie_rtl.sv
+
+# Wypisywanie statystyki użytych bramek
+    stat -tech cmos

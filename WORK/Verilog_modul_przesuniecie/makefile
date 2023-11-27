@@ -4,7 +4,7 @@ RTL_FILES       = ${EXAMPLE}_rtl.sv
 TB_FILES        = ${EXAMPLE}_tb.sv
 
 # Domyślny target
-all: rtl sim
+all: rtl sim 
 
 # Target, który syntetyzuje moduł i robi plik rtl
 rtl:
@@ -26,5 +26,6 @@ waves:
 
 clear:
 	if [ -f $(EXAMPLE).iveri.run ]; then rm $(EXAMPLE).iveri.run; fi
+	if [ -f $(EXAMPLE).iveri.log ]; then rm $(EXAMPLE).iveri.log; fi
 
 .PHONY: all rtl sim compile waves clear

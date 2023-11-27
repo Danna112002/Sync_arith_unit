@@ -51,7 +51,7 @@ module przesuniecie_tb;
 
         //wygenerowanie losowych wartości dla wybranych przeze mnie przypadków
         //ściągawka: maksymalne A = 2**BITS - 1; minimalne A = -(2**BITS - 1);
-        for (int i = 0; i < 5; i++) begin
+        for (int i = 0; i<5; i++) begin
 
             //tablica wartości A dla idealnego przypadku
             #1

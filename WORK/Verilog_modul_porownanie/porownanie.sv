@@ -4,9 +4,9 @@ module porownanie (i_arg_A, i_arg_B, o_result);
     parameter BITS = 32;
 
     //deklarowanie wejść i wyjść
-    input logic [BITS-1:0] i_arg_A;
-    input logic [BITS-1:0] i_arg_B;
-    output logic o_result;
+    input logic signed [BITS-1:0] i_arg_A;
+    input logic signed [BITS-1:0] i_arg_B;
+    output logic signed o_result;
 
     //blok opisujący logikę
     always_comb 
