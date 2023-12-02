@@ -1,8 +1,8 @@
 //jednostka arytmetyczno-logiczna 
-`include "ustawienie.sv";
-`include "przesuniecie.sv";
-`include "porownanie.sv";
-`include "konwersja.sv";
+`include "ustawienie.sv"
+`include "przesuniecie.sv"
+`include "porownanie.sv"
+`include "konwersja.sv"
 module sync_arith_unit_12 (
     i_arg_A, 
     i_arg_B, 
@@ -16,8 +16,8 @@ module sync_arith_unit_12 (
     o_error_ust
     );
 
-    parameter BITS;
-    parameter OPER;
+    parameter BITS = 32;
+    parameter OPER = 4;
 
     //zadeklarowanie wejść i wyjść 
     input logic signed   [BITS-1:0] i_arg_A;
@@ -56,14 +56,23 @@ module sync_arith_unit_12 (
     //funkcja mi potrzebna by automatycznie mi parzystość zer liczyła
     //iteruje po wszystkich bitach sygnału wyniku i liczy zera
     //wypluwa modulo z dzielenia liczby zer na dwa.
-    function automatic bit IS_ODD_ZEROS(wektor);
-        int liczbaZer = 0;
-        for (int i = 0; i < BITS; i++) begin
-            if (wektor[i] == 0) begin
-                liczbaZer++;
+    function IS_ODD_ZEROS(input logic [BITS-1:0] result);
+        integer count_zeros;
+        integer i;
+        //iteracyjne liczenie zer
+        count_zeros = 0;
+        for (i = 0; i < BITS; i = i + 1) begin
+            if (result[i] == 1'b0) begin
+                count_zeros = count_zeros + 1;
             end
         end
-        return liczbaZer %2;        
+        //dla nieparzystych zer zwracaj 1, jak nie to zero.
+        if (count_zeros % 2 == 1) begin
+            IS_ODD_ZEROS = 1'b1;
+        end
+        else begin
+            IS_ODD_ZEROS = 1'b0;
+        end
     endfunction
 
     //blok synchroniczny 
