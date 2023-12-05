@@ -17,16 +17,15 @@ module sync_arith_unit_12 (
     );
 
     parameter BITS = 32;
-    parameter OPER = 4;
 
     //zadeklarowanie wejść i wyjść 
     input logic signed   [BITS-1:0] i_arg_A;
     input logic signed   [BITS-1:0] i_arg_B; 
-    input logic          [OPER-1:0] i_op;
+    input logic          [1:0]      i_op;
     input logic                     i_clk;
     input logic                     i_reset;
     output logic signed  [BITS-1:0] o_result;
-    output logic         [OPER-1:0] o_status;
+    output logic         [3:0]      o_status;
     output logic                    o_error_konw;
     output logic                    o_error_przes; 
     output logic                    o_error_ust;

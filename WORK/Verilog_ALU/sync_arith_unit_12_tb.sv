@@ -1,7 +1,5 @@
 //testbench ALU;
 `timescale 1s/1ms
-`define CLKSTEP  10
-`define SIMTIME  800 
 
 module sync_arith_unit_12_tb;
 
@@ -15,9 +13,7 @@ module sync_arith_unit_12_tb;
     logic [3:0]         o_status_model;
     logic [BITS-1:0]    o_result_gates;
     logic [3:0]         o_status_gates;
-    integer liczba_testow=0;
-    integer liczba_bledow=0;
-
+   
     //jawne przypisanie portów
     //model
     sync_arith_unit_12 #(.BITS(BITS))
@@ -42,7 +38,7 @@ module sync_arith_unit_12_tb;
         );
 
         //generujemy sygnał zegarowy
-        always #`CLKSTEP i_clk<=~i_clk;
+        always #1 i_clk <= ~i_clk;
 
         //blok generacji losowych danych 
         integer seed_data=0;
@@ -50,14 +46,18 @@ module sync_arith_unit_12_tb;
         //na sztywno symulacja ma 80 przypadków do zrobienia
         always @(i_clk)
         begin
-            #10
+            #1
                 i_arg_A = $random;
                 i_arg_B = $random;
                 i_op = $urandom_range(0,3);
         end
 
-    //dla narastającego zbocza pokazuj staty
-    always @(negedge i_clk)
+        integer liczba_testow=0;
+        integer liczba_bledow=0;
+
+
+    //dla opadającego zbocza pokazuj staty
+    always @(posedge i_clk)
     begin
         liczba_testow = liczba_testow + 1;
 
@@ -77,14 +77,15 @@ module sync_arith_unit_12_tb;
 
     //blok zadania wartosci początkowych i czasu symulacji 
     initial begin
+        $dumpfile("signals_ALU.vcd");
+        $dumpvars(0, sync_arith_unit_12_tb);
+        #1
         i_clk<=0;
         i_reset<=0;
         i_arg_A<='0;
         i_arg_B<='0;
         i_op<='0;
-        $dumpfile("signals_ALU.vcd");
-        $dumpvars(0, sync_arith_unit_12_tb);
-        #`SIMTIME;
+        #80;
         $display("--------------------");
         $display("Liczba testow: %0d, liczba bledow: %0d", liczba_testow, liczba_bledow);
         $display("--------------------");

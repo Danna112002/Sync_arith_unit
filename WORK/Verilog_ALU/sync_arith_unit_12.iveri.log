@@ -1,10 +1,6 @@
 ./konwersja.sv:16: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
 ./konwersja.sv:16: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
 ./konwersja.sv:16: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
-sync_arith_unit_12.sv:50: warning: Port 3 (o_result) of porownanie expects 1 bits, got 32.
-sync_arith_unit_12.sv:50:        : Padding (signed) 31 high bits of the expression.
+sync_arith_unit_12.sv:49: warning: Port 3 (o_result) of porownanie expects 1 bits, got 32.
+sync_arith_unit_12.sv:49:        : Padding (signed) 31 high bits of the expression.
 ./ustawienie.sv:15: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
-sync_arith_unit_12_tb.sv:24: warning: Port 3 (i_op) of sync_arith_unit_12 expects 4 bits, got 2.
-sync_arith_unit_12_tb.sv:24:        : Padding 2 high bits of the port.
-sync_arith_unit_12_tb.sv:35: warning: Port 3 (i_op) of sync_arith_unit_12_rtl expects 4 bits, got 2.
-sync_arith_unit_12_tb.sv:35:        : Padding 2 high bits of the port.
