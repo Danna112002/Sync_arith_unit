@@ -2762,182 +2762,182 @@ module sync_arith_unit_12_rtl(i_arg_A, i_arg_B, i_op, i_clk, i_reset, o_result, 
   assign _283_ = _279_ ^ _282_;
   assign _284_ = _275_ ^ _283_;
   assign flaga_NOT_EVEN_ZERO = _268_ ^ _284_;
-  always @(negedge i_clk or negedge i_reset)
+  always @(posedge i_clk or negedge i_reset)
     if (!i_reset)
       o_result[0] <= 0;
     else
       o_result[0] <= wynik[0];
-  always @(negedge i_clk or negedge i_reset)
+  always @(posedge i_clk or negedge i_reset)
     if (!i_reset)
       o_result[1] <= 0;
     else
       o_result[1] <= wynik[1];
-  always @(negedge i_clk or negedge i_reset)
+  always @(posedge i_clk or negedge i_reset)
     if (!i_reset)
       o_result[2] <= 0;
     else
       o_result[2] <= wynik[2];
-  always @(negedge i_clk or negedge i_reset)
+  always @(posedge i_clk or negedge i_reset)
     if (!i_reset)
       o_result[3] <= 0;
     else
       o_result[3] <= wynik[3];
-  always @(negedge i_clk or negedge i_reset)
+  always @(posedge i_clk or negedge i_reset)
     if (!i_reset)
       o_result[4] <= 0;
     else
       o_result[4] <= wynik[4];
-  always @(negedge i_clk or negedge i_reset)
+  always @(posedge i_clk or negedge i_reset)
     if (!i_reset)
       o_result[5] <= 0;
     else
       o_result[5] <= wynik[5];
-  always @(negedge i_clk or negedge i_reset)
+  always @(posedge i_clk or negedge i_reset)
     if (!i_reset)
       o_result[6] <= 0;
     else
       o_result[6] <= wynik[6];
-  always @(negedge i_clk or negedge i_reset)
+  always @(posedge i_clk or negedge i_reset)
     if (!i_reset)
       o_result[7] <= 0;
     else
       o_result[7] <= wynik[7];
-  always @(negedge i_clk or negedge i_reset)
+  always @(posedge i_clk or negedge i_reset)
     if (!i_reset)
       o_result[8] <= 0;
     else
       o_result[8] <= wynik[8];
-  always @(negedge i_clk or negedge i_reset)
+  always @(posedge i_clk or negedge i_reset)
     if (!i_reset)
       o_result[9] <= 0;
     else
       o_result[9] <= wynik[9];
-  always @(negedge i_clk or negedge i_reset)
+  always @(posedge i_clk or negedge i_reset)
     if (!i_reset)
       o_result[10] <= 0;
     else
       o_result[10] <= wynik[10];
-  always @(negedge i_clk or negedge i_reset)
+  always @(posedge i_clk or negedge i_reset)
     if (!i_reset)
       o_result[11] <= 0;
     else
       o_result[11] <= wynik[11];
-  always @(negedge i_clk or negedge i_reset)
+  always @(posedge i_clk or negedge i_reset)
     if (!i_reset)
       o_result[12] <= 0;
     else
       o_result[12] <= wynik[12];
-  always @(negedge i_clk or negedge i_reset)
+  always @(posedge i_clk or negedge i_reset)
     if (!i_reset)
       o_result[13] <= 0;
     else
       o_result[13] <= wynik[13];
-  always @(negedge i_clk or negedge i_reset)
+  always @(posedge i_clk or negedge i_reset)
     if (!i_reset)
       o_result[14] <= 0;
     else
       o_result[14] <= wynik[14];
-  always @(negedge i_clk or negedge i_reset)
+  always @(posedge i_clk or negedge i_reset)
     if (!i_reset)
       o_result[15] <= 0;
     else
       o_result[15] <= wynik[15];
-  always @(negedge i_clk or negedge i_reset)
+  always @(posedge i_clk or negedge i_reset)
     if (!i_reset)
       o_result[16] <= 0;
     else
       o_result[16] <= wynik[16];
-  always @(negedge i_clk or negedge i_reset)
+  always @(posedge i_clk or negedge i_reset)
     if (!i_reset)
       o_result[17] <= 0;
     else
       o_result[17] <= wynik[17];
-  always @(negedge i_clk or negedge i_reset)
+  always @(posedge i_clk or negedge i_reset)
     if (!i_reset)
       o_result[18] <= 0;
     else
       o_result[18] <= wynik[18];
-  always @(negedge i_clk or negedge i_reset)
+  always @(posedge i_clk or negedge i_reset)
     if (!i_reset)
       o_result[19] <= 0;
     else
       o_result[19] <= wynik[19];
-  always @(negedge i_clk or negedge i_reset)
+  always @(posedge i_clk or negedge i_reset)
     if (!i_reset)
       o_result[20] <= 0;
     else
       o_result[20] <= wynik[20];
-  always @(negedge i_clk or negedge i_reset)
+  always @(posedge i_clk or negedge i_reset)
     if (!i_reset)
       o_result[21] <= 0;
     else
       o_result[21] <= wynik[21];
-  always @(negedge i_clk or negedge i_reset)
+  always @(posedge i_clk or negedge i_reset)
     if (!i_reset)
       o_result[22] <= 0;
     else
       o_result[22] <= wynik[22];
-  always @(negedge i_clk or negedge i_reset)
+  always @(posedge i_clk or negedge i_reset)
     if (!i_reset)
       o_result[23] <= 0;
     else
       o_result[23] <= wynik[23];
-  always @(negedge i_clk or negedge i_reset)
+  always @(posedge i_clk or negedge i_reset)
     if (!i_reset)
       o_result[24] <= 0;
     else
       o_result[24] <= wynik[24];
-  always @(negedge i_clk or negedge i_reset)
+  always @(posedge i_clk or negedge i_reset)
     if (!i_reset)
       o_result[25] <= 0;
     else
       o_result[25] <= wynik[25];
-  always @(negedge i_clk or negedge i_reset)
+  always @(posedge i_clk or negedge i_reset)
     if (!i_reset)
       o_result[26] <= 0;
     else
       o_result[26] <= wynik[26];
-  always @(negedge i_clk or negedge i_reset)
+  always @(posedge i_clk or negedge i_reset)
     if (!i_reset)
       o_result[27] <= 0;
     else
       o_result[27] <= wynik[27];
-  always @(negedge i_clk or negedge i_reset)
+  always @(posedge i_clk or negedge i_reset)
     if (!i_reset)
       o_result[28] <= 0;
     else
       o_result[28] <= wynik[28];
-  always @(negedge i_clk or negedge i_reset)
+  always @(posedge i_clk or negedge i_reset)
     if (!i_reset)
       o_result[29] <= 0;
     else
       o_result[29] <= wynik[29];
-  always @(negedge i_clk or negedge i_reset)
+  always @(posedge i_clk or negedge i_reset)
     if (!i_reset)
       o_result[30] <= 0;
     else
       o_result[30] <= wynik[30];
-  always @(negedge i_clk or negedge i_reset)
+  always @(posedge i_clk or negedge i_reset)
     if (!i_reset)
       o_result[31] <= 0;
     else
       o_result[31] <= wynik[31];
   reg \o_status_reg[1] ;
-  always @(negedge i_clk or negedge i_reset)
+  always @(posedge i_clk or negedge i_reset)
     if (!i_reset)
       \o_status_reg[1]  <= 0;
     else
       \o_status_reg[1]  <= flaga_ZEROS;
   assign o_status[1] = \o_status_reg[1] ;
   reg \o_status_reg[2] ;
-  always @(negedge i_clk or negedge i_reset)
+  always @(posedge i_clk or negedge i_reset)
     if (!i_reset)
       \o_status_reg[2]  <= 0;
     else
       \o_status_reg[2]  <= flaga_NOT_EVEN_ZERO;
   assign o_status[2] = \o_status_reg[2] ;
   reg \o_status_reg[3] ;
-  always @(negedge i_clk or negedge i_reset)
+  always @(posedge i_clk or negedge i_reset)
     if (!i_reset)
       \o_status_reg[3]  <= 0;
     else

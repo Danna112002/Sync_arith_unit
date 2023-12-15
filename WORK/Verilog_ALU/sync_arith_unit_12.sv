@@ -110,14 +110,17 @@ module sync_arith_unit_12 (
     end
 
     //blok synchronizowalny
-    always_ff @(negedge i_clk, negedge i_reset) begin
-        if (i_reset == 1'b1) begin
-            o_result <= wynik;
-            o_status <= {flaga_ERROR, flaga_NOT_EVEN_ZERO, flaga_ZEROS, flaga_OVERFLOW};
+    always_ff @(posedge i_clk or negedge i_reset) begin
+        if (~i_reset) begin
+        o_result <= '0;
+        o_status <= '0;
         end
         else begin
-            o_result = '0;
-            o_status = '0;
+        o_result <= wynik;
+        o_status <= {flaga_ERROR, flaga_NOT_EVEN_ZERO, flaga_ZEROS, flaga_OVERFLOW};
         end
     end
 endmodule
+
+
+
