@@ -79,12 +79,12 @@ module sync_arith_unit_12 (
     begin
         //wybór operacji na danych wejściowych i_oper;
         case(i_op)
-            2'b00 : wynik = konw_wynik;
             2'b01 : wynik = poro_wynik;
             2'b10 : wynik = ustaw_wynik;
             2'b11 : wynik = przesu_wynik;
+            2'b00 : wynik = konw_wynik;
             default :
-            wynik = 'bx;
+            wynik = 0;
         endcase        
 
         flaga_ERROR = '0;
@@ -110,8 +110,8 @@ module sync_arith_unit_12 (
     end
 
     //blok synchronizowalny
-    always_ff @(posedge i_clk or negedge i_reset) begin
-        if (~i_reset) begin
+    always_ff @(posedge i_clk, posedge i_reset) begin
+        if (i_reset==1'b1) begin
         o_result <= '0;
         o_status <= '0;
         end

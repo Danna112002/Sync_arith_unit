@@ -9,7 +9,7 @@ module sync_arith_unit_12_tb;
 
     //sygnały sterujące 
     logic               i_reset = '0;
-    logic               i_clk = '1;
+    logic               i_clk = '0;
     logic [BITS-1:0]    i_arg_A, i_arg_B;
     logic [1:0]         i_op;
     //wyjścia danych
@@ -42,45 +42,57 @@ module sync_arith_unit_12_tb;
             .o_result(o_result_gates), 
             .o_status(o_status_gates) 
             );
-
-    //generacja sygnału zegarowego               
-    always #CLKPERIOD i_clk = ~i_clk;
-
-    //dla opadającego zbocza zegara pokazuj staty
-    integer liczba_testow=0;
-    integer liczba_bledow=0;
-
-    always @(negedge i_clk) begin
-        liczba_testow = liczba_testow + 1;
-        if (o_result_model === o_result_gates && o_status_model === o_status_gates) begin
-            $display("OK @(%0d): Dane wyjsciowe modelu i bramek zgodne: %d === %d, %b === %b",
-                $time, o_result_gates, o_result_model, o_status_gates, o_status_model);
-        end 
-        else begin
-            $display("!!! BLAD @(%0d): Dane wyjsciowe modelu i bramek niezgodne: %d === %d, %b === %b",
-                $time, o_result_gates, o_result_model, o_status_gates, o_status_model);
-            liczba_bledow = liczba_bledow + 1;
+    
+    initial begin
+        forever begin
+            #10
+            i_op = $urandom_range(0,3);            
         end
     end
 
-    //blok zadania wartosci początkowych i czasu symulacji 
-    initial begin
-
-        i_clk = 0;
-        i_reset = 1;
-        #10;
         
-        repeat (100) begin
-            i_arg_A = $random;
-            i_arg_B = $random;
-            i_op = $urandom_range(0, 3);
-            #10;  
+    initial begin
+        forever begin
+            #10
+            i_arg_A = $urandom;                 
         end
+    end
 
-        #SIMTIME
-        $display("--------------------");
-        $display("Liczba testow: %0d, liczba bledow: %0d", liczba_testow, liczba_bledow);
-        $display("--------------------");
+   initial begin
+        forever begin
+            #10
+            i_arg_B = $urandom;
+            
+            if ($time >= SIMTIME) begin
+                $finish;  
+            end
+        end
+    end
+
+    
+
+    initial begin 
+        forever begin 
+            #CLKPERIOD i_clk = ~i_clk;
+        end
+    end 
+
+    initial begin
+        forever begin
+            #CLKPERIOD i_reset = ~i_reset;
+        end
+    end
+
+
+    initial begin 
+
+        //i_arg_A<='0;
+        //i_arg_B<='0;
+        //i_op<='0;
+        $dumpfile("signals_ALU.vcd");
+        $dumpvars(0, sync_arith_unit_12_tb);
+        #SIMTIME;
         $finish;
     end
+
 endmodule

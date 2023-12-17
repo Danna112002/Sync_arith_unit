@@ -1,12 +1,6 @@
-sync_arith_unit_12_tb.sv:73: syntax error
-sync_arith_unit_12_tb.sv:74: Syntax in assignment statement l-value.
-sync_arith_unit_12_tb.sv:80: syntax error
-sync_arith_unit_12_tb.sv:81: error: invalid module item.
-sync_arith_unit_12_tb.sv:82: syntax error
-sync_arith_unit_12_tb.sv:82: error: invalid module item.
-sync_arith_unit_12_tb.sv:83: syntax error
-sync_arith_unit_12_tb.sv:83: error: invalid module item.
-sync_arith_unit_12_tb.sv:84: syntax error
-sync_arith_unit_12_tb.sv:84: error: invalid module item.
-sync_arith_unit_12_tb.sv:85: syntax error
-I give up.
+./konwersja.sv:16: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+./konwersja.sv:16: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+./konwersja.sv:16: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+sync_arith_unit_12.sv:49: warning: Port 3 (o_result) of porownanie expects 1 bits, got 32.
+sync_arith_unit_12.sv:49:        : Padding (signed) 31 high bits of the expression.
+./ustawienie.sv:15: sorry: constant selects in always_* processes are not currently supported (all bits will be included).

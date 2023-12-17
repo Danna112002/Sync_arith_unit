@@ -2422,6 +2422,9 @@ module sync_arith_unit_12_rtl(i_arg_A, i_arg_B, i_op, i_clk, i_reset, o_result, 
   wire _282_;
   wire _283_;
   wire _284_;
+  wire _285_;
+  wire _286_;
+  wire _287_;
   wire flaga_ERROR;
   wire flaga_NOT_EVEN_ZERO;
   wire flaga_OVERFLOW;
@@ -2442,503 +2445,506 @@ module sync_arith_unit_12_rtl(i_arg_A, i_arg_B, i_op, i_clk, i_reset, o_result, 
   wire [31:0] przesu_wynik;
   wire [31:0] ustaw_wynik;
   wire [31:0] wynik;
-  assign _000_ = ~i_op[1];
+  assign _000_ = ~poro_wynik;
   assign _001_ = ~i_op[0];
-  assign _002_ = ~konw_wynik[0];
-  assign _003_ = ~przesu_wynik[1];
-  assign _004_ = ~konw_wynik[2];
-  assign _005_ = ~ustaw_wynik[2];
-  assign _006_ = ~przesu_wynik[2];
-  assign _007_ = ~konw_wynik[4];
-  assign _008_ = ~ustaw_wynik[4];
-  assign _009_ = ~przesu_wynik[4];
-  assign _010_ = ~przesu_wynik[6];
-  assign _011_ = ~konw_wynik[9];
-  assign _012_ = ~ustaw_wynik[9];
-  assign _013_ = ~przesu_wynik[9];
-  assign _014_ = ~przesu_wynik[12];
-  assign _015_ = ~przesu_wynik[13];
-  assign _016_ = ~konw_wynik[14];
-  assign _017_ = ~ustaw_wynik[14];
-  assign _018_ = ~przesu_wynik[14];
-  assign _019_ = ~konw_wynik[15];
-  assign _020_ = ~ustaw_wynik[15];
-  assign _021_ = ~konw_wynik[18];
-  assign _022_ = ~ustaw_wynik[18];
-  assign _023_ = ~konw_wynik[19];
-  assign _024_ = ~ustaw_wynik[19];
-  assign _025_ = ~ustaw_wynik[23];
-  assign _026_ = ~konw_wynik[26];
-  assign _027_ = ~ustaw_wynik[26];
-  assign _028_ = ~konw_wynik[27];
-  assign _029_ = ~ustaw_wynik[27];
-  assign _030_ = ~ustaw_wynik[29];
-  assign _031_ = i_op[0] & poro_wynik;
-  assign _032_ = ~_031_;
-  assign _033_ = i_op[0] | _002_;
-  assign _034_ = _032_ & _033_;
-  assign _035_ = _000_ & _001_;
-  assign _036_ = i_op[1] | i_op[0];
-  assign _037_ = i_op[1] | _034_;
-  assign _038_ = i_op[1] & i_op[0];
-  assign _039_ = przesu_wynik[0] & _038_;
-  assign _040_ = i_op[1] & _001_;
-  assign _041_ = _000_ | i_op[0];
-  assign _042_ = ustaw_wynik[0] & _040_;
-  assign _043_ = _039_ | _042_;
-  assign _044_ = ~_043_;
-  assign _045_ = _037_ & _044_;
-  assign wynik[0] = ~_045_;
-  assign _046_ = ustaw_wynik[1] | _041_;
-  assign _047_ = i_op[0] & _003_;
-  assign _048_ = _001_ & konw_wynik[1];
-  assign _049_ = i_op[1] | _048_;
-  assign _050_ = _046_ & _049_;
-  assign _051_ = ~_050_;
-  assign _052_ = _047_ | _051_;
-  assign wynik[1] = ~_052_;
-  assign _053_ = _005_ & _040_;
-  assign _054_ = i_op[0] & _006_;
-  assign _055_ = i_op[0] | _004_;
-  assign _056_ = _000_ & _055_;
-  assign _057_ = _054_ | _056_;
-  assign _058_ = _053_ | _057_;
-  assign wynik[2] = ~_058_;
-  assign _059_ = ustaw_wynik[3] | _041_;
-  assign _060_ = i_op[1] | konw_wynik[3];
-  assign _061_ = _001_ & _060_;
-  assign _062_ = i_op[1] & przesu_wynik[3];
-  assign _063_ = _061_ | _062_;
-  assign wynik[3] = _059_ & _063_;
-  assign _064_ = ~wynik[3];
-  assign _065_ = _008_ & _040_;
-  assign _066_ = i_op[0] & _009_;
-  assign _067_ = i_op[0] | _007_;
-  assign _068_ = _000_ & _067_;
-  assign _069_ = _066_ | _068_;
-  assign _070_ = _065_ | _069_;
-  assign wynik[4] = ~_070_;
-  assign _071_ = ustaw_wynik[5] | _041_;
-  assign _072_ = i_op[1] | konw_wynik[5];
-  assign _073_ = _001_ & _072_;
-  assign _074_ = i_op[1] & przesu_wynik[5];
-  assign _075_ = _073_ | _074_;
-  assign wynik[5] = _071_ & _075_;
-  assign _076_ = ~wynik[5];
-  assign _077_ = ustaw_wynik[6] | _041_;
-  assign _078_ = i_op[0] & _010_;
-  assign _079_ = _001_ & konw_wynik[6];
-  assign _080_ = i_op[1] | _079_;
-  assign _081_ = _077_ & _080_;
-  assign _082_ = ~_081_;
-  assign _083_ = _078_ | _082_;
-  assign wynik[6] = ~_083_;
-  assign _084_ = ustaw_wynik[7] | _041_;
-  assign _085_ = i_op[1] | konw_wynik[7];
-  assign _086_ = _001_ & _085_;
-  assign _087_ = i_op[1] & przesu_wynik[7];
-  assign _088_ = _086_ | _087_;
-  assign wynik[7] = _084_ & _088_;
-  assign _089_ = ~wynik[7];
-  assign _090_ = ustaw_wynik[8] | _041_;
-  assign _091_ = i_op[1] | konw_wynik[8];
-  assign _092_ = _001_ & _091_;
-  assign _093_ = i_op[1] & przesu_wynik[8];
-  assign _094_ = _092_ | _093_;
-  assign wynik[8] = _090_ & _094_;
-  assign _095_ = ~wynik[8];
-  assign _096_ = _012_ & _040_;
-  assign _097_ = i_op[0] | _011_;
-  assign _098_ = i_op[0] & _013_;
-  assign _099_ = _000_ | _098_;
-  assign _100_ = _097_ & _099_;
-  assign _101_ = _096_ | _100_;
-  assign wynik[9] = ~_101_;
-  assign _102_ = ustaw_wynik[10] | _041_;
-  assign _103_ = _001_ & konw_wynik[10];
-  assign _104_ = _001_ | przesu_wynik[10];
-  assign _105_ = i_op[1] & _104_;
-  assign _106_ = _103_ | _105_;
-  assign wynik[10] = _102_ & _106_;
-  assign _107_ = ustaw_wynik[11] | _041_;
-  assign _108_ = _001_ & konw_wynik[11];
-  assign _109_ = _001_ | przesu_wynik[11];
-  assign _110_ = i_op[1] & _109_;
-  assign _111_ = _108_ | _110_;
-  assign wynik[11] = _107_ & _111_;
-  assign _112_ = ustaw_wynik[12] | _041_;
-  assign _113_ = i_op[0] & _014_;
-  assign _114_ = _001_ & konw_wynik[12];
-  assign _115_ = i_op[1] | _114_;
-  assign _116_ = _112_ & _115_;
-  assign _117_ = ~_116_;
-  assign _118_ = _113_ | _117_;
-  assign wynik[12] = ~_118_;
-  assign _119_ = ustaw_wynik[13] | _041_;
-  assign _120_ = i_op[0] & _015_;
-  assign _121_ = _001_ & konw_wynik[13];
-  assign _122_ = i_op[1] | _121_;
-  assign _123_ = _119_ & _122_;
-  assign _124_ = ~_123_;
-  assign _125_ = _120_ | _124_;
-  assign wynik[13] = ~_125_;
-  assign _126_ = _017_ & _040_;
-  assign _127_ = i_op[0] & _018_;
-  assign _128_ = i_op[0] | _016_;
-  assign _129_ = _000_ & _128_;
-  assign _130_ = _127_ | _129_;
-  assign _131_ = _126_ | _130_;
-  assign wynik[14] = ~_131_;
-  assign _132_ = przesu_wynik[15] & _038_;
-  assign _133_ = ~_132_;
-  assign _134_ = _020_ | _041_;
-  assign _135_ = _019_ | _036_;
-  assign _136_ = _134_ & _135_;
-  assign _137_ = _133_ & _136_;
-  assign wynik[15] = ~_137_;
-  assign _138_ = przesu_wynik[16] & _038_;
-  assign _139_ = ustaw_wynik[16] & _040_;
-  assign _140_ = konw_wynik[16] & _035_;
-  assign _141_ = _139_ | _140_;
-  assign wynik[16] = _138_ | _141_;
-  assign _142_ = ~wynik[16];
-  assign _143_ = przesu_wynik[17] & _038_;
-  assign _144_ = ustaw_wynik[17] & _040_;
-  assign _145_ = konw_wynik[17] & _035_;
-  assign _146_ = _144_ | _145_;
-  assign wynik[17] = _143_ | _146_;
-  assign _147_ = ~wynik[17];
-  assign _148_ = przesu_wynik[18] & _038_;
+  assign _002_ = ~i_op[1];
+  assign _003_ = ~przesu_wynik[0];
+  assign _004_ = ~konw_wynik[0];
+  assign _005_ = ~konw_wynik[2];
+  assign _006_ = ~ustaw_wynik[2];
+  assign _007_ = ~konw_wynik[3];
+  assign _008_ = ~konw_wynik[7];
+  assign _009_ = ~ustaw_wynik[7];
+  assign _010_ = ~konw_wynik[10];
+  assign _011_ = ~ustaw_wynik[10];
+  assign _012_ = ~konw_wynik[11];
+  assign _013_ = ~ustaw_wynik[11];
+  assign _014_ = ~konw_wynik[13];
+  assign _015_ = ~konw_wynik[14];
+  assign _016_ = ~ustaw_wynik[14];
+  assign _017_ = ~konw_wynik[15];
+  assign _018_ = ~ustaw_wynik[15];
+  assign _019_ = ~konw_wynik[16];
+  assign _020_ = ~ustaw_wynik[16];
+  assign _021_ = ~konw_wynik[17];
+  assign _022_ = ~ustaw_wynik[17];
+  assign _023_ = ~konw_wynik[18];
+  assign _024_ = ~ustaw_wynik[18];
+  assign _025_ = ~konw_wynik[19];
+  assign _026_ = ~ustaw_wynik[19];
+  assign _027_ = ~konw_wynik[20];
+  assign _028_ = ~ustaw_wynik[20];
+  assign _029_ = ~konw_wynik[21];
+  assign _030_ = ~ustaw_wynik[21];
+  assign _031_ = ~konw_wynik[27];
+  assign _032_ = ~konw_wynik[28];
+  assign _033_ = ~ustaw_wynik[28];
+  assign _034_ = ~konw_wynik[29];
+  assign _035_ = ~ustaw_wynik[29];
+  assign _036_ = ~konw_wynik[30];
+  assign _037_ = ~ustaw_wynik[30];
+  assign _038_ = ~konw_wynik[31];
+  assign _039_ = _000_ & i_op[0];
+  assign _040_ = _002_ & _039_;
+  assign _041_ = _001_ & i_op[1];
+  assign _042_ = i_op[0] | _002_;
+  assign _043_ = _001_ & _002_;
+  assign _044_ = i_op[0] | i_op[1];
+  assign _045_ = _004_ | _044_;
+  assign _046_ = i_op[0] & i_op[1];
+  assign _047_ = _003_ & _046_;
+  assign _048_ = i_op[1] & ustaw_wynik[0];
+  assign _049_ = i_op[0] | _048_;
+  assign _050_ = ~_049_;
+  assign _051_ = _047_ | _050_;
+  assign _052_ = _045_ & _051_;
+  assign _053_ = _040_ | _052_;
+  assign wynik[0] = ~_053_;
+  assign _054_ = przesu_wynik[1] & _046_;
+  assign _055_ = ~_054_;
+  assign _056_ = ustaw_wynik[1] & _041_;
+  assign _057_ = konw_wynik[1] & _043_;
+  assign _058_ = _056_ | _057_;
+  assign _059_ = ~_058_;
+  assign _060_ = _055_ & _059_;
+  assign wynik[1] = ~_060_;
+  assign _061_ = przesu_wynik[2] & _046_;
+  assign _062_ = ~_061_;
+  assign _063_ = _006_ | _042_;
+  assign _064_ = _005_ | _044_;
+  assign _065_ = _063_ & _064_;
+  assign _066_ = _062_ & _065_;
+  assign wynik[2] = ~_066_;
+  assign _067_ = ustaw_wynik[3] & _041_;
+  assign _068_ = ~_067_;
+  assign _069_ = _007_ | _044_;
+  assign _070_ = przesu_wynik[3] & _046_;
+  assign _071_ = ~_070_;
+  assign _072_ = _069_ & _071_;
+  assign _073_ = _068_ & _072_;
+  assign wynik[3] = ~_073_;
+  assign _074_ = przesu_wynik[4] & _046_;
+  assign _075_ = ustaw_wynik[4] & _041_;
+  assign _076_ = konw_wynik[4] & _043_;
+  assign _077_ = _075_ | _076_;
+  assign wynik[4] = _074_ | _077_;
+  assign _078_ = konw_wynik[5] & _043_;
+  assign _079_ = przesu_wynik[5] & _046_;
+  assign _080_ = ustaw_wynik[5] & _041_;
+  assign _081_ = _079_ | _080_;
+  assign wynik[5] = _078_ | _081_;
+  assign _082_ = konw_wynik[6] & _043_;
+  assign _083_ = przesu_wynik[6] & _046_;
+  assign _084_ = ustaw_wynik[6] & _041_;
+  assign _085_ = _083_ | _084_;
+  assign wynik[6] = _082_ | _085_;
+  assign _086_ = ~wynik[6];
+  assign _087_ = _008_ | _044_;
+  assign _088_ = _009_ | _042_;
+  assign _089_ = przesu_wynik[7] & _046_;
+  assign _090_ = ~_089_;
+  assign _091_ = _088_ & _090_;
+  assign _092_ = _087_ & _091_;
+  assign wynik[7] = ~_092_;
+  assign _093_ = konw_wynik[8] & _043_;
+  assign _094_ = przesu_wynik[8] & _046_;
+  assign _095_ = ustaw_wynik[8] & _041_;
+  assign _096_ = _094_ | _095_;
+  assign wynik[8] = _093_ | _096_;
+  assign _097_ = konw_wynik[9] & _043_;
+  assign _098_ = przesu_wynik[9] & _046_;
+  assign _099_ = ustaw_wynik[9] & _041_;
+  assign _100_ = _098_ | _099_;
+  assign wynik[9] = _097_ | _100_;
+  assign _101_ = przesu_wynik[10] & _046_;
+  assign _102_ = ~_101_;
+  assign _103_ = _011_ | _042_;
+  assign _104_ = _010_ | _044_;
+  assign _105_ = _103_ & _104_;
+  assign _106_ = _102_ & _105_;
+  assign wynik[10] = ~_106_;
+  assign _107_ = _012_ | _044_;
+  assign _108_ = przesu_wynik[11] & _046_;
+  assign _109_ = ~_108_;
+  assign _110_ = _013_ | _042_;
+  assign _111_ = _109_ & _110_;
+  assign _112_ = _107_ & _111_;
+  assign wynik[11] = ~_112_;
+  assign _113_ = konw_wynik[12] & _043_;
+  assign _114_ = przesu_wynik[12] & _046_;
+  assign _115_ = ustaw_wynik[12] & _041_;
+  assign _116_ = _114_ | _115_;
+  assign wynik[12] = _113_ | _116_;
+  assign _117_ = ~wynik[12];
+  assign _118_ = _014_ | _044_;
+  assign _119_ = przesu_wynik[13] & _046_;
+  assign _120_ = ustaw_wynik[13] & _041_;
+  assign _121_ = _119_ | _120_;
+  assign _122_ = ~_121_;
+  assign _123_ = _118_ & _122_;
+  assign wynik[13] = ~_123_;
+  assign _124_ = przesu_wynik[14] & _046_;
+  assign _125_ = ~_124_;
+  assign _126_ = _016_ | _042_;
+  assign _127_ = _015_ | _044_;
+  assign _128_ = _126_ & _127_;
+  assign _129_ = _125_ & _128_;
+  assign wynik[14] = ~_129_;
+  assign _130_ = _017_ | _044_;
+  assign _131_ = przesu_wynik[15] & _046_;
+  assign _132_ = ~_131_;
+  assign _133_ = _018_ | _042_;
+  assign _134_ = _132_ & _133_;
+  assign _135_ = _130_ & _134_;
+  assign wynik[15] = ~_135_;
+  assign _136_ = _019_ | _044_;
+  assign _137_ = przesu_wynik[16] & _046_;
+  assign _138_ = ~_137_;
+  assign _139_ = _020_ | _042_;
+  assign _140_ = _138_ & _139_;
+  assign _141_ = _136_ & _140_;
+  assign wynik[16] = ~_141_;
+  assign _142_ = _021_ | _044_;
+  assign _143_ = przesu_wynik[17] & _046_;
+  assign _144_ = ~_143_;
+  assign _145_ = _022_ | _042_;
+  assign _146_ = _144_ & _145_;
+  assign _147_ = _142_ & _146_;
+  assign wynik[17] = ~_147_;
+  assign _148_ = przesu_wynik[18] & _046_;
   assign _149_ = ~_148_;
-  assign _150_ = _022_ | _041_;
-  assign _151_ = _021_ | _036_;
+  assign _150_ = _023_ | _044_;
+  assign _151_ = _024_ | _042_;
   assign _152_ = _150_ & _151_;
   assign _153_ = _149_ & _152_;
   assign wynik[18] = ~_153_;
-  assign _154_ = przesu_wynik[19] & _038_;
+  assign _154_ = przesu_wynik[19] & _046_;
   assign _155_ = ~_154_;
-  assign _156_ = _024_ | _041_;
-  assign _157_ = _023_ | _036_;
+  assign _156_ = _026_ | _042_;
+  assign _157_ = _025_ | _044_;
   assign _158_ = _156_ & _157_;
   assign _159_ = _155_ & _158_;
   assign wynik[19] = ~_159_;
-  assign _160_ = przesu_wynik[20] & _038_;
-  assign _161_ = ustaw_wynik[20] & _040_;
-  assign _162_ = konw_wynik[20] & _035_;
-  assign _163_ = _161_ | _162_;
-  assign wynik[20] = _160_ | _163_;
-  assign _164_ = przesu_wynik[21] & _038_;
-  assign _165_ = ustaw_wynik[21] & _040_;
-  assign _166_ = konw_wynik[21] & _035_;
-  assign _167_ = _165_ | _166_;
-  assign wynik[21] = _164_ | _167_;
-  assign _168_ = przesu_wynik[22] & _038_;
-  assign _169_ = ustaw_wynik[22] & _040_;
-  assign _170_ = konw_wynik[22] & _035_;
-  assign _171_ = _169_ | _170_;
-  assign wynik[22] = _168_ | _171_;
-  assign _172_ = ~wynik[22];
-  assign _173_ = przesu_wynik[23] & _038_;
-  assign _174_ = _025_ | _041_;
-  assign _175_ = konw_wynik[23] & _035_;
-  assign _176_ = _173_ | _175_;
-  assign _177_ = ~_176_;
-  assign _178_ = _174_ & _177_;
-  assign wynik[23] = ~_178_;
-  assign _179_ = przesu_wynik[24] & _038_;
-  assign _180_ = ustaw_wynik[24] & _040_;
-  assign _181_ = konw_wynik[24] & _035_;
-  assign _182_ = _180_ | _181_;
-  assign wynik[24] = _179_ | _182_;
-  assign _183_ = przesu_wynik[25] & _038_;
-  assign _184_ = ustaw_wynik[25] & _040_;
-  assign _185_ = konw_wynik[25] & _035_;
-  assign _186_ = _184_ | _185_;
-  assign wynik[25] = _183_ | _186_;
-  assign _187_ = ~wynik[25];
-  assign _188_ = przesu_wynik[26] & _038_;
-  assign _189_ = ~_188_;
-  assign _190_ = _027_ | _041_;
-  assign _191_ = _026_ | _036_;
-  assign _192_ = _190_ & _191_;
-  assign _193_ = _189_ & _192_;
-  assign wynik[26] = ~_193_;
-  assign _194_ = przesu_wynik[27] & _038_;
-  assign _195_ = ~_194_;
-  assign _196_ = _029_ | _041_;
-  assign _197_ = _028_ | _036_;
-  assign _198_ = _196_ & _197_;
-  assign _199_ = _195_ & _198_;
-  assign wynik[27] = ~_199_;
-  assign _200_ = przesu_wynik[28] & _038_;
-  assign _201_ = ustaw_wynik[28] & _040_;
-  assign _202_ = konw_wynik[28] & _035_;
-  assign _203_ = _201_ | _202_;
-  assign wynik[28] = _200_ | _203_;
-  assign _204_ = przesu_wynik[29] & _038_;
-  assign _205_ = _030_ | _041_;
-  assign _206_ = konw_wynik[29] & _035_;
-  assign _207_ = _204_ | _206_;
-  assign _208_ = ~_207_;
-  assign _209_ = _205_ & _208_;
-  assign wynik[29] = ~_209_;
-  assign _210_ = przesu_wynik[30] & _038_;
-  assign _211_ = ustaw_wynik[30] & _040_;
-  assign _212_ = konw_wynik[30] & _035_;
-  assign _213_ = _211_ | _212_;
-  assign wynik[30] = _210_ | _213_;
-  assign _214_ = ~wynik[30];
-  assign _215_ = ustaw_wynik[31] & _040_;
-  assign _216_ = konw_wynik[31] & _035_;
-  assign _217_ = ~_216_;
-  assign _218_ = przesu_wynik[31] & _038_;
-  assign _219_ = _215_ | _218_;
-  assign _220_ = ~_219_;
-  assign _221_ = _217_ & _220_;
-  assign wynik[31] = ~_221_;
-  assign _222_ = _058_ & _064_;
-  assign _223_ = _131_ & _137_;
-  assign _224_ = _193_ & _199_;
-  assign _225_ = wynik[10] | wynik[11];
-  assign _226_ = ~_225_;
-  assign _227_ = wynik[20] | wynik[21];
-  assign _228_ = wynik[24] | wynik[28];
-  assign _229_ = _227_ | _228_;
-  assign _230_ = ~_229_;
-  assign _231_ = _187_ & _209_;
-  assign _232_ = _076_ & _101_;
-  assign _233_ = _118_ & _147_;
-  assign _234_ = _045_ & _052_;
-  assign _235_ = _172_ & _178_;
-  assign _236_ = _153_ & _159_;
-  assign _237_ = _083_ & _089_;
-  assign _238_ = _214_ & _221_;
-  assign _239_ = _070_ & _095_;
-  assign _240_ = _125_ & _230_;
-  assign _241_ = _223_ & _232_;
-  assign _242_ = _222_ & _239_;
-  assign _243_ = _241_ & _242_;
-  assign _244_ = _142_ & _233_;
-  assign _245_ = _243_ & _244_;
-  assign _246_ = _240_ & _245_;
-  assign _247_ = _226_ & _237_;
-  assign _248_ = _235_ & _238_;
-  assign _249_ = _247_ & _248_;
-  assign _250_ = _224_ & _236_;
-  assign _251_ = _234_ & _250_;
-  assign _252_ = _231_ & _251_;
-  assign _253_ = _249_ & _252_;
-  assign flaga_ZEROS = _246_ & _253_;
-  assign _254_ = o_error_przes | o_error_konw;
-  assign flaga_ERROR = o_error_ust | _254_;
-  assign _255_ = _214_ ^ _221_;
-  assign _256_ = _131_ ^ _137_;
-  assign _257_ = _255_ ^ _256_;
-  assign _258_ = _153_ ^ _159_;
-  assign _259_ = _125_ ^ wynik[20];
+  assign _160_ = przesu_wynik[20] & _046_;
+  assign _161_ = ~_160_;
+  assign _162_ = _028_ | _042_;
+  assign _163_ = _027_ | _044_;
+  assign _164_ = _162_ & _163_;
+  assign _165_ = _161_ & _164_;
+  assign wynik[20] = ~_165_;
+  assign _166_ = przesu_wynik[21] & _046_;
+  assign _167_ = ~_166_;
+  assign _168_ = _030_ | _042_;
+  assign _169_ = _029_ | _044_;
+  assign _170_ = _168_ & _169_;
+  assign _171_ = _167_ & _170_;
+  assign wynik[21] = ~_171_;
+  assign _172_ = konw_wynik[22] & _043_;
+  assign _173_ = przesu_wynik[22] & _046_;
+  assign _174_ = ustaw_wynik[22] & _041_;
+  assign _175_ = _173_ | _174_;
+  assign wynik[22] = _172_ | _175_;
+  assign _176_ = konw_wynik[23] & _043_;
+  assign _177_ = przesu_wynik[23] & _046_;
+  assign _178_ = ustaw_wynik[23] & _041_;
+  assign _179_ = _177_ | _178_;
+  assign wynik[23] = _176_ | _179_;
+  assign _180_ = konw_wynik[24] & _043_;
+  assign _181_ = przesu_wynik[24] & _046_;
+  assign _182_ = ustaw_wynik[24] & _041_;
+  assign _183_ = _181_ | _182_;
+  assign wynik[24] = _180_ | _183_;
+  assign _184_ = konw_wynik[25] & _043_;
+  assign _185_ = przesu_wynik[25] & _046_;
+  assign _186_ = ustaw_wynik[25] & _041_;
+  assign _187_ = _185_ | _186_;
+  assign wynik[25] = _184_ | _187_;
+  assign _188_ = konw_wynik[26] & _043_;
+  assign _189_ = przesu_wynik[26] & _046_;
+  assign _190_ = ustaw_wynik[26] & _041_;
+  assign _191_ = _189_ | _190_;
+  assign wynik[26] = _188_ | _191_;
+  assign _192_ = ~wynik[26];
+  assign _193_ = _031_ | _044_;
+  assign _194_ = przesu_wynik[27] & _046_;
+  assign _195_ = ustaw_wynik[27] & _041_;
+  assign _196_ = _194_ | _195_;
+  assign _197_ = ~_196_;
+  assign _198_ = _193_ & _197_;
+  assign wynik[27] = ~_198_;
+  assign _199_ = przesu_wynik[28] & _046_;
+  assign _200_ = ~_199_;
+  assign _201_ = _033_ | _042_;
+  assign _202_ = _032_ | _044_;
+  assign _203_ = _201_ & _202_;
+  assign _204_ = _200_ & _203_;
+  assign wynik[28] = ~_204_;
+  assign _205_ = przesu_wynik[29] & _046_;
+  assign _206_ = ~_205_;
+  assign _207_ = _035_ | _042_;
+  assign _208_ = _034_ | _044_;
+  assign _209_ = _207_ & _208_;
+  assign _210_ = _206_ & _209_;
+  assign wynik[29] = ~_210_;
+  assign _211_ = przesu_wynik[30] & _046_;
+  assign _212_ = ~_211_;
+  assign _213_ = _037_ | _042_;
+  assign _214_ = _036_ | _044_;
+  assign _215_ = _213_ & _214_;
+  assign _216_ = _212_ & _215_;
+  assign wynik[30] = ~_216_;
+  assign _217_ = ustaw_wynik[31] & _041_;
+  assign _218_ = ~_217_;
+  assign _219_ = _038_ | _044_;
+  assign _220_ = przesu_wynik[31] & _046_;
+  assign _221_ = ~_220_;
+  assign _222_ = _219_ & _221_;
+  assign _223_ = _218_ & _222_;
+  assign wynik[31] = ~_223_;
+  assign _224_ = _053_ & _060_;
+  assign _225_ = _117_ & _123_;
+  assign _226_ = _192_ & _198_;
+  assign _227_ = _225_ & _226_;
+  assign _228_ = wynik[24] | wynik[25];
+  assign _229_ = wynik[8] | wynik[9];
+  assign _230_ = _228_ | _229_;
+  assign _231_ = ~_230_;
+  assign _232_ = _227_ & _231_;
+  assign _233_ = _066_ & _073_;
+  assign _234_ = _086_ & _092_;
+  assign _235_ = _204_ & _210_;
+  assign _236_ = _216_ & _223_;
+  assign _237_ = _141_ & _147_;
+  assign _238_ = _236_ & _237_;
+  assign _239_ = _165_ & _171_;
+  assign _240_ = wynik[22] | wynik[23];
+  assign _241_ = ~_240_;
+  assign _242_ = _129_ & _135_;
+  assign _243_ = _106_ & _112_;
+  assign _244_ = wynik[4] | wynik[5];
+  assign _245_ = ~_244_;
+  assign _246_ = _153_ & _159_;
+  assign _247_ = _234_ & _245_;
+  assign _248_ = _233_ & _242_;
+  assign _249_ = _224_ & _248_;
+  assign _250_ = _247_ & _249_;
+  assign _251_ = _239_ & _243_;
+  assign _252_ = _241_ & _251_;
+  assign _253_ = _235_ & _246_;
+  assign _254_ = _238_ & _253_;
+  assign _255_ = _252_ & _254_;
+  assign _256_ = _250_ & _255_;
+  assign flaga_ZEROS = _232_ & _256_;
+  assign _257_ = o_error_przes | o_error_konw;
+  assign flaga_ERROR = o_error_ust | _257_;
+  assign _258_ = wynik[6] ^ _092_;
+  assign _259_ = wynik[10] ^ _112_;
   assign _260_ = _258_ ^ _259_;
-  assign _261_ = _257_ ^ _260_;
-  assign _262_ = _045_ ^ _052_;
-  assign _263_ = _142_ ^ _262_;
-  assign _264_ = wynik[25] ^ _209_;
-  assign _265_ = wynik[5] ^ wynik[9];
-  assign _266_ = _264_ ^ _265_;
-  assign _267_ = _263_ ^ _266_;
-  assign _268_ = _261_ ^ _267_;
-  assign _269_ = _118_ ^ _147_;
-  assign _270_ = wynik[21] ^ _269_;
-  assign _271_ = wynik[26] ^ _199_;
-  assign _272_ = wynik[10] ^ wynik[11];
-  assign _273_ = wynik[28] ^ _272_;
-  assign _274_ = _271_ ^ _273_;
-  assign _275_ = _270_ ^ _274_;
-  assign _276_ = _083_ ^ wynik[7];
-  assign _277_ = _070_ ^ wynik[8];
-  assign _278_ = wynik[22] ^ _178_;
-  assign _279_ = wynik[24] ^ _278_;
-  assign _280_ = _058_ ^ wynik[3];
-  assign _281_ = _277_ ^ _280_;
-  assign _282_ = _276_ ^ _281_;
-  assign _283_ = _279_ ^ _282_;
-  assign _284_ = _275_ ^ _283_;
-  assign flaga_NOT_EVEN_ZERO = _268_ ^ _284_;
-  always @(posedge i_clk or negedge i_reset)
-    if (!i_reset)
+  assign _261_ = wynik[8] ^ wynik[9];
+  assign _262_ = _129_ ^ _135_;
+  assign _263_ = _261_ ^ _262_;
+  assign _264_ = _260_ ^ _263_;
+  assign _265_ = wynik[26] ^ _198_;
+  assign _266_ = wynik[2] ^ _073_;
+  assign _267_ = wynik[4] ^ wynik[5];
+  assign _268_ = _266_ ^ _267_;
+  assign _269_ = _165_ ^ _171_;
+  assign _270_ = wynik[22] ^ wynik[23];
+  assign _271_ = _269_ ^ _270_;
+  assign _272_ = wynik[30] ^ _223_;
+  assign _273_ = _204_ ^ _210_;
+  assign _274_ = wynik[24] ^ wynik[25];
+  assign _275_ = wynik[16] ^ _147_;
+  assign _276_ = _153_ ^ _159_;
+  assign _277_ = _275_ ^ _276_;
+  assign _278_ = _272_ ^ _274_;
+  assign _279_ = _273_ ^ _278_;
+  assign _280_ = _271_ ^ _277_;
+  assign _281_ = _279_ ^ _280_;
+  assign _282_ = _053_ ^ _060_;
+  assign _283_ = _117_ ^ _123_;
+  assign _284_ = _282_ ^ _283_;
+  assign _285_ = _264_ ^ _265_;
+  assign _286_ = _268_ ^ _284_;
+  assign _287_ = _285_ ^ _286_;
+  assign flaga_NOT_EVEN_ZERO = _281_ ^ _287_;
+  always @(posedge i_clk or posedge i_reset)
+    if (i_reset)
       o_result[0] <= 0;
     else
       o_result[0] <= wynik[0];
-  always @(posedge i_clk or negedge i_reset)
-    if (!i_reset)
+  always @(posedge i_clk or posedge i_reset)
+    if (i_reset)
       o_result[1] <= 0;
     else
       o_result[1] <= wynik[1];
-  always @(posedge i_clk or negedge i_reset)
-    if (!i_reset)
+  always @(posedge i_clk or posedge i_reset)
+    if (i_reset)
       o_result[2] <= 0;
     else
       o_result[2] <= wynik[2];
-  always @(posedge i_clk or negedge i_reset)
-    if (!i_reset)
+  always @(posedge i_clk or posedge i_reset)
+    if (i_reset)
       o_result[3] <= 0;
     else
       o_result[3] <= wynik[3];
-  always @(posedge i_clk or negedge i_reset)
-    if (!i_reset)
+  always @(posedge i_clk or posedge i_reset)
+    if (i_reset)
       o_result[4] <= 0;
     else
       o_result[4] <= wynik[4];
-  always @(posedge i_clk or negedge i_reset)
-    if (!i_reset)
+  always @(posedge i_clk or posedge i_reset)
+    if (i_reset)
       o_result[5] <= 0;
     else
       o_result[5] <= wynik[5];
-  always @(posedge i_clk or negedge i_reset)
-    if (!i_reset)
+  always @(posedge i_clk or posedge i_reset)
+    if (i_reset)
       o_result[6] <= 0;
     else
       o_result[6] <= wynik[6];
-  always @(posedge i_clk or negedge i_reset)
-    if (!i_reset)
+  always @(posedge i_clk or posedge i_reset)
+    if (i_reset)
       o_result[7] <= 0;
     else
       o_result[7] <= wynik[7];
-  always @(posedge i_clk or negedge i_reset)
-    if (!i_reset)
+  always @(posedge i_clk or posedge i_reset)
+    if (i_reset)
       o_result[8] <= 0;
     else
       o_result[8] <= wynik[8];
-  always @(posedge i_clk or negedge i_reset)
-    if (!i_reset)
+  always @(posedge i_clk or posedge i_reset)
+    if (i_reset)
       o_result[9] <= 0;
     else
       o_result[9] <= wynik[9];
-  always @(posedge i_clk or negedge i_reset)
-    if (!i_reset)
+  always @(posedge i_clk or posedge i_reset)
+    if (i_reset)
       o_result[10] <= 0;
     else
       o_result[10] <= wynik[10];
-  always @(posedge i_clk or negedge i_reset)
-    if (!i_reset)
+  always @(posedge i_clk or posedge i_reset)
+    if (i_reset)
       o_result[11] <= 0;
     else
       o_result[11] <= wynik[11];
-  always @(posedge i_clk or negedge i_reset)
-    if (!i_reset)
+  always @(posedge i_clk or posedge i_reset)
+    if (i_reset)
       o_result[12] <= 0;
     else
       o_result[12] <= wynik[12];
-  always @(posedge i_clk or negedge i_reset)
-    if (!i_reset)
+  always @(posedge i_clk or posedge i_reset)
+    if (i_reset)
       o_result[13] <= 0;
     else
       o_result[13] <= wynik[13];
-  always @(posedge i_clk or negedge i_reset)
-    if (!i_reset)
+  always @(posedge i_clk or posedge i_reset)
+    if (i_reset)
       o_result[14] <= 0;
     else
       o_result[14] <= wynik[14];
-  always @(posedge i_clk or negedge i_reset)
-    if (!i_reset)
+  always @(posedge i_clk or posedge i_reset)
+    if (i_reset)
       o_result[15] <= 0;
     else
       o_result[15] <= wynik[15];
-  always @(posedge i_clk or negedge i_reset)
-    if (!i_reset)
+  always @(posedge i_clk or posedge i_reset)
+    if (i_reset)
       o_result[16] <= 0;
     else
       o_result[16] <= wynik[16];
-  always @(posedge i_clk or negedge i_reset)
-    if (!i_reset)
+  always @(posedge i_clk or posedge i_reset)
+    if (i_reset)
       o_result[17] <= 0;
     else
       o_result[17] <= wynik[17];
-  always @(posedge i_clk or negedge i_reset)
-    if (!i_reset)
+  always @(posedge i_clk or posedge i_reset)
+    if (i_reset)
       o_result[18] <= 0;
     else
       o_result[18] <= wynik[18];
-  always @(posedge i_clk or negedge i_reset)
-    if (!i_reset)
+  always @(posedge i_clk or posedge i_reset)
+    if (i_reset)
       o_result[19] <= 0;
     else
       o_result[19] <= wynik[19];
-  always @(posedge i_clk or negedge i_reset)
-    if (!i_reset)
+  always @(posedge i_clk or posedge i_reset)
+    if (i_reset)
       o_result[20] <= 0;
     else
       o_result[20] <= wynik[20];
-  always @(posedge i_clk or negedge i_reset)
-    if (!i_reset)
+  always @(posedge i_clk or posedge i_reset)
+    if (i_reset)
       o_result[21] <= 0;
     else
       o_result[21] <= wynik[21];
-  always @(posedge i_clk or negedge i_reset)
-    if (!i_reset)
+  always @(posedge i_clk or posedge i_reset)
+    if (i_reset)
       o_result[22] <= 0;
     else
       o_result[22] <= wynik[22];
-  always @(posedge i_clk or negedge i_reset)
-    if (!i_reset)
+  always @(posedge i_clk or posedge i_reset)
+    if (i_reset)
       o_result[23] <= 0;
     else
       o_result[23] <= wynik[23];
-  always @(posedge i_clk or negedge i_reset)
-    if (!i_reset)
+  always @(posedge i_clk or posedge i_reset)
+    if (i_reset)
       o_result[24] <= 0;
     else
       o_result[24] <= wynik[24];
-  always @(posedge i_clk or negedge i_reset)
-    if (!i_reset)
+  always @(posedge i_clk or posedge i_reset)
+    if (i_reset)
       o_result[25] <= 0;
     else
       o_result[25] <= wynik[25];
-  always @(posedge i_clk or negedge i_reset)
-    if (!i_reset)
+  always @(posedge i_clk or posedge i_reset)
+    if (i_reset)
       o_result[26] <= 0;
     else
       o_result[26] <= wynik[26];
-  always @(posedge i_clk or negedge i_reset)
-    if (!i_reset)
+  always @(posedge i_clk or posedge i_reset)
+    if (i_reset)
       o_result[27] <= 0;
     else
       o_result[27] <= wynik[27];
-  always @(posedge i_clk or negedge i_reset)
-    if (!i_reset)
+  always @(posedge i_clk or posedge i_reset)
+    if (i_reset)
       o_result[28] <= 0;
     else
       o_result[28] <= wynik[28];
-  always @(posedge i_clk or negedge i_reset)
-    if (!i_reset)
+  always @(posedge i_clk or posedge i_reset)
+    if (i_reset)
       o_result[29] <= 0;
     else
       o_result[29] <= wynik[29];
-  always @(posedge i_clk or negedge i_reset)
-    if (!i_reset)
+  always @(posedge i_clk or posedge i_reset)
+    if (i_reset)
       o_result[30] <= 0;
     else
       o_result[30] <= wynik[30];
-  always @(posedge i_clk or negedge i_reset)
-    if (!i_reset)
+  always @(posedge i_clk or posedge i_reset)
+    if (i_reset)
       o_result[31] <= 0;
     else
       o_result[31] <= wynik[31];
   reg \o_status_reg[1] ;
-  always @(posedge i_clk or negedge i_reset)
-    if (!i_reset)
+  always @(posedge i_clk or posedge i_reset)
+    if (i_reset)
       \o_status_reg[1]  <= 0;
     else
       \o_status_reg[1]  <= flaga_ZEROS;
   assign o_status[1] = \o_status_reg[1] ;
   reg \o_status_reg[2] ;
-  always @(posedge i_clk or negedge i_reset)
-    if (!i_reset)
+  always @(posedge i_clk or posedge i_reset)
+    if (i_reset)
       \o_status_reg[2]  <= 0;
     else
       \o_status_reg[2]  <= flaga_NOT_EVEN_ZERO;
   assign o_status[2] = \o_status_reg[2] ;
   reg \o_status_reg[3] ;
-  always @(posedge i_clk or negedge i_reset)
-    if (!i_reset)
+  always @(posedge i_clk or posedge i_reset)
+    if (i_reset)
       \o_status_reg[3]  <= 0;
     else
       \o_status_reg[3]  <= flaga_ERROR;
