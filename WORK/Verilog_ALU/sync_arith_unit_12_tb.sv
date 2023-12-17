@@ -46,12 +46,11 @@ module sync_arith_unit_12_tb;
     initial begin
         forever begin
             #10
-            i_arg_A = $urandom;                     
-            i_arg_B = $urandom;
+            i_op = $urandom_range(0,3);
+            i_arg_A = $urandom;
+            i_arg_B = $urandom;                     
         end
     end
-
-    
 
     initial begin 
         forever begin 
@@ -59,19 +58,11 @@ module sync_arith_unit_12_tb;
         end
     end 
 
-    initial begin
-        forever begin
-            #CLKPERIOD i_reset = ~i_reset;
-        end
-    end
-
-
     initial begin 
-
-        //i_arg_A<='0;
-        //i_arg_B<='0;
-        //i_op<='0;
-        $dumpfile("signals_ALU.vcd");
+        i_arg_A<='0;
+        i_arg_B<='0;
+        i_op<='0;
+        $dumpfile("signals_sync_arith_unit_12.vcd");
         $dumpvars(0, sync_arith_unit_12_tb);
         #SIMTIME;
         $finish;
