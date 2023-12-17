@@ -46,26 +46,8 @@ module sync_arith_unit_12_tb;
     initial begin
         forever begin
             #10
-            i_op = $urandom_range(0,3);            
-        end
-    end
-
-        
-    initial begin
-        forever begin
-            #10
-            i_arg_A = $urandom;                 
-        end
-    end
-
-   initial begin
-        forever begin
-            #10
+            i_arg_A = $urandom;                     
             i_arg_B = $urandom;
-            
-            if ($time >= SIMTIME) begin
-                $stop;  
-            end
         end
     end
 
