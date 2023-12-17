@@ -40,6 +40,9 @@ module konwersja_rtl(i_arg_A, o_result, o_error);
   wire _036_;
   wire _037_;
   input [31:0] i_arg_A;
+  wire i_arg_A_MSB;
+  wire i_arg_A_MSB_2;
+  wire [30:0] i_arg_A_REST;
   output o_error;
   output [31:0] o_result;
   assign _033_ = ~i_arg_A[30];
@@ -112,5 +115,8 @@ module konwersja_rtl(i_arg_A, o_result, o_error);
   assign _031_ = ~_030_;
   assign _032_ = _023_ & _031_;
   assign o_error = _015_ & _032_;
+  assign i_arg_A_MSB = i_arg_A[31];
+  assign i_arg_A_MSB_2 = i_arg_A[30];
+  assign i_arg_A_REST = i_arg_A[30:0];
   assign o_result[31] = 1'h0;
 endmodule

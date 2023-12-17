@@ -12,6 +12,14 @@ module konwersja (i_arg_A, o_result, o_error);
     output logic [BITS-1:0] o_result;
     output logic o_error;    
 
+    wire logic i_arg_A_MSB;
+    wire logic i_arg_A_MSB_2;
+    wire [BITS-2:0] i_arg_A_REST;
+
+    assign  i_arg_A_MSB = i_arg_A[BITS-1];
+    assign  i_arg_A_MSB_2 = i_arg_A[BITS-2];
+    assign  i_arg_A_REST = i_arg_A[BITS-2:0];
+
     //blok opisujący logikę
     always_comb begin
         //defaultowe ustawienie wartości wyjścia i wejścia
@@ -19,7 +27,7 @@ module konwersja (i_arg_A, o_result, o_error);
         o_error = 0;
 
         //sytuacja, jak mamy dodatnią liczbę kodowaną w typie ZM, to nic nie trzeba robić
-        if (i_arg_A[BITS-1] == 0) begin
+        if (i_arg_A_MSB == 0) begin
             o_result = i_arg_A;
         end
     
@@ -27,8 +35,8 @@ module konwersja (i_arg_A, o_result, o_error);
         //wyjscie = {1'b1, ~i_arg_A[BITS-2] +1'b1}
         //mamy w ogóle jakiekolwiek wyjście, dopóki nam się zero ujemne nie wylosuje. 
         //nie ma takiej opcji, że on poprawnie przekonwertuje mi {1'b1, '0}
-        else if (i_arg_A[BITS-1] == 1 && |i_arg_A[BITS-2:0] != 0) begin
-            o_result = {1'b1, (~i_arg_A[BITS-2]) +1'b1};
+        else if (i_arg_A_MSB == 1 && |i_arg_A_REST != 0) begin
+            o_result = {1'b1, (~i_arg_A_MSB_2) +1'b1};
         end
         else begin 
             o_error = 1;

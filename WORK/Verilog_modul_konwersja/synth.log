@@ -56,7 +56,7 @@ Removed 0 unused modules.
 Cleaned up 0 empty switches.
 
 3.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
-Marked 2 switch rules as full_case in process $proc$konwersja.sv:16$1 in module konwersja_rtl.
+Marked 2 switch rules as full_case in process $proc$konwersja.sv:24$1 in module konwersja_rtl.
 Removed a total of 0 dead cases.
 
 3.2.3. Executing PROC_INIT pass (extract init attributes).
@@ -64,7 +64,7 @@ Removed a total of 0 dead cases.
 3.2.4. Executing PROC_ARST pass (detect async resets in processes).
 
 3.2.5. Executing PROC_MUX pass (convert decision trees to multiplexers).
-Creating decoders for process `\konwersja_rtl.$proc$konwersja.sv:16$1'.
+Creating decoders for process `\konwersja_rtl.$proc$konwersja.sv:24$1'.
      1/6: $2\o_result[31:0]
      2/6: $2\o_error[0:0]
      3/6: $1\o_result[31:0]
@@ -73,14 +73,14 @@ Creating decoders for process `\konwersja_rtl.$proc$konwersja.sv:16$1'.
      6/6: $0\o_result[31:0]
 
 3.2.6. Executing PROC_DLATCH pass (convert process syncs to latches).
-No latch inferred for signal `\konwersja_rtl.\o_result' from process `\konwersja_rtl.$proc$konwersja.sv:16$1'.
-No latch inferred for signal `\konwersja_rtl.\o_error' from process `\konwersja_rtl.$proc$konwersja.sv:16$1'.
+No latch inferred for signal `\konwersja_rtl.\o_result' from process `\konwersja_rtl.$proc$konwersja.sv:24$1'.
+No latch inferred for signal `\konwersja_rtl.\o_error' from process `\konwersja_rtl.$proc$konwersja.sv:24$1'.
 
 3.2.7. Executing PROC_DFF pass (convert process syncs to FFs).
 
 3.2.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Found and cleaned up 2 empty switches in `\konwersja_rtl.$proc$konwersja.sv:16$1'.
-Removing empty process `konwersja_rtl.$proc$konwersja.sv:16$1'.
+Found and cleaned up 2 empty switches in `\konwersja_rtl.$proc$konwersja.sv:24$1'.
+Removing empty process `konwersja_rtl.$proc$konwersja.sv:24$1'.
 Cleaned up 2 empty switches.
 
 3.3. Executing OPT_EXPR pass (perform const folding).
@@ -118,7 +118,7 @@ Removed 2 multiplexer ports.
 
 3.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \konwersja_rtl.
-    New input vector for $reduce_or cell $reduce_or$konwersja.sv:30$4: { \i_arg_A [0] \i_arg_A [1] \i_arg_A [2] \i_arg_A [3] \i_arg_A [4] \i_arg_A [5] \i_arg_A [6] \i_arg_A [7] \i_arg_A [8] \i_arg_A [9] \i_arg_A [10] \i_arg_A [11] \i_arg_A [12] \i_arg_A [13] \i_arg_A [14] \i_arg_A [15] \i_arg_A [16] \i_arg_A [17] \i_arg_A [18] \i_arg_A [19] \i_arg_A [20] \i_arg_A [21] \i_arg_A [22] \i_arg_A [23] \i_arg_A [24] \i_arg_A [25] \i_arg_A [26] \i_arg_A [27] \i_arg_A [28] \i_arg_A [29] \i_arg_A [30] }
+    New input vector for $reduce_or cell $reduce_or$konwersja.sv:38$4: { \i_arg_A [0] \i_arg_A [1] \i_arg_A [2] \i_arg_A [3] \i_arg_A [4] \i_arg_A [5] \i_arg_A [6] \i_arg_A [7] \i_arg_A [8] \i_arg_A [9] \i_arg_A [10] \i_arg_A [11] \i_arg_A [12] \i_arg_A [13] \i_arg_A [14] \i_arg_A [15] \i_arg_A [16] \i_arg_A [17] \i_arg_A [18] \i_arg_A [19] \i_arg_A [20] \i_arg_A [21] \i_arg_A [22] \i_arg_A [23] \i_arg_A [24] \i_arg_A [25] \i_arg_A [26] \i_arg_A [27] \i_arg_A [28] \i_arg_A [29] \i_arg_A [30] }
   Optimizing cells in module \konwersja_rtl.
 Performed a total of 1 changes.
 
@@ -167,7 +167,7 @@ Optimizing module konwersja_rtl.
 3.7. Executing WREDUCE pass (reducing word size of cells).
 Removed cell konwersja_rtl.$procmux$10 ($mux).
 Removed top 1 bits (of 32) from mux cell konwersja_rtl.$procmux$22 ($mux).
-Removed top 31 bits (of 32) from wire konwersja_rtl.$reduce_or$konwersja.sv:30$4_Y.
+Removed top 31 bits (of 32) from wire konwersja_rtl.$reduce_or$konwersja.sv:38$4_Y.
 
 3.8. Executing PEEPOPT pass (run peephole optimizers).
 
@@ -188,9 +188,9 @@ No more expansions possible.
 
 3.11. Executing ALUMACC pass (create $alu and $macc cells).
 Extracting $alu and $macc cells in module konwersja_rtl:
-  creating $macc model for $add$konwersja.sv:31$8 ($add).
-  creating $alu model for $macc $add$konwersja.sv:31$8.
-  creating $alu cell for $add$konwersja.sv:31$8: $auto$alumacc.cc:474:replace_alu$28
+  creating $macc model for $add$konwersja.sv:39$8 ($add).
+  creating $alu model for $macc $add$konwersja.sv:39$8.
+  creating $alu cell for $add$konwersja.sv:39$8: $auto$alumacc.cc:474:replace_alu$28
   created 1 $alu and 0 $macc cells.
 
 3.12. Executing SHARE pass (SAT-based resource sharing).
@@ -456,10 +456,10 @@ Removed 0 unused modules.
 
 === konwersja_rtl ===
 
-   Number of wires:                 33
-   Number of wire bits:             95
-   Number of public wires:           3
-   Number of public wire bits:      65
+   Number of wires:                 36
+   Number of wire bits:            128
+   Number of public wires:           6
+   Number of public wire bits:      98
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0

@@ -56,7 +56,7 @@ Removed 0 unused modules.
 Cleaned up 0 empty switches.
 
 3.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
-Marked 4 switch rules as full_case in process $proc$ustawienie.sv:15$1 in module ustawienie_rtl.
+Marked 4 switch rules as full_case in process $proc$ustawienie.sv:18$1 in module ustawienie_rtl.
 Removed a total of 0 dead cases.
 
 3.2.3. Executing PROC_INIT pass (extract init attributes).
@@ -64,7 +64,7 @@ Removed a total of 0 dead cases.
 3.2.4. Executing PROC_ARST pass (detect async resets in processes).
 
 3.2.5. Executing PROC_MUX pass (convert decision trees to multiplexers).
-Creating decoders for process `\ustawienie_rtl.$proc$ustawienie.sv:15$1'.
+Creating decoders for process `\ustawienie_rtl.$proc$ustawienie.sv:18$1'.
      1/43: $4\tymczasowy_rejestr[31:0] [31]
      2/43: $4\tymczasowy_rejestr[31:0] [28]
      3/43: $4\tymczasowy_rejestr[31:0] [26]
@@ -110,15 +110,15 @@ Creating decoders for process `\ustawienie_rtl.$proc$ustawienie.sv:15$1'.
     43/43: $0\tymczasowy_rejestr[31:0]
 
 3.2.6. Executing PROC_DLATCH pass (convert process syncs to latches).
-No latch inferred for signal `\ustawienie_rtl.\tymczasowy_rejestr' from process `\ustawienie_rtl.$proc$ustawienie.sv:15$1'.
-No latch inferred for signal `\ustawienie_rtl.\o_result' from process `\ustawienie_rtl.$proc$ustawienie.sv:15$1'.
-No latch inferred for signal `\ustawienie_rtl.\o_error' from process `\ustawienie_rtl.$proc$ustawienie.sv:15$1'.
+No latch inferred for signal `\ustawienie_rtl.\tymczasowy_rejestr' from process `\ustawienie_rtl.$proc$ustawienie.sv:18$1'.
+No latch inferred for signal `\ustawienie_rtl.\o_result' from process `\ustawienie_rtl.$proc$ustawienie.sv:18$1'.
+No latch inferred for signal `\ustawienie_rtl.\o_error' from process `\ustawienie_rtl.$proc$ustawienie.sv:18$1'.
 
 3.2.7. Executing PROC_DFF pass (convert process syncs to FFs).
 
 3.2.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Found and cleaned up 4 empty switches in `\ustawienie_rtl.$proc$ustawienie.sv:15$1'.
-Removing empty process `ustawienie_rtl.$proc$ustawienie.sv:15$1'.
+Found and cleaned up 4 empty switches in `\ustawienie_rtl.$proc$ustawienie.sv:18$1'.
+Removing empty process `ustawienie_rtl.$proc$ustawienie.sv:18$1'.
 Cleaned up 4 empty switches.
 
 3.3. Executing OPT_EXPR pass (perform const folding).
@@ -202,9 +202,9 @@ Optimizing module ustawienie_rtl.
 3.6.16. Finished OPT passes. (There is nothing left to do.)
 
 3.7. Executing WREDUCE pass (reducing word size of cells).
-Removed top 26 bits (of 32) from port B of cell ustawienie_rtl.$gt$ustawienie.sv:28$3 ($gt).
-Removed top 31 bits (of 32) from port B of cell ustawienie_rtl.$ge$ustawienie.sv:33$4 ($ge).
-Removed top 25 bits (of 32) from port B of cell ustawienie_rtl.$lt$ustawienie.sv:33$7 ($lt).
+Removed top 26 bits (of 32) from port B of cell ustawienie_rtl.$gt$ustawienie.sv:31$3 ($gt).
+Removed top 31 bits (of 32) from port B of cell ustawienie_rtl.$ge$ustawienie.sv:36$4 ($ge).
+Removed top 25 bits (of 32) from port B of cell ustawienie_rtl.$lt$ustawienie.sv:36$7 ($lt).
 Removed cell ustawienie_rtl.$procmux$15 ($mux).
 Removed top 27 bits (of 32) from port B of cell ustawienie_rtl.$procmux$14_CMP0 ($eq).
 Removed cell ustawienie_rtl.$procmux$18 ($mux).
@@ -356,8 +356,8 @@ No more expansions possible.
 
 3.11. Executing ALUMACC pass (create $alu and $macc cells).
 Extracting $alu and $macc cells in module ustawienie_rtl:
-  creating $alu model for $gt$ustawienie.sv:28$3 ($gt): new $alu
-  creating $alu cell for $gt$ustawienie.sv:28$3: $auto$alumacc.cc:474:replace_alu$937
+  creating $alu model for $gt$ustawienie.sv:31$3 ($gt): new $alu
+  creating $alu cell for $gt$ustawienie.sv:31$3: $auto$alumacc.cc:474:replace_alu$937
   created 1 $alu and 0 $macc cells.
 
 3.12. Executing SHARE pass (SAT-based resource sharing).
@@ -628,10 +628,10 @@ Removed 0 unused modules.
 
 === ustawienie_rtl ===
 
-   Number of wires:                125
-   Number of wire bits:            218
-   Number of public wires:           4
-   Number of public wire bits:      97
+   Number of wires:                126
+   Number of wire bits:            219
+   Number of public wires:           5
+   Number of public wire bits:      98
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0

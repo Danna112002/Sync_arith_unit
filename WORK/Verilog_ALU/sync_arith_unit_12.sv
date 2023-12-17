@@ -33,7 +33,7 @@ module sync_arith_unit_12 (
     //zadeklarowanie pomocniczych zmiennych do rejestrowania flag i wewnętrznych rejestrów
     logic [BITS-1:0] wynik;
     logic [BITS-1:0] konw_wynik;
-    logic [BITS-1:0] poro_wynik;
+    logic poro_wynik;
     logic [BITS-1:0] przesu_wynik;
     logic [BITS-1:0] ustaw_wynik;
     logic [BITS-1:0] wektor;
@@ -84,7 +84,7 @@ module sync_arith_unit_12 (
             2'b11 : wynik = przesu_wynik;
             2'b00 : wynik = konw_wynik;
             default :
-            wynik = 0;
+            wynik = 'bx;
         endcase        
 
         flaga_ERROR = '0;

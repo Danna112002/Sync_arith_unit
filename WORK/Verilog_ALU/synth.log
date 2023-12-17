@@ -77,7 +77,6 @@ Removing unused module `\porownanie'.
 Removing unused module `\przesuniecie'.
 Removing unused module `\ustawienie'.
 Removed 5 unused modules.
-Warning: Resizing cell port sync_arith_unit_12_rtl.porownanie.o_result from 32 bits to 1 bits.
 
 3. Executing SYNTH pass.
 
@@ -105,9 +104,9 @@ Cleaned up 0 empty switches.
 
 3.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
 Marked 4 switch rules as full_case in process $proc$przesuniecie.sv:13$227 in module $paramod\przesuniecie\BITS=32.
-Marked 4 switch rules as full_case in process $proc$ustawienie.sv:15$217 in module $paramod\ustawienie\BITS=32.
+Marked 4 switch rules as full_case in process $proc$ustawienie.sv:18$217 in module $paramod\ustawienie\BITS=32.
 Marked 2 switch rules as full_case in process $proc$porownanie.sv:12$205 in module $paramod\porownanie\BITS=32.
-Marked 2 switch rules as full_case in process $proc$konwersja.sv:16$197 in module $paramod\konwersja\BITS=32.
+Marked 2 switch rules as full_case in process $proc$konwersja.sv:23$197 in module $paramod\konwersja\BITS=32.
 Removed 1 dead cases from process $proc$sync_arith_unit_12.sv:78$84 in module sync_arith_unit_12_rtl.
 Marked 37 switch rules as full_case in process $proc$sync_arith_unit_12.sv:78$84 in module sync_arith_unit_12_rtl.
 Marked 1 switch rules as full_case in process $proc$sync_arith_unit_12.sv:113$195 in module sync_arith_unit_12_rtl.
@@ -129,7 +128,7 @@ Creating decoders for process `$paramod\przesuniecie\BITS=32.$proc$przesuniecie.
      7/9: $1\o_result[31:0]
      8/9: $0\o_error[0:0]
      9/9: $0\o_result[31:0]
-Creating decoders for process `$paramod\ustawienie\BITS=32.$proc$ustawienie.sv:15$217'.
+Creating decoders for process `$paramod\ustawienie\BITS=32.$proc$ustawienie.sv:18$217'.
      1/43: $4\tymczasowy_rejestr[31:0] [31]
      2/43: $4\tymczasowy_rejestr[31:0] [28]
      3/43: $4\tymczasowy_rejestr[31:0] [26]
@@ -177,7 +176,7 @@ Creating decoders for process `$paramod\porownanie\BITS=32.$proc$porownanie.sv:1
      1/3: $2\o_result[0:0]
      2/3: $1\o_result[0:0]
      3/3: $0\o_result[0:0]
-Creating decoders for process `$paramod\konwersja\BITS=32.$proc$konwersja.sv:16$197'.
+Creating decoders for process `$paramod\konwersja\BITS=32.$proc$konwersja.sv:23$197'.
      1/6: $2\o_result[31:0]
      2/6: $2\o_error[0:0]
      3/6: $1\o_result[31:0]
@@ -240,12 +239,12 @@ Creating decoders for process `\sync_arith_unit_12_rtl.$proc$sync_arith_unit_12.
 3.2.6. Executing PROC_DLATCH pass (convert process syncs to latches).
 No latch inferred for signal `$paramod\przesuniecie\BITS=32.\o_result' from process `$paramod\przesuniecie\BITS=32.$proc$przesuniecie.sv:13$227'.
 No latch inferred for signal `$paramod\przesuniecie\BITS=32.\o_error' from process `$paramod\przesuniecie\BITS=32.$proc$przesuniecie.sv:13$227'.
-No latch inferred for signal `$paramod\ustawienie\BITS=32.\tymczasowy_rejestr' from process `$paramod\ustawienie\BITS=32.$proc$ustawienie.sv:15$217'.
-No latch inferred for signal `$paramod\ustawienie\BITS=32.\o_result' from process `$paramod\ustawienie\BITS=32.$proc$ustawienie.sv:15$217'.
-No latch inferred for signal `$paramod\ustawienie\BITS=32.\o_error' from process `$paramod\ustawienie\BITS=32.$proc$ustawienie.sv:15$217'.
+No latch inferred for signal `$paramod\ustawienie\BITS=32.\tymczasowy_rejestr' from process `$paramod\ustawienie\BITS=32.$proc$ustawienie.sv:18$217'.
+No latch inferred for signal `$paramod\ustawienie\BITS=32.\o_result' from process `$paramod\ustawienie\BITS=32.$proc$ustawienie.sv:18$217'.
+No latch inferred for signal `$paramod\ustawienie\BITS=32.\o_error' from process `$paramod\ustawienie\BITS=32.$proc$ustawienie.sv:18$217'.
 No latch inferred for signal `$paramod\porownanie\BITS=32.\o_result' from process `$paramod\porownanie\BITS=32.$proc$porownanie.sv:12$205'.
-No latch inferred for signal `$paramod\konwersja\BITS=32.\o_result' from process `$paramod\konwersja\BITS=32.$proc$konwersja.sv:16$197'.
-No latch inferred for signal `$paramod\konwersja\BITS=32.\o_error' from process `$paramod\konwersja\BITS=32.$proc$konwersja.sv:16$197'.
+No latch inferred for signal `$paramod\konwersja\BITS=32.\o_result' from process `$paramod\konwersja\BITS=32.$proc$konwersja.sv:23$197'.
+No latch inferred for signal `$paramod\konwersja\BITS=32.\o_error' from process `$paramod\konwersja\BITS=32.$proc$konwersja.sv:23$197'.
 No latch inferred for signal `\sync_arith_unit_12_rtl.\wynik' from process `\sync_arith_unit_12_rtl.$proc$sync_arith_unit_12.sv:78$84'.
 No latch inferred for signal `\sync_arith_unit_12_rtl.\flaga_ERROR' from process `\sync_arith_unit_12_rtl.$proc$sync_arith_unit_12.sv:78$84'.
 No latch inferred for signal `\sync_arith_unit_12_rtl.\flaga_NOT_EVEN_ZERO' from process `\sync_arith_unit_12_rtl.$proc$sync_arith_unit_12.sv:78$84'.
@@ -265,12 +264,12 @@ Creating register for signal `\sync_arith_unit_12_rtl.\o_status' using process `
 3.2.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
 Found and cleaned up 4 empty switches in `$paramod\przesuniecie\BITS=32.$proc$przesuniecie.sv:13$227'.
 Removing empty process `$paramod\przesuniecie\BITS=32.$proc$przesuniecie.sv:13$227'.
-Found and cleaned up 4 empty switches in `$paramod\ustawienie\BITS=32.$proc$ustawienie.sv:15$217'.
-Removing empty process `$paramod\ustawienie\BITS=32.$proc$ustawienie.sv:15$217'.
+Found and cleaned up 4 empty switches in `$paramod\ustawienie\BITS=32.$proc$ustawienie.sv:18$217'.
+Removing empty process `$paramod\ustawienie\BITS=32.$proc$ustawienie.sv:18$217'.
 Found and cleaned up 2 empty switches in `$paramod\porownanie\BITS=32.$proc$porownanie.sv:12$205'.
 Removing empty process `$paramod\porownanie\BITS=32.$proc$porownanie.sv:12$205'.
-Found and cleaned up 2 empty switches in `$paramod\konwersja\BITS=32.$proc$konwersja.sv:16$197'.
-Removing empty process `$paramod\konwersja\BITS=32.$proc$konwersja.sv:16$197'.
+Found and cleaned up 2 empty switches in `$paramod\konwersja\BITS=32.$proc$konwersja.sv:23$197'.
+Removing empty process `$paramod\konwersja\BITS=32.$proc$konwersja.sv:23$197'.
 Found and cleaned up 37 empty switches in `\sync_arith_unit_12_rtl.$proc$sync_arith_unit_12.sv:78$84'.
 Removing empty process `sync_arith_unit_12_rtl.$proc$sync_arith_unit_12.sv:78$84'.
 Removing empty process `sync_arith_unit_12_rtl.$proc$sync_arith_unit_12.sv:113$195'.
@@ -366,7 +365,7 @@ Removed 16 multiplexer ports.
 
 3.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module $paramod\konwersja\BITS=32.
-    New input vector for $reduce_or cell $reduce_or$konwersja.sv:30$200: { \i_arg_A [0] \i_arg_A [1] \i_arg_A [2] \i_arg_A [3] \i_arg_A [4] \i_arg_A [5] \i_arg_A [6] \i_arg_A [7] \i_arg_A [8] \i_arg_A [9] \i_arg_A [10] \i_arg_A [11] \i_arg_A [12] \i_arg_A [13] \i_arg_A [14] \i_arg_A [15] \i_arg_A [16] \i_arg_A [17] \i_arg_A [18] \i_arg_A [19] \i_arg_A [20] \i_arg_A [21] \i_arg_A [22] \i_arg_A [23] \i_arg_A [24] \i_arg_A [25] \i_arg_A [26] \i_arg_A [27] \i_arg_A [28] \i_arg_A [29] \i_arg_A [30] }
+    New input vector for $reduce_or cell $reduce_or$konwersja.sv:37$200: { \i_arg_A [0] \i_arg_A [1] \i_arg_A [2] \i_arg_A [3] \i_arg_A [4] \i_arg_A [5] \i_arg_A [6] \i_arg_A [7] \i_arg_A [8] \i_arg_A [9] \i_arg_A [10] \i_arg_A [11] \i_arg_A [12] \i_arg_A [13] \i_arg_A [14] \i_arg_A [15] \i_arg_A [16] \i_arg_A [17] \i_arg_A [18] \i_arg_A [19] \i_arg_A [20] \i_arg_A [21] \i_arg_A [22] \i_arg_A [23] \i_arg_A [24] \i_arg_A [25] \i_arg_A [26] \i_arg_A [27] \i_arg_A [28] \i_arg_A [29] \i_arg_A [30] }
   Optimizing cells in module $paramod\konwersja\BITS=32.
   Optimizing cells in module $paramod\porownanie\BITS=32.
   Optimizing cells in module $paramod\przesuniecie\BITS=32.
@@ -463,7 +462,7 @@ Optimizing module sync_arith_unit_12_rtl.
 3.7. Executing WREDUCE pass (reducing word size of cells).
 Removed cell $paramod\konwersja\BITS=32.$procmux$1229 ($mux).
 Removed top 1 bits (of 32) from mux cell $paramod\konwersja\BITS=32.$procmux$1241 ($mux).
-Removed top 31 bits (of 32) from wire $paramod\konwersja\BITS=32.$reduce_or$konwersja.sv:30$200_Y.
+Removed top 31 bits (of 32) from wire $paramod\konwersja\BITS=32.$reduce_or$konwersja.sv:37$200_Y.
 Removed cell $paramod\przesuniecie\BITS=32.$procmux$269 ($mux).
 Removed top 31 bits (of 32) from port B of cell $paramod\przesuniecie\BITS=32.$gt$przesuniecie.sv:20$229 ($gt).
 Removed top 25 bits (of 32) from port B of cell $paramod\przesuniecie\BITS=32.$lt$przesuniecie.sv:20$231 ($lt).
@@ -481,16 +480,16 @@ Removed cell $paramod\ustawienie\BITS=32.$procmux$334 ($mux).
 Removed cell $paramod\ustawienie\BITS=32.$procmux$320 ($mux).
 Removed cell $paramod\ustawienie\BITS=32.$procmux$331 ($mux).
 Removed cell $paramod\ustawienie\BITS=32.$procmux$317 ($mux).
-Removed top 27 bits (of 32) from port B of cell $paramod\ustawienie\BITS=32.$procmux$370_CMP0 ($eq).
 Removed cell $paramod\ustawienie\BITS=32.$procmux$314 ($mux).
 Removed top 27 bits (of 32) from port B of cell $paramod\ustawienie\BITS=32.$procmux$330_CMP0 ($eq).
+Removed top 27 bits (of 32) from port B of cell $paramod\ustawienie\BITS=32.$procmux$370_CMP0 ($eq).
 Removed cell $paramod\ustawienie\BITS=32.$procmux$350 ($mux).
 Removed cell $paramod\ustawienie\BITS=32.$procmux$356 ($mux).
 Removed cell $paramod\ustawienie\BITS=32.$procmux$353 ($mux).
 Removed top 27 bits (of 32) from port B of cell $paramod\ustawienie\BITS=32.$procmux$349_CMP0 ($eq).
-Removed top 26 bits (of 32) from port B of cell $paramod\ustawienie\BITS=32.$gt$ustawienie.sv:28$219 ($gt).
-Removed top 31 bits (of 32) from port B of cell $paramod\ustawienie\BITS=32.$ge$ustawienie.sv:33$220 ($ge).
-Removed top 25 bits (of 32) from port B of cell $paramod\ustawienie\BITS=32.$lt$ustawienie.sv:33$223 ($lt).
+Removed top 26 bits (of 32) from port B of cell $paramod\ustawienie\BITS=32.$gt$ustawienie.sv:31$219 ($gt).
+Removed top 31 bits (of 32) from port B of cell $paramod\ustawienie\BITS=32.$ge$ustawienie.sv:36$220 ($ge).
+Removed top 25 bits (of 32) from port B of cell $paramod\ustawienie\BITS=32.$lt$ustawienie.sv:36$223 ($lt).
 Removed cell $paramod\ustawienie\BITS=32.$procmux$371 ($mux).
 Removed cell $paramod\ustawienie\BITS=32.$procmux$374 ($mux).
 Removed cell $paramod\ustawienie\BITS=32.$procmux$377 ($mux).
@@ -639,7 +638,6 @@ Removed top 30 bits (of 32) from port B of cell sync_arith_unit_12_rtl.$eq$sync_
 Removed top 31 bits (of 32) from mux cell sync_arith_unit_12_rtl.$procmux$1349 ($mux).
 Removed top 1 bits (of 2) from port B of cell sync_arith_unit_12_rtl.$procmux$1362_CMP0 ($eq).
 Removed top 31 bits (of 32) from wire sync_arith_unit_12_rtl.$1$func$\IS_ODD_ZEROS$sync_arith_unit_12.sv:103$51$\count_zeros[31:0]$95.
-Removed top 31 bits (of 32) from wire sync_arith_unit_12_rtl.poro_wynik.
 
 3.8. Executing PEEPOPT pass (run peephole optimizers).
 
@@ -649,7 +647,7 @@ Finding unused cells or wires in module $paramod\porownanie\BITS=32..
 Finding unused cells or wires in module $paramod\przesuniecie\BITS=32..
 Finding unused cells or wires in module $paramod\ustawienie\BITS=32..
 Finding unused cells or wires in module \sync_arith_unit_12_rtl..
-Removed 5 unused cells and 109 unused wires.
+Removed 5 unused cells and 108 unused wires.
 <suppressed ~9 debug messages>
 
 3.10. Executing TECHMAP pass (map to technology primitives).
@@ -665,13 +663,13 @@ No more expansions possible.
 
 3.11. Executing ALUMACC pass (create $alu and $macc cells).
 Extracting $alu and $macc cells in module $paramod\konwersja\BITS=32:
-  creating $macc model for $add$konwersja.sv:31$204 ($add).
-  creating $alu model for $macc $add$konwersja.sv:31$204.
-  creating $alu cell for $add$konwersja.sv:31$204: $auto$alumacc.cc:474:replace_alu$1368
+  creating $macc model for $add$konwersja.sv:38$204 ($add).
+  creating $alu model for $macc $add$konwersja.sv:38$204.
+  creating $alu cell for $add$konwersja.sv:38$204: $auto$alumacc.cc:474:replace_alu$1367
   created 1 $alu and 0 $macc cells.
 Extracting $alu and $macc cells in module $paramod\porownanie\BITS=32:
   creating $alu model for $gt$porownanie.sv:17$207 ($gt): new $alu
-  creating $alu cell for $gt$porownanie.sv:17$207: $auto$alumacc.cc:474:replace_alu$1372
+  creating $alu cell for $gt$porownanie.sv:17$207: $auto$alumacc.cc:474:replace_alu$1371
   created 1 $alu and 0 $macc cells.
 Extracting $alu and $macc cells in module $paramod\przesuniecie\BITS=32:
   creating $alu model for $ge$przesuniecie.sv:34$242 ($ge): new $alu
@@ -679,13 +677,13 @@ Extracting $alu and $macc cells in module $paramod\przesuniecie\BITS=32:
   creating $alu model for $lt$przesuniecie.sv:20$231 ($lt): merged with $ge$przesuniecie.sv:34$242.
   creating $alu model for $lt$przesuniecie.sv:35$243 ($lt): new $alu
   creating $alu model for $lt$przesuniecie.sv:40$246 ($lt): merged with $gt$przesuniecie.sv:20$229.
-  creating $alu cell for $lt$przesuniecie.sv:35$243: $auto$alumacc.cc:474:replace_alu$1388
-  creating $alu cell for $gt$przesuniecie.sv:20$229, $lt$przesuniecie.sv:40$246: $auto$alumacc.cc:474:replace_alu$1401
-  creating $alu cell for $ge$przesuniecie.sv:34$242, $lt$przesuniecie.sv:20$231: $auto$alumacc.cc:474:replace_alu$1414
+  creating $alu cell for $lt$przesuniecie.sv:35$243: $auto$alumacc.cc:474:replace_alu$1387
+  creating $alu cell for $gt$przesuniecie.sv:20$229, $lt$przesuniecie.sv:40$246: $auto$alumacc.cc:474:replace_alu$1400
+  creating $alu cell for $ge$przesuniecie.sv:34$242, $lt$przesuniecie.sv:20$231: $auto$alumacc.cc:474:replace_alu$1413
   created 3 $alu and 0 $macc cells.
 Extracting $alu and $macc cells in module $paramod\ustawienie\BITS=32:
-  creating $alu model for $gt$ustawienie.sv:28$219 ($gt): new $alu
-  creating $alu cell for $gt$ustawienie.sv:28$219: $auto$alumacc.cc:474:replace_alu$1430
+  creating $alu model for $gt$ustawienie.sv:31$219 ($gt): new $alu
+  creating $alu cell for $gt$ustawienie.sv:31$219: $auto$alumacc.cc:474:replace_alu$1429
   created 1 $alu and 0 $macc cells.
 Extracting $alu and $macc cells in module sync_arith_unit_12_rtl:
   creating $macc model for $add$sync_arith_unit_12.sv:65$102 ($add).
@@ -750,37 +748,37 @@ Extracting $alu and $macc cells in module sync_arith_unit_12_rtl:
   creating $alu model for $macc $add$sync_arith_unit_12.sv:65$108.
   creating $alu model for $macc $add$sync_arith_unit_12.sv:65$105.
   creating $alu model for $macc $add$sync_arith_unit_12.sv:65$102.
-  creating $alu cell for $add$sync_arith_unit_12.sv:65$102: $auto$alumacc.cc:474:replace_alu$1437
-  creating $alu cell for $add$sync_arith_unit_12.sv:65$105: $auto$alumacc.cc:474:replace_alu$1440
-  creating $alu cell for $add$sync_arith_unit_12.sv:65$108: $auto$alumacc.cc:474:replace_alu$1443
-  creating $alu cell for $add$sync_arith_unit_12.sv:65$111: $auto$alumacc.cc:474:replace_alu$1446
-  creating $alu cell for $add$sync_arith_unit_12.sv:65$114: $auto$alumacc.cc:474:replace_alu$1449
-  creating $alu cell for $add$sync_arith_unit_12.sv:65$117: $auto$alumacc.cc:474:replace_alu$1452
-  creating $alu cell for $add$sync_arith_unit_12.sv:65$120: $auto$alumacc.cc:474:replace_alu$1455
-  creating $alu cell for $add$sync_arith_unit_12.sv:65$123: $auto$alumacc.cc:474:replace_alu$1458
-  creating $alu cell for $add$sync_arith_unit_12.sv:65$126: $auto$alumacc.cc:474:replace_alu$1461
-  creating $alu cell for $add$sync_arith_unit_12.sv:65$129: $auto$alumacc.cc:474:replace_alu$1464
-  creating $alu cell for $add$sync_arith_unit_12.sv:65$132: $auto$alumacc.cc:474:replace_alu$1467
-  creating $alu cell for $add$sync_arith_unit_12.sv:65$135: $auto$alumacc.cc:474:replace_alu$1470
-  creating $alu cell for $add$sync_arith_unit_12.sv:65$138: $auto$alumacc.cc:474:replace_alu$1473
-  creating $alu cell for $add$sync_arith_unit_12.sv:65$141: $auto$alumacc.cc:474:replace_alu$1476
-  creating $alu cell for $add$sync_arith_unit_12.sv:65$144: $auto$alumacc.cc:474:replace_alu$1479
-  creating $alu cell for $add$sync_arith_unit_12.sv:65$147: $auto$alumacc.cc:474:replace_alu$1482
-  creating $alu cell for $add$sync_arith_unit_12.sv:65$150: $auto$alumacc.cc:474:replace_alu$1485
-  creating $alu cell for $add$sync_arith_unit_12.sv:65$153: $auto$alumacc.cc:474:replace_alu$1488
-  creating $alu cell for $add$sync_arith_unit_12.sv:65$156: $auto$alumacc.cc:474:replace_alu$1491
-  creating $alu cell for $add$sync_arith_unit_12.sv:65$159: $auto$alumacc.cc:474:replace_alu$1494
-  creating $alu cell for $add$sync_arith_unit_12.sv:65$162: $auto$alumacc.cc:474:replace_alu$1497
-  creating $alu cell for $add$sync_arith_unit_12.sv:65$165: $auto$alumacc.cc:474:replace_alu$1500
-  creating $alu cell for $add$sync_arith_unit_12.sv:65$168: $auto$alumacc.cc:474:replace_alu$1503
-  creating $alu cell for $add$sync_arith_unit_12.sv:65$171: $auto$alumacc.cc:474:replace_alu$1506
-  creating $alu cell for $add$sync_arith_unit_12.sv:65$174: $auto$alumacc.cc:474:replace_alu$1509
-  creating $alu cell for $add$sync_arith_unit_12.sv:65$177: $auto$alumacc.cc:474:replace_alu$1512
-  creating $alu cell for $add$sync_arith_unit_12.sv:65$180: $auto$alumacc.cc:474:replace_alu$1515
-  creating $alu cell for $add$sync_arith_unit_12.sv:65$183: $auto$alumacc.cc:474:replace_alu$1518
-  creating $alu cell for $add$sync_arith_unit_12.sv:65$186: $auto$alumacc.cc:474:replace_alu$1521
-  creating $alu cell for $add$sync_arith_unit_12.sv:65$189: $auto$alumacc.cc:474:replace_alu$1524
-  creating $alu cell for $add$sync_arith_unit_12.sv:65$99: $auto$alumacc.cc:474:replace_alu$1527
+  creating $alu cell for $add$sync_arith_unit_12.sv:65$102: $auto$alumacc.cc:474:replace_alu$1436
+  creating $alu cell for $add$sync_arith_unit_12.sv:65$105: $auto$alumacc.cc:474:replace_alu$1439
+  creating $alu cell for $add$sync_arith_unit_12.sv:65$108: $auto$alumacc.cc:474:replace_alu$1442
+  creating $alu cell for $add$sync_arith_unit_12.sv:65$111: $auto$alumacc.cc:474:replace_alu$1445
+  creating $alu cell for $add$sync_arith_unit_12.sv:65$114: $auto$alumacc.cc:474:replace_alu$1448
+  creating $alu cell for $add$sync_arith_unit_12.sv:65$117: $auto$alumacc.cc:474:replace_alu$1451
+  creating $alu cell for $add$sync_arith_unit_12.sv:65$120: $auto$alumacc.cc:474:replace_alu$1454
+  creating $alu cell for $add$sync_arith_unit_12.sv:65$123: $auto$alumacc.cc:474:replace_alu$1457
+  creating $alu cell for $add$sync_arith_unit_12.sv:65$126: $auto$alumacc.cc:474:replace_alu$1460
+  creating $alu cell for $add$sync_arith_unit_12.sv:65$129: $auto$alumacc.cc:474:replace_alu$1463
+  creating $alu cell for $add$sync_arith_unit_12.sv:65$132: $auto$alumacc.cc:474:replace_alu$1466
+  creating $alu cell for $add$sync_arith_unit_12.sv:65$135: $auto$alumacc.cc:474:replace_alu$1469
+  creating $alu cell for $add$sync_arith_unit_12.sv:65$138: $auto$alumacc.cc:474:replace_alu$1472
+  creating $alu cell for $add$sync_arith_unit_12.sv:65$141: $auto$alumacc.cc:474:replace_alu$1475
+  creating $alu cell for $add$sync_arith_unit_12.sv:65$144: $auto$alumacc.cc:474:replace_alu$1478
+  creating $alu cell for $add$sync_arith_unit_12.sv:65$147: $auto$alumacc.cc:474:replace_alu$1481
+  creating $alu cell for $add$sync_arith_unit_12.sv:65$150: $auto$alumacc.cc:474:replace_alu$1484
+  creating $alu cell for $add$sync_arith_unit_12.sv:65$153: $auto$alumacc.cc:474:replace_alu$1487
+  creating $alu cell for $add$sync_arith_unit_12.sv:65$156: $auto$alumacc.cc:474:replace_alu$1490
+  creating $alu cell for $add$sync_arith_unit_12.sv:65$159: $auto$alumacc.cc:474:replace_alu$1493
+  creating $alu cell for $add$sync_arith_unit_12.sv:65$162: $auto$alumacc.cc:474:replace_alu$1496
+  creating $alu cell for $add$sync_arith_unit_12.sv:65$165: $auto$alumacc.cc:474:replace_alu$1499
+  creating $alu cell for $add$sync_arith_unit_12.sv:65$168: $auto$alumacc.cc:474:replace_alu$1502
+  creating $alu cell for $add$sync_arith_unit_12.sv:65$171: $auto$alumacc.cc:474:replace_alu$1505
+  creating $alu cell for $add$sync_arith_unit_12.sv:65$174: $auto$alumacc.cc:474:replace_alu$1508
+  creating $alu cell for $add$sync_arith_unit_12.sv:65$177: $auto$alumacc.cc:474:replace_alu$1511
+  creating $alu cell for $add$sync_arith_unit_12.sv:65$180: $auto$alumacc.cc:474:replace_alu$1514
+  creating $alu cell for $add$sync_arith_unit_12.sv:65$183: $auto$alumacc.cc:474:replace_alu$1517
+  creating $alu cell for $add$sync_arith_unit_12.sv:65$186: $auto$alumacc.cc:474:replace_alu$1520
+  creating $alu cell for $add$sync_arith_unit_12.sv:65$189: $auto$alumacc.cc:474:replace_alu$1523
+  creating $alu cell for $add$sync_arith_unit_12.sv:65$99: $auto$alumacc.cc:474:replace_alu$1526
   created 31 $alu and 0 $macc cells.
 
 3.12. Executing SHARE pass (SAT-based resource sharing).
@@ -832,13 +830,13 @@ Removed 0 multiplexer ports.
 3.13.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module $paramod\konwersja\BITS=32.
   Optimizing cells in module $paramod\porownanie\BITS=32.
-    New input vector for $reduce_and cell $auto$alumacc.cc:64:get_eq$1375: { $auto$alumacc.cc:490:replace_alu$1373 [0] $auto$alumacc.cc:490:replace_alu$1373 [1] $auto$alumacc.cc:490:replace_alu$1373 [2] $auto$alumacc.cc:490:replace_alu$1373 [3] $auto$alumacc.cc:490:replace_alu$1373 [4] $auto$alumacc.cc:490:replace_alu$1373 [5] $auto$alumacc.cc:490:replace_alu$1373 [6] $auto$alumacc.cc:490:replace_alu$1373 [7] $auto$alumacc.cc:490:replace_alu$1373 [8] $auto$alumacc.cc:490:replace_alu$1373 [9] $auto$alumacc.cc:490:replace_alu$1373 [10] $auto$alumacc.cc:490:replace_alu$1373 [11] $auto$alumacc.cc:490:replace_alu$1373 [12] $auto$alumacc.cc:490:replace_alu$1373 [13] $auto$alumacc.cc:490:replace_alu$1373 [14] $auto$alumacc.cc:490:replace_alu$1373 [15] $auto$alumacc.cc:490:replace_alu$1373 [16] $auto$alumacc.cc:490:replace_alu$1373 [17] $auto$alumacc.cc:490:replace_alu$1373 [18] $auto$alumacc.cc:490:replace_alu$1373 [19] $auto$alumacc.cc:490:replace_alu$1373 [20] $auto$alumacc.cc:490:replace_alu$1373 [21] $auto$alumacc.cc:490:replace_alu$1373 [22] $auto$alumacc.cc:490:replace_alu$1373 [23] $auto$alumacc.cc:490:replace_alu$1373 [24] $auto$alumacc.cc:490:replace_alu$1373 [25] $auto$alumacc.cc:490:replace_alu$1373 [26] $auto$alumacc.cc:490:replace_alu$1373 [27] $auto$alumacc.cc:490:replace_alu$1373 [28] $auto$alumacc.cc:490:replace_alu$1373 [29] $auto$alumacc.cc:490:replace_alu$1373 [30] $auto$alumacc.cc:490:replace_alu$1373 [31] }
+    New input vector for $reduce_and cell $auto$alumacc.cc:64:get_eq$1374: { $auto$alumacc.cc:490:replace_alu$1372 [0] $auto$alumacc.cc:490:replace_alu$1372 [1] $auto$alumacc.cc:490:replace_alu$1372 [2] $auto$alumacc.cc:490:replace_alu$1372 [3] $auto$alumacc.cc:490:replace_alu$1372 [4] $auto$alumacc.cc:490:replace_alu$1372 [5] $auto$alumacc.cc:490:replace_alu$1372 [6] $auto$alumacc.cc:490:replace_alu$1372 [7] $auto$alumacc.cc:490:replace_alu$1372 [8] $auto$alumacc.cc:490:replace_alu$1372 [9] $auto$alumacc.cc:490:replace_alu$1372 [10] $auto$alumacc.cc:490:replace_alu$1372 [11] $auto$alumacc.cc:490:replace_alu$1372 [12] $auto$alumacc.cc:490:replace_alu$1372 [13] $auto$alumacc.cc:490:replace_alu$1372 [14] $auto$alumacc.cc:490:replace_alu$1372 [15] $auto$alumacc.cc:490:replace_alu$1372 [16] $auto$alumacc.cc:490:replace_alu$1372 [17] $auto$alumacc.cc:490:replace_alu$1372 [18] $auto$alumacc.cc:490:replace_alu$1372 [19] $auto$alumacc.cc:490:replace_alu$1372 [20] $auto$alumacc.cc:490:replace_alu$1372 [21] $auto$alumacc.cc:490:replace_alu$1372 [22] $auto$alumacc.cc:490:replace_alu$1372 [23] $auto$alumacc.cc:490:replace_alu$1372 [24] $auto$alumacc.cc:490:replace_alu$1372 [25] $auto$alumacc.cc:490:replace_alu$1372 [26] $auto$alumacc.cc:490:replace_alu$1372 [27] $auto$alumacc.cc:490:replace_alu$1372 [28] $auto$alumacc.cc:490:replace_alu$1372 [29] $auto$alumacc.cc:490:replace_alu$1372 [30] $auto$alumacc.cc:490:replace_alu$1372 [31] }
   Optimizing cells in module $paramod\porownanie\BITS=32.
   Optimizing cells in module $paramod\przesuniecie\BITS=32.
-    New input vector for $reduce_or cell $auto$alumacc.cc:509:replace_alu$1423: { $auto$rtlil.cc:1864:Xor$1420 $auto$rtlil.cc:1835:ReduceAnd$1422 }
-    New input vector for $reduce_and cell $auto$alumacc.cc:64:get_eq$1391: { $auto$alumacc.cc:490:replace_alu$1389 [0] $auto$alumacc.cc:490:replace_alu$1389 [1] $auto$alumacc.cc:490:replace_alu$1389 [2] $auto$alumacc.cc:490:replace_alu$1389 [3] $auto$alumacc.cc:490:replace_alu$1389 [4] $auto$alumacc.cc:490:replace_alu$1389 [5] $auto$alumacc.cc:490:replace_alu$1389 [6] $auto$alumacc.cc:490:replace_alu$1389 [7] $auto$alumacc.cc:490:replace_alu$1389 [8] $auto$alumacc.cc:490:replace_alu$1389 [9] $auto$alumacc.cc:490:replace_alu$1389 [10] $auto$alumacc.cc:490:replace_alu$1389 [11] $auto$alumacc.cc:490:replace_alu$1389 [12] $auto$alumacc.cc:490:replace_alu$1389 [13] $auto$alumacc.cc:490:replace_alu$1389 [14] $auto$alumacc.cc:490:replace_alu$1389 [15] $auto$alumacc.cc:490:replace_alu$1389 [16] $auto$alumacc.cc:490:replace_alu$1389 [17] $auto$alumacc.cc:490:replace_alu$1389 [18] $auto$alumacc.cc:490:replace_alu$1389 [19] $auto$alumacc.cc:490:replace_alu$1389 [20] $auto$alumacc.cc:490:replace_alu$1389 [21] $auto$alumacc.cc:490:replace_alu$1389 [22] $auto$alumacc.cc:490:replace_alu$1389 [23] $auto$alumacc.cc:490:replace_alu$1389 [24] $auto$alumacc.cc:490:replace_alu$1389 [25] $auto$alumacc.cc:490:replace_alu$1389 [26] $auto$alumacc.cc:490:replace_alu$1389 [27] $auto$alumacc.cc:490:replace_alu$1389 [28] $auto$alumacc.cc:490:replace_alu$1389 [29] $auto$alumacc.cc:490:replace_alu$1389 [30] $auto$alumacc.cc:490:replace_alu$1389 [31] }
-    New input vector for $reduce_and cell $auto$alumacc.cc:64:get_eq$1408: { $auto$alumacc.cc:490:replace_alu$1402 [0] $auto$alumacc.cc:490:replace_alu$1402 [1] $auto$alumacc.cc:490:replace_alu$1402 [2] $auto$alumacc.cc:490:replace_alu$1402 [3] $auto$alumacc.cc:490:replace_alu$1402 [4] $auto$alumacc.cc:490:replace_alu$1402 [5] $auto$alumacc.cc:490:replace_alu$1402 [6] $auto$alumacc.cc:490:replace_alu$1402 [7] $auto$alumacc.cc:490:replace_alu$1402 [8] $auto$alumacc.cc:490:replace_alu$1402 [9] $auto$alumacc.cc:490:replace_alu$1402 [10] $auto$alumacc.cc:490:replace_alu$1402 [11] $auto$alumacc.cc:490:replace_alu$1402 [12] $auto$alumacc.cc:490:replace_alu$1402 [13] $auto$alumacc.cc:490:replace_alu$1402 [14] $auto$alumacc.cc:490:replace_alu$1402 [15] $auto$alumacc.cc:490:replace_alu$1402 [16] $auto$alumacc.cc:490:replace_alu$1402 [17] $auto$alumacc.cc:490:replace_alu$1402 [18] $auto$alumacc.cc:490:replace_alu$1402 [19] $auto$alumacc.cc:490:replace_alu$1402 [20] $auto$alumacc.cc:490:replace_alu$1402 [21] $auto$alumacc.cc:490:replace_alu$1402 [22] $auto$alumacc.cc:490:replace_alu$1402 [23] $auto$alumacc.cc:490:replace_alu$1402 [24] $auto$alumacc.cc:490:replace_alu$1402 [25] $auto$alumacc.cc:490:replace_alu$1402 [26] $auto$alumacc.cc:490:replace_alu$1402 [27] $auto$alumacc.cc:490:replace_alu$1402 [28] $auto$alumacc.cc:490:replace_alu$1402 [29] $auto$alumacc.cc:490:replace_alu$1402 [30] $auto$alumacc.cc:490:replace_alu$1402 [31] }
-    New input vector for $reduce_and cell $auto$alumacc.cc:64:get_eq$1421: { $auto$alumacc.cc:490:replace_alu$1415 [0] $auto$alumacc.cc:490:replace_alu$1415 [1] $auto$alumacc.cc:490:replace_alu$1415 [2] $auto$alumacc.cc:490:replace_alu$1415 [3] $auto$alumacc.cc:490:replace_alu$1415 [4] $auto$alumacc.cc:490:replace_alu$1415 [5] $auto$alumacc.cc:490:replace_alu$1415 [6] $auto$alumacc.cc:490:replace_alu$1415 [7] $auto$alumacc.cc:490:replace_alu$1415 [8] $auto$alumacc.cc:490:replace_alu$1415 [9] $auto$alumacc.cc:490:replace_alu$1415 [10] $auto$alumacc.cc:490:replace_alu$1415 [11] $auto$alumacc.cc:490:replace_alu$1415 [12] $auto$alumacc.cc:490:replace_alu$1415 [13] $auto$alumacc.cc:490:replace_alu$1415 [14] $auto$alumacc.cc:490:replace_alu$1415 [15] $auto$alumacc.cc:490:replace_alu$1415 [16] $auto$alumacc.cc:490:replace_alu$1415 [17] $auto$alumacc.cc:490:replace_alu$1415 [18] $auto$alumacc.cc:490:replace_alu$1415 [19] $auto$alumacc.cc:490:replace_alu$1415 [20] $auto$alumacc.cc:490:replace_alu$1415 [21] $auto$alumacc.cc:490:replace_alu$1415 [22] $auto$alumacc.cc:490:replace_alu$1415 [23] $auto$alumacc.cc:490:replace_alu$1415 [24] $auto$alumacc.cc:490:replace_alu$1415 [25] $auto$alumacc.cc:490:replace_alu$1415 [26] $auto$alumacc.cc:490:replace_alu$1415 [27] $auto$alumacc.cc:490:replace_alu$1415 [28] $auto$alumacc.cc:490:replace_alu$1415 [29] $auto$alumacc.cc:490:replace_alu$1415 [30] $auto$alumacc.cc:490:replace_alu$1415 [31] }
+    New input vector for $reduce_or cell $auto$alumacc.cc:509:replace_alu$1422: { $auto$rtlil.cc:1864:Xor$1419 $auto$rtlil.cc:1835:ReduceAnd$1421 }
+    New input vector for $reduce_and cell $auto$alumacc.cc:64:get_eq$1390: { $auto$alumacc.cc:490:replace_alu$1388 [0] $auto$alumacc.cc:490:replace_alu$1388 [1] $auto$alumacc.cc:490:replace_alu$1388 [2] $auto$alumacc.cc:490:replace_alu$1388 [3] $auto$alumacc.cc:490:replace_alu$1388 [4] $auto$alumacc.cc:490:replace_alu$1388 [5] $auto$alumacc.cc:490:replace_alu$1388 [6] $auto$alumacc.cc:490:replace_alu$1388 [7] $auto$alumacc.cc:490:replace_alu$1388 [8] $auto$alumacc.cc:490:replace_alu$1388 [9] $auto$alumacc.cc:490:replace_alu$1388 [10] $auto$alumacc.cc:490:replace_alu$1388 [11] $auto$alumacc.cc:490:replace_alu$1388 [12] $auto$alumacc.cc:490:replace_alu$1388 [13] $auto$alumacc.cc:490:replace_alu$1388 [14] $auto$alumacc.cc:490:replace_alu$1388 [15] $auto$alumacc.cc:490:replace_alu$1388 [16] $auto$alumacc.cc:490:replace_alu$1388 [17] $auto$alumacc.cc:490:replace_alu$1388 [18] $auto$alumacc.cc:490:replace_alu$1388 [19] $auto$alumacc.cc:490:replace_alu$1388 [20] $auto$alumacc.cc:490:replace_alu$1388 [21] $auto$alumacc.cc:490:replace_alu$1388 [22] $auto$alumacc.cc:490:replace_alu$1388 [23] $auto$alumacc.cc:490:replace_alu$1388 [24] $auto$alumacc.cc:490:replace_alu$1388 [25] $auto$alumacc.cc:490:replace_alu$1388 [26] $auto$alumacc.cc:490:replace_alu$1388 [27] $auto$alumacc.cc:490:replace_alu$1388 [28] $auto$alumacc.cc:490:replace_alu$1388 [29] $auto$alumacc.cc:490:replace_alu$1388 [30] $auto$alumacc.cc:490:replace_alu$1388 [31] }
+    New input vector for $reduce_and cell $auto$alumacc.cc:64:get_eq$1407: { $auto$alumacc.cc:490:replace_alu$1401 [0] $auto$alumacc.cc:490:replace_alu$1401 [1] $auto$alumacc.cc:490:replace_alu$1401 [2] $auto$alumacc.cc:490:replace_alu$1401 [3] $auto$alumacc.cc:490:replace_alu$1401 [4] $auto$alumacc.cc:490:replace_alu$1401 [5] $auto$alumacc.cc:490:replace_alu$1401 [6] $auto$alumacc.cc:490:replace_alu$1401 [7] $auto$alumacc.cc:490:replace_alu$1401 [8] $auto$alumacc.cc:490:replace_alu$1401 [9] $auto$alumacc.cc:490:replace_alu$1401 [10] $auto$alumacc.cc:490:replace_alu$1401 [11] $auto$alumacc.cc:490:replace_alu$1401 [12] $auto$alumacc.cc:490:replace_alu$1401 [13] $auto$alumacc.cc:490:replace_alu$1401 [14] $auto$alumacc.cc:490:replace_alu$1401 [15] $auto$alumacc.cc:490:replace_alu$1401 [16] $auto$alumacc.cc:490:replace_alu$1401 [17] $auto$alumacc.cc:490:replace_alu$1401 [18] $auto$alumacc.cc:490:replace_alu$1401 [19] $auto$alumacc.cc:490:replace_alu$1401 [20] $auto$alumacc.cc:490:replace_alu$1401 [21] $auto$alumacc.cc:490:replace_alu$1401 [22] $auto$alumacc.cc:490:replace_alu$1401 [23] $auto$alumacc.cc:490:replace_alu$1401 [24] $auto$alumacc.cc:490:replace_alu$1401 [25] $auto$alumacc.cc:490:replace_alu$1401 [26] $auto$alumacc.cc:490:replace_alu$1401 [27] $auto$alumacc.cc:490:replace_alu$1401 [28] $auto$alumacc.cc:490:replace_alu$1401 [29] $auto$alumacc.cc:490:replace_alu$1401 [30] $auto$alumacc.cc:490:replace_alu$1401 [31] }
+    New input vector for $reduce_and cell $auto$alumacc.cc:64:get_eq$1420: { $auto$alumacc.cc:490:replace_alu$1414 [0] $auto$alumacc.cc:490:replace_alu$1414 [1] $auto$alumacc.cc:490:replace_alu$1414 [2] $auto$alumacc.cc:490:replace_alu$1414 [3] $auto$alumacc.cc:490:replace_alu$1414 [4] $auto$alumacc.cc:490:replace_alu$1414 [5] $auto$alumacc.cc:490:replace_alu$1414 [6] $auto$alumacc.cc:490:replace_alu$1414 [7] $auto$alumacc.cc:490:replace_alu$1414 [8] $auto$alumacc.cc:490:replace_alu$1414 [9] $auto$alumacc.cc:490:replace_alu$1414 [10] $auto$alumacc.cc:490:replace_alu$1414 [11] $auto$alumacc.cc:490:replace_alu$1414 [12] $auto$alumacc.cc:490:replace_alu$1414 [13] $auto$alumacc.cc:490:replace_alu$1414 [14] $auto$alumacc.cc:490:replace_alu$1414 [15] $auto$alumacc.cc:490:replace_alu$1414 [16] $auto$alumacc.cc:490:replace_alu$1414 [17] $auto$alumacc.cc:490:replace_alu$1414 [18] $auto$alumacc.cc:490:replace_alu$1414 [19] $auto$alumacc.cc:490:replace_alu$1414 [20] $auto$alumacc.cc:490:replace_alu$1414 [21] $auto$alumacc.cc:490:replace_alu$1414 [22] $auto$alumacc.cc:490:replace_alu$1414 [23] $auto$alumacc.cc:490:replace_alu$1414 [24] $auto$alumacc.cc:490:replace_alu$1414 [25] $auto$alumacc.cc:490:replace_alu$1414 [26] $auto$alumacc.cc:490:replace_alu$1414 [27] $auto$alumacc.cc:490:replace_alu$1414 [28] $auto$alumacc.cc:490:replace_alu$1414 [29] $auto$alumacc.cc:490:replace_alu$1414 [30] $auto$alumacc.cc:490:replace_alu$1414 [31] }
   Optimizing cells in module $paramod\przesuniecie\BITS=32.
   Optimizing cells in module $paramod\ustawienie\BITS=32.
   Optimizing cells in module \sync_arith_unit_12_rtl.
@@ -1266,7 +1264,7 @@ Finding identical cells in module `\sync_arith_unit_12_rtl'.
 Removed a total of 1149 cells.
 
 3.22.3. Executing OPT_RMDFF pass (remove dff with constant values).
-Removing $auto$simplemap.cc:496:simplemap_adff$2710 ($_DFF_PP0_) from module sync_arith_unit_12_rtl.
+Removing $auto$simplemap.cc:496:simplemap_adff$2709 ($_DFF_PP0_) from module sync_arith_unit_12_rtl.
 Replaced 1 DFF cells.
 
 3.22.4. Executing OPT_CLEAN pass (remove unused cells and wires).
@@ -1515,10 +1513,10 @@ Removed 0 unused modules.
 
 === $paramod\konwersja\BITS=32 ===
 
-   Number of wires:                 33
-   Number of wire bits:             95
-   Number of public wires:           3
-   Number of public wire bits:      65
+   Number of wires:                 36
+   Number of wire bits:            128
+   Number of public wires:           6
+   Number of public wire bits:      98
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
@@ -1572,10 +1570,10 @@ Removed 0 unused modules.
 
 === $paramod\ustawienie\BITS=32 ===
 
-   Number of wires:                125
-   Number of wire bits:            218
-   Number of public wires:           4
-   Number of public wire bits:      97
+   Number of wires:                126
+   Number of wire bits:            219
+   Number of public wires:           5
+   Number of public wire bits:      98
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
@@ -1626,10 +1624,10 @@ Removed 0 unused modules.
      $paramod\przesuniecie\BITS=32      1
      $paramod\ustawienie\BITS=32      1
 
-   Number of wires:                867
-   Number of wire bits:           1398
-   Number of public wires:          33
-   Number of public wire bits:     564
+   Number of wires:                871
+   Number of wire bits:           1432
+   Number of public wires:          37
+   Number of public wire bits:     598
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0

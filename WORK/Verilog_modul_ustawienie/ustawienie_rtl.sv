@@ -136,6 +136,7 @@ module ustawienie_rtl(i_arg_A, i_arg_B, o_result, o_error);
   wire _132_;
   input [31:0] i_arg_A;
   input [31:0] i_arg_B;
+  wire i_arg_B_MSB;
   output o_error;
   output [31:0] o_result;
   assign _131_ = ~i_arg_B[1];
@@ -304,4 +305,5 @@ module ustawienie_rtl(i_arg_A, i_arg_B, o_result, o_error);
   assign _129_ = _043_ & _064_;
   assign _130_ = ~_129_;
   assign o_error = _066_ | _130_;
+  assign i_arg_B_MSB = i_arg_B[31];
 endmodule

@@ -10,6 +10,9 @@ parameter BITS = 32;
     output logic signed [BITS-1:0] o_result;
     output logic o_error;
     logic [BITS-1:0] tymczasowy_rejestr;
+    wire logic i_arg_B_MSB;
+
+    assign i_arg_B_MSB = i_arg_B[BITS-1];
 
     //blok opisujący logikę
     always_comb begin 
@@ -20,7 +23,7 @@ parameter BITS = 32;
         tymczasowy_rejestr = '0;
 
         //jak B jest ujemne, to ustawiamy flagę błędu
-        if (i_arg_B[BITS-1] == 1) begin
+        if (i_arg_B_MSB == 1) begin
             o_error = 1;
         end
 

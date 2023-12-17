@@ -40,6 +40,9 @@ module \$paramod\konwersja\BITS=32 (i_arg_A, o_result, o_error);
   wire _036_;
   wire _037_;
   input [31:0] i_arg_A;
+  wire i_arg_A_MSB;
+  wire i_arg_A_MSB_2;
+  wire [30:0] i_arg_A_REST;
   output o_error;
   output [31:0] o_result;
   assign _033_ = ~i_arg_A[30];
@@ -112,6 +115,9 @@ module \$paramod\konwersja\BITS=32 (i_arg_A, o_result, o_error);
   assign _031_ = ~_030_;
   assign _032_ = _023_ & _031_;
   assign o_error = _015_ & _032_;
+  assign i_arg_A_MSB = i_arg_A[31];
+  assign i_arg_A_MSB_2 = i_arg_A[30];
+  assign i_arg_A_REST = i_arg_A[30:0];
   assign o_result[31] = 1'h0;
 endmodule
 
@@ -1966,6 +1972,7 @@ module \$paramod\ustawienie\BITS=32 (i_arg_A, i_arg_B, o_result, o_error);
   wire _132_;
   input [31:0] i_arg_A;
   input [31:0] i_arg_B;
+  wire i_arg_B_MSB;
   output o_error;
   output [31:0] o_result;
   assign _131_ = ~i_arg_B[1];
@@ -2134,6 +2141,7 @@ module \$paramod\ustawienie\BITS=32 (i_arg_A, i_arg_B, o_result, o_error);
   assign _129_ = _043_ & _064_;
   assign _130_ = ~_129_;
   assign o_error = _066_ | _130_;
+  assign i_arg_B_MSB = i_arg_B[31];
 endmodule
 
 module sync_arith_unit_12_rtl(i_arg_A, i_arg_B, i_op, i_clk, i_reset, o_result, o_status, o_error_konw, o_error_przes, o_error_ust);
