@@ -64,7 +64,7 @@ module sync_arith_unit_12_tb;
             i_arg_B = $urandom;
             
             if ($time >= SIMTIME) begin
-                $finish;  
+                $stop;  
             end
         end
     end
