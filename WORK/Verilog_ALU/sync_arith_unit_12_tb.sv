@@ -8,7 +8,7 @@ module sync_arith_unit_12_tb;
     localparam SIMTIME = 1000;
 
     //sygnały sterujące 
-    logic               i_reset = '0;
+    logic               i_reset = '1;
     logic               i_clk = '0;
     logic [BITS-1:0]    i_arg_A, i_arg_B;
     logic [1:0]         i_op;
@@ -47,16 +47,28 @@ module sync_arith_unit_12_tb;
         forever begin
             #10
             i_op = $urandom_range(0,3);
-            i_arg_A = $urandom;
-            i_arg_B = $urandom;                     
-        end
+            if (i_op != 2) begin
+                i_arg_A = $urandom;
+                i_arg_B = $urandom;                    
+            end
+            else begin
+                i_arg_A = $urandom;
+                i_arg_B = 0;
+            end
+    end 
     end
 
     initial begin 
         forever begin 
             #CLKPERIOD i_clk = ~i_clk;
         end
-    end 
+    end
+    
+    initial begin 
+        forever begin 
+            #CLKPERIOD i_reset = ~i_reset;
+        end
+    end     
 
     initial begin 
         i_arg_A<='0;

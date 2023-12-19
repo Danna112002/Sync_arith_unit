@@ -115,5 +115,197 @@ informujące określonymi bitami o statusie powiązanym z wynikiem operacji:
 \section{Sprawozdanie z syntezy i realizacji jednostki 
 \\ \textbf{sync\_arith\_unit\_12} }
 
-\subsection{}
+
+Realizacja projektu polegała na zaprojektowaniu czterech małych modułów, 
+zsyntezowaniu ich, po czym przetestowaniu ich samodzielnej pracy w module testbenchu.
+
+Następnie po potwierdzeniu poprawności pracy w.w. modułów, dołączyłam ich instancje
+do pliku z modułem ALU. 
+Moduł ALU łączy działanie wszystkich czterech modułów. Jego funkcjonaność polega na
+przyjęciu wartości\footnote[1]{Lista portów układu znajduje się w punkcie 3. Listy portów do poszczególnych modułów
+znajdą się w ich opisach poniżej.}:
+\begin{itemize}
+  \item arumentów A, B, 
+  \item dwubitowego operandu wyboru operacji, 
+  \item sterowanego resetu synchronicznego,
+  \item zegara.
+\end{itemize}
+Wtedy wykonywane jest działanie, a następnie generowane są wartości wyjść: wyniku i statusu operacji.
+Do tego modułu też napisałam testbench sprawdzający działanie jednostki arytmetyczno-logicznej.
+Wszystkie testy - i te jednostkowe i testy całości wykazały poprawne zachowanie układu i oczekiwane wyniki. 
+
+\subsection{Moduł przesunięcia bitowego (\textbf\and\textit{A} $>>$ \textbf\and\textit{\raisebox{-0.5ex}{\textasciitilde} B})}
+Działanie tego modułu zostało opisane w podpunkcie 1. punktu 2. \footnote[2]{Działanie każdego "małego" modułu opisane jest w punkcie 2., 
+dlatego w pozostałych raportach z syntez małych modułów nie będzie opisów ich działania} 
+
+
+\textbf{Lista portów modułu}
+\begin{itemize}
+  \item \textbf{i\textunderscore arg\textunderscore A, i\textunderscore arg\textunderscore B} - wejścia zapewniające 
+  operandy, na których będzie wykonywana operacja
+  \item \textbf{o\textunderscore result} - wynik operacji
+  \item \textbf{o\textunderscore error} - flaga przyjmująca wartość 1, gdy wykrywany jest błąd operacji
+\end{itemize}
+
+\textbf{Symulacja i synteza}
+
+Synteza modułu przesunięcia przebiegła bez zatrzasków, w pliku synth.log nie znajdujemy też błędów. Po syntezie, działanie
+obydwu plików z modułami przed syntezą ("przesuniecie.sv") i po ("przesuniecie\textunderscore rtl.sv") zostało sprawdzone w module "testbench".
+Wyniki przebiegów zegarowych tej symulacji możemy obserwować w programie GTKWave, co obrazuje poniższy rysunek.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.5]{/home/ania/Obrazy/Zrzuty ekranu/Zrzut ekranu z 2023-12-19 05-34-29.png}
+\centering
+\caption{\textit{Przebiegi sygnałów użytych w testbenchu, pokazane w programie GTKWave}}
+\end{figure}
+
+Stwierdzenie poprawności zachowania modułu "przesunięcie.sv" umożliwiła konktretna konstrukcja testbenchu.
+Pierwsze 5 wartości operandów A oraz B, czyli przebieg do szóstej sekundy, miał obrazować sytuację "idealną", 
+która miała spełniać wymogi: 
+\begin{itemize}
+\item A wylosowane z przedziału liczb możliwych do zapisania na m-bitach,
+\item B wylosowane z przedziału liczb od 0 do maksymalnej liczby bitów A.
+\end{itemize}
+Więc: flaga błędu nie jest podniesiona, wyniki modułów przed syntezą i po są identyczne.
+
+Przypadek ten powtarza się dla przesunięć przyjmujących wartości "dodatnie zero" oraz "ujemne zero", występujących
+w kodowaniu liczb ZM (od 6. do 16. sekundy), dla przesunięcia większego od 32 bitów oraz dla szczególnych przypadków, gdzie operandy 
+A i B są zerami "dodatnimi" i "ujemnymi".
+
+Jedyna sytuacja, w której podnoszona jest flaga błędu to od 16. do 21. sekundy, wtedy też w module przed syntezą wynik 
+jest niezdefiniowany.
+
+\newpage
+\subsection{Moduł porównania liczb (\textbf\and\textit{A} $>$ \textbf\and\textit{\raisebox{-0.5ex}{\textasciitilde} B})}
+
+\textbf{Lista portów modułu}
+\begin{itemize}
+  \item \textbf{i\textunderscore arg\textunderscore A, i\textunderscore arg\textunderscore B} - wejścia zapewniające 
+  operandy, na których będzie wykonywana operacja
+  \item \textbf{o\textunderscore result} - wynik operacji
+\end{itemize}
+
+\textbf{Symulacja i synteza}
+
+Synteza modułu porównania przebiegła bez zatrzasków, w pliku synth.log nie znajdujemy też błędów. Po syntezie, działanie
+obydwu plików z modułami przed syntezą ("porownanie.sv") i po ("porownanie\textunderscore rtl.sv") zostało sprawdzone w module "testbench".
+Wyniki przebiegów zegarowych tej symulacji możemy obserwować w programie GTKWave, co obrazuje poniższy rysunek.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=.45]{/home/ania/Obrazy/Zrzuty ekranu/Zrzut ekranu z 2023-12-19 06-45-18.png}
+  \centering
+  \caption{\textit{Przebiegi sygnałów użytych w testbenchu, pokazane w programie GTKWave}}
+  \end{figure}
+
+Więc: do 10. sekundy obserówjemy porównywanie losowych wartości A i B, następnie aż do końca symulacji
+A i B przyjmują wartości zer "dodatnich" i "ujemnych" mając dawać wynik porównania równy 0.
+Po wyrywkowym sprawdzeniu pierwszej części testbenchu oraz drugiej, można stwierdzić, że moduł działa prawidłowo.
+\subsection{Moduł ustawiania wartości 1 na zadanym bicie 
+\\(\raisebox{-0.5ex}{\textasciitilde} A[B] = 1)}
+
+\textbf{Lista portów modułu}
+\begin{itemize}
+  \item \textbf{i\textunderscore arg\textunderscore A, i\textunderscore arg\textunderscore B} - wejścia zapewniające 
+  operandy, na których będzie wykonywana operacja
+  \item \textbf{o\textunderscore result} - wynik operacji
+  \item \textbf{o\textunderscore error} - flaga przyjmująca wartość 1, gdy wykrywany jest błąd operacji
+\end{itemize}
+
+\textbf{Symulacja i synteza}
+
+Synteza modułu ustawienia bitu na 1 przebiegła bez zatrzasków, w pliku synth.log nie znajdujemy też błędów. Po syntezie, działanie
+obydwu plików z modułami przed syntezą ("ustawienie.sv") i po ("ustawienie\textunderscore rtl.sv") zostało sprawdzone w module "testbench".
+Wyniki przebiegów zegarowych tej symulacji możemy obserwować w programie GTKWave, co obrazuje poniższy rysunek.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=.45]{/home/ania/Obrazy/Zrzuty ekranu/Zrzut ekranu z 2023-12-19 07-29-16.png}
+  \centering
+  \caption{\textit{Przebiegi sygnałów użytych w testbenchu, pokazane w programie GTKWave}}
+  \end{figure}
+
+  Budowa testbencha umożliwia na poprawne wykonanie operacji ustawienia bitu od 1. do 7. sekundy. Następnie sprawdzane 
+  jest podnoszenie flagi error dla B mniejszego od zera i większego od zakresu bitów A. Ostatnie dwie sekundy symulacji są poświęcone
+  na sprawdzenie poprawności zachowania modułu dla dwóch różnych reprezentacji zera w argumencie B - dla nich nie powinna się 
+  pojawiać flaga error. Na podstawie powyższych faktów można uznać, że moduł ustawiania bitu na 1 działa poprawnie.
+
+\subsection{Moduł konwersji zapisu liczby z ZM na U2 
+\\(\textbf\and\textit{ZM(A)=> U2(A)})}
+
+\textbf{Lista portów modułu}
+\begin{itemize}
+  \item \textbf{i\textunderscore arg\textunderscore A} - wejście zapewniające 
+  operand, na którym będzie wykonywana operacja
+  \item \textbf{o\textunderscore result} - wynik operacji
+  \item \textbf{o\textunderscore error} - flaga przyjmująca wartość 1, gdy wykrywany jest błąd operacji
+\end{itemize}
+
+\textbf{Symulacja i synteza}
+
+Synteza modułu konwersji przebiegła bez zatrzasków, w pliku synth.log nie znajdujemy też błędów. Po syntezie, działanie
+obydwu plików z modułami przed syntezą ("konwersja.sv") i po ("konwersja\textunderscore rtl.sv") zostało sprawdzone w module "testbench".
+Wyniki przebiegów zegarowych tej symulacji możemy obserwować w programie GTKWave, co obrazuje poniższy rysunek.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=.5]{/home/ania/Obrazy/Zrzuty ekranu/Zrzut ekranu z 2023-12-19 14-24-58.png}
+  \centering
+  \caption{\textit{Przebiegi sygnałów użytych w testbenchu, pokazane w programie GTKWave}}
+  \end{figure}
+
+  Testbench "konwersja\textunderscore tb.sv" napisany jest w taki sposób, by pierwsze 7 sekund moduł konwertował 
+  liczby będące w zakresie konwersji, DUT wykonało poprawnie wszystkie te operacjem flaga error nie jest podniesiona.
+  Następnie sprawdzany jest przypadek "ujemnego" zera, którego nie da się poprawnie przekonwertować, DUT ma wtedy podnieść 
+  \textbf{o\textunderscore error},  wynik ma pozostać niezdefiniowany. Ostatnie 3 testy sprawdzają
+  zachowanie modułu dla "dodatniego" zera oraz maksymalnej i minimalnej wartości z zakresu konwersji.
+\subsection{Moduł ALU}
+
+Moduł ALU połączył 4 moduły w całość oraz otrzymał kilka nowych sygnałów, nieużywanych w "małych modułach"
+\textbf{Lista portów modułu}
+\begin{itemize}
+  \item \textbf{i\textunderscore arg\textunderscore A, i\textunderscore arg\textunderscore B} - wejście zapewniające 
+  operandy, na których będzie wykonywana operacja
+  \item \textbf{o\textunderscore result} - wynik operacji
+  \item \textbf{o\textunderscore error} - flaga przyjmująca wartość 1, gdy wykrywany jest błąd operacji. Każdej operacji, w której możliwe
+  jest wykrycie błędu, odpowiada wewnętrzny oddzielnie nazwany i zadeklarowany sygnał błędu.
+  \item \textbf{o\textunderscore status} - synchroniczne wyjście z ALU pozwalające sprawdzić: czy wynik posiada parzystą liczbę zer, 
+  czy wynik składa się z samych zer, czy wynik jest błędny oraz czy nastąpiło przepełnienie\footnote[3]{Przepełnienie nie jest możliwe do pojawienia się
+  w żadnym z "małych" modułów.} Wyjście to ma szerokość czterech bitów, ALU sprawdza zaistnienie w.w. sytuacji przy wykonywaniu operacji i podnosi odpowiednie
+  flagi.
+  \item \textbf{i\textunderscore clk} - wejście sygnału zegarowego.
+  \item \textbf{i\textunderscore reset} - wejście resetu synchronicznego, aktywowanego narastającym zboczem zegara.
+  \item \textbf{i\textunderscore op} - wejście ustalające, jaka operacja zostanie wykonana.
+\end{itemize}
+
+\textbf{Symulacja i synteza}
+
+Synteza "sync\textunderscore arith\textunderscore unit\textunderscore 12.sv" przebiegła bez zatrzasków, w pliku synth.log nie znajdujemy też błędów. Po syntezie, działanie
+obydwu plików z modułami przed syntezą ("sync\textunderscore arith\textunderscore unit\textunderscore 12.sv") i po ("sync\textunderscore arith\textunderscore unit\textunderscore 12\textunderscore rtl.sv") 
+zostało sprawdzone w module "testbench".
+Wyniki fragmentu przebiegów zegarowych tej symulacji możemy obserwować w programie GTKWave, co obrazuje poniższy rysunek.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=.5]{/home/ania/Obrazy/Zrzuty ekranu/Zrzut ekranu z 2023-12-19 15-20-32.png}
+  \centering
+  \caption{\textit{Przebiegi sygnałów użytych w testbenchu, pokazane w programie GTKWave}}
+  \end{figure}
+
+  Dane modelu (ALU przed syntezą) i bramek (ALU po syntezie) są zgodne wszędzie tam, gdzie wynik nie pozostaje niezdefiniowany. Wynik pozostaje niezdefiniowany tylko w sytuacjach, 
+  gdy jednostka ma wykonać przesunięcie bitowe (kod 11), a sygnał B reprezentuje wartość ujemną, czyli dokładnie tak, jak się można było spodziewać. Sygnał resetu został ustawiony 
+  przeciwnie do zegara, by umożliwić zwalnianie danych z wyjścia przed otrzymaniem wyniku następnej operacji. Biorąc pod uwagę analizę przebiegu sygnałów, działanie
+  jednostki jest poprawne.
+
+
+\section{Schemat blokowy realizowanej jednostki \\\textbf{sync\_arith\_unit\_12}}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=.5]{/home/ania/Obrazy/Schemat blokowy ALU.jpg}
+  \centering
+  \caption{\textit{Schemat blokowy realizowanej jednostki wraz z nazwanymi w niej sygnałami}}
+  \end{figure}
+
 \end{document}

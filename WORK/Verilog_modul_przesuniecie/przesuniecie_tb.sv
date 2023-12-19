@@ -7,6 +7,7 @@ module przesuniecie_tb;
     parameter BITS=32;
     localparam TOP = 2**(BITS-1)-1;
     localparam BOTTOM = -(2**(BITS-1)-1);
+    localparam MOD_NUMBER = BITS-1;
     
     // sygnały wewnętrzne w tej konkretnej ławeczce testowej
     logic [BITS-1:0] s_i_arg_A;
@@ -15,6 +16,8 @@ module przesuniecie_tb;
     logic            s_o_error_synthesis;
     logic [BITS-1:0] s_o_model;
     logic [BITS-1:0] s_o_synthesis;    
+
+    //integer
     
     // instancjowanie wejść i wyjść, jawne przypisywanie portów, łączenie kabelków
     przesuniecie     #(.BITS(BITS))        
@@ -49,30 +52,34 @@ module przesuniecie_tb;
         //wygenerowanie losowych wartości dla wybranych przeze mnie przypadków
         //ściągawka: maksymalne A = 2**BITS - 1; minimalne A = -(2**BITS - 1);
         for (int i = 0; i<5; i++) begin
-            //wartości A dla idealnego przypadku
             #1
+            //wartości A dla idealnego przypadku
             s_i_arg_A = $urandom_range(BOTTOM, TOP); 
             //losowanie z maksymalnego zakresu B, które to wartości będą przypadkami wzorowymi
-            s_i_arg_B = ~$urandom_range(0, BITS-1);          
+            s_i_arg_B = ~$urandom_range(0, BITS-1);
         end
     
         for (int i = 0; i<5; i++) begin
             #1
+            s_i_arg_A = $urandom;
             //przesunięcie równe zero, to każde B jest 0, ale krwa znaczone, ofc, że znaczone
             s_i_arg_B = '1;
-            s_i_arg_B = {1'b0, '1};
+            #1
+            s_i_arg_B = {1'b0, {MOD_NUMBER{1'b1}}};
         end
 
         for (int i = 0; i<5; i++) begin       
             #1
+            s_i_arg_A = $urandom;
             //przesunięcie negatywne
             s_i_arg_B = ~$urandom_range(BOTTOM, -1);
         end
 
-        for (int i = 0; i<5; i++) begin 
+        for (int i = 0; i<5; i++) begin
             #1
+            s_i_arg_A = $urandom;
             //B dla >=32 przesunięcia to
-            s_i_arg_B = $urandom_range(BITS, TOP);
+            s_i_arg_B = ~$urandom_range(BITS, TOP);
         end
 
         //skrajne przypadki, ujemne zero i dodatnie zero w argumencie A
@@ -88,7 +95,7 @@ module przesuniecie_tb;
         #1
         s_i_arg_A = {1'b0, '1};
         s_i_arg_B = ~$urandom_range(BITS, TOP);
-        #1
+        #2
         
     $finish;
     end    

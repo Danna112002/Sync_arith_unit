@@ -4,6 +4,7 @@
 module porownanie_tb;
 
 parameter BITS=32;
+localparam MOD_NUMBER = BITS-1;
 
 // sygnały wewnętrzne
 logic [BITS-1:0] s_i_arg_A;
@@ -28,8 +29,7 @@ Porownanie_rtl (
     );    
 
 // Dostarczenie zmiennych do testu, rozpoczęcie bloku initial
-initial 
-begin
+initial begin
     //w tym pliku zostaną zapisane zapisane sygnały zarejestrowane w symulacji
         $dumpfile("signals_porownanie.vcd");  
 
@@ -38,7 +38,7 @@ begin
 
         //początkowe wyzerowanie wartości sygnałów A i B
         s_i_arg_A = 0;
-        s_i_arg_B = 0;      
+        s_i_arg_B = '1;      
         #1
 
                 // Pętla for przypisująca losowe wartości argumentom wejścia dla pięciu iteracji, rozpoczęcie symulacji
@@ -48,14 +48,23 @@ begin
             s_i_arg_B = $urandom;
         end
         
-        #1 
-        s_i_arg_A = '0;
-        s_i_arg_B = '0;
-        #1
-        s_i_arg_B = {1'b1, '0};
-        #1
-        s_i_arg_A = {1'b1, '0};
-        #1
-        s_i_arg_B = '0;
-end
+       for (int i = 0; i<5; i++) begin
+            #1
+            s_i_arg_A = '0;
+            //przesunięcie równe zero, to każde B jest 0, ale krwa znaczone, ofc, że znaczone
+            s_i_arg_B = '1;
+            #1
+            s_i_arg_B = ~{1'b0, {MOD_NUMBER{1'b1}}};
+        end
+
+        for (int i = 0; i<5; i++) begin
+            #1
+            s_i_arg_A = {1'b1, {MOD_NUMBER{1'b0}}};
+            //przesunięcie równe zero, to każde B jest 0, ale krwa znaczone, ofc, że znaczone
+            s_i_arg_B = '1;
+            #1
+            s_i_arg_B = ~{1'b0, {MOD_NUMBER{1'b1}}};
+        end
+
+    end
 endmodule

@@ -20,7 +20,6 @@ Działanie kodu obserwowane będzie na analizie wyników zachowania modułów *'
 - [***GTKWave Analyzer***](#https://gtkwave.sourceforge.net/) - wersja v3.3.104 (w)1999-2020 BSI, analiza przebiegów sygnałów zegarowych przed syntezą i po niej
 - [***Yosys Open Synthesis Suite***](#https://yosyshq.net/yosys/) - wersja 0.9 (git sha1 1979e0b) - framework do syntezy poziomu transferu rejestru Verilog, w tym przypadku: System Verilog.
 - [***Meld(????)***](#https://meldmerge.org/) - porównywanie kodów modułów w celach bliżej mi niepoznanych, może się przyda
-- ***Chhhuuuuusteczka wie co jeszcze*** - lista do późniejszej edycji
 
 ## Przeznaczenie
 

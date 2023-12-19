@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.6.1)  14 NOV 2023 22:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.6.1)  19 DEC 2023 16:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/home/ania/Pulpit/Studia/SCK/SCK_23Z/anna_dziezyk_sck23z_projekt_indywidualny/Latex DOC Files/Dokumentacja_Projekt_Indywidualny.tex"
-(/home/ania/Pulpit/Studia/SCK/SCK_23Z/anna_dziezyk_sck23z_projekt_indywidualny/Latex DOC Files/Dokumentacja_Projekt_Indywidualny.tex
+**"/home/ania/Pulpit/Studia/SCK/SCK_23Z/anna_dziezyk_sck23z_projekt_indywidualny/DOC/Latex DOC Files/Dokumentacja_Projekt_Indywidualny.tex"
+(/home/ania/Pulpit/Studia/SCK/SCK_23Z/anna_dziezyk_sck23z_projekt_indywidualny/DOC/Latex DOC Files/Dokumentacja_Projekt_Indywidualny.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-01-21> (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
@@ -345,20 +345,149 @@ Overfull \hbox (18.90482pt too wide) in paragraph at lines 67--70
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\\' on input line 116.
 
-[3] (./Dokumentacja_Projekt_Indywidualny.aux) ) 
+[3]
+Overfull \hbox (7.49881pt too wide) in paragraph at lines 122--127
+[]\T1/cmr/m/n/12 Nast¦pnie po potwierdze-niu poprawno±ci pracy w.w. mod-uªów, doª¡czyªam
+ []
+
+
+Overfull \hbox (3.32008pt too wide) in paragraph at lines 133--136
+\T1/cmr/m/n/12 wyniku i sta-tusu op-er-acji. Do tego mod-uªu te» napisaªam test-bench sprawdza-
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 137.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 137.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 137.
+
+[4]
+</home/ania/Obrazy/Zrzuty ekranu/Zrzut ekranu z 2023-12-19 05-34-29.png, id=62, 996.72375pt x 171.64125pt>
+File: /home/ania/Obrazy/Zrzuty ekranu/Zrzut ekranu z 2023-12-19 05-34-29.png Graphic file (type png)
+<use /home/ania/Obrazy/Zrzuty ekranu/Zrzut ekranu z 2023-12-19 05-34-29.png>
+Package pdftex.def Info: /home/ania/Obrazy/Zrzuty ekranu/Zrzut ekranu z 2023-12-19 05-34-29.png  used on input line 158.
+(pdftex.def)             Requested size: 498.36066pt x 85.8204pt.
+
+Overfull \hbox (108.36066pt too wide) in paragraph at lines 158--160
+ [][] 
+ []
+
+[5 </home/ania/Obrazy/Zrzuty ekranu/Zrzut ekranu z 2023-12-19 05-34-29.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 180.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 180.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 180.
+
+</home/ania/Obrazy/Zrzuty ekranu/Zrzut ekranu z 2023-12-19 06-45-18.png, id=70, 1038.88126pt x 171.64125pt>
+File: /home/ania/Obrazy/Zrzuty ekranu/Zrzut ekranu z 2023-12-19 06-45-18.png Graphic file (type png)
+<use /home/ania/Obrazy/Zrzuty ekranu/Zrzut ekranu z 2023-12-19 06-45-18.png>
+Package pdftex.def Info: /home/ania/Obrazy/Zrzuty ekranu/Zrzut ekranu z 2023-12-19 06-45-18.png  used on input line 197.
+(pdftex.def)             Requested size: 467.49225pt x 77.23784pt.
+
+Overfull \hbox (77.49225pt too wide) in paragraph at lines 197--199
+ [][] 
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 206.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 206.
+
+[6 </home/ania/Obrazy/Zrzuty ekranu/Zrzut ekranu z 2023-12-19 06-45-18.png>]
+</home/ania/Obrazy/Zrzuty ekranu/Zrzut ekranu z 2023-12-19 07-29-16.png, id=77, 1111.15125pt x 168.63pt>
+File: /home/ania/Obrazy/Zrzuty ekranu/Zrzut ekranu z 2023-12-19 07-29-16.png Graphic file (type png)
+<use /home/ania/Obrazy/Zrzuty ekranu/Zrzut ekranu z 2023-12-19 07-29-16.png>
+Package pdftex.def Info: /home/ania/Obrazy/Zrzuty ekranu/Zrzut ekranu z 2023-12-19 07-29-16.png  used on input line 224.
+(pdftex.def)             Requested size: 500.01344pt x 75.88278pt.
+
+Overfull \hbox (110.01344pt too wide) in paragraph at lines 224--226
+ [][] 
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 235.
+
+[7 </home/ania/Obrazy/Zrzuty ekranu/Zrzut ekranu z 2023-12-19 07-29-16.png>]
+Overfull \hbox (9.92442pt too wide) in paragraph at lines 247--250
+\T1/cmr/m/n/12 uªami przed syn-tez¡ ("kon-wer-sja.sv") i po ("kon-wer-sja_rtl.sv") zostaªo sprawd-
+ []
+
+</home/ania/Obrazy/Zrzuty ekranu/Zrzut ekranu z 2023-12-19 14-24-58.png, id=85, 923.45pt x 144.54pt>
+File: /home/ania/Obrazy/Zrzuty ekranu/Zrzut ekranu z 2023-12-19 14-24-58.png Graphic file (type png)
+<use /home/ania/Obrazy/Zrzuty ekranu/Zrzut ekranu z 2023-12-19 14-24-58.png>
+Package pdftex.def Info: /home/ania/Obrazy/Zrzuty ekranu/Zrzut ekranu z 2023-12-19 14-24-58.png  used on input line 253.
+(pdftex.def)             Requested size: 461.72386pt x 72.2698pt.
+
+Overfull \hbox (71.72386pt too wide) in paragraph at lines 253--255
+ [][] 
+ []
+
+
+Overfull \hbox (2.79597pt too wide) in paragraph at lines 258--263
+\T1/cmr/m/n/12 aªo poprawnie wszys-tkie te op-er-ac-jem flaga er-ror nie jest pod-nie-siona. Nast¦p-
+ []
+
+[8 </home/ania/Obrazy/Zrzuty ekranu/Zrzut ekranu z 2023-12-19 14-24-58.png>]
+Overfull \hbox (65.88623pt too wide) in paragraph at lines 284--288
+\T1/cmr/m/n/12 mod-uªami przed syn-tez¡ ("sync_arith_unit_12.sv") i po ("sync_arith_unit_12_rtl.sv")
+ []
+
+</home/ania/Obrazy/Zrzuty ekranu/Zrzut ekranu z 2023-12-19 15-20-32.png, id=93, 1454.43375pt x 229.85875pt>
+File: /home/ania/Obrazy/Zrzuty ekranu/Zrzut ekranu z 2023-12-19 15-20-32.png Graphic file (type png)
+<use /home/ania/Obrazy/Zrzuty ekranu/Zrzut ekranu z 2023-12-19 15-20-32.png>
+Package pdftex.def Info: /home/ania/Obrazy/Zrzuty ekranu/Zrzut ekranu z 2023-12-19 15-20-32.png  used on input line 291.
+(pdftex.def)             Requested size: 727.2151pt x 114.92908pt.
+
+Overfull \hbox (337.2151pt too wide) in paragraph at lines 291--293
+ [][] 
+ []
+
+[9 </home/ania/Obrazy/Zrzuty ekranu/Zrzut ekranu z 2023-12-19 15-20-32.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 302.
+
+</home/ania/Obrazy/Schemat blokowy ALU.jpg, id=101, 833.1125pt x 392.46625pt>
+File: /home/ania/Obrazy/Schemat blokowy ALU.jpg Graphic file (type jpg)
+<use /home/ania/Obrazy/Schemat blokowy ALU.jpg>
+Package pdftex.def Info: /home/ania/Obrazy/Schemat blokowy ALU.jpg  used on input line 306.
+(pdftex.def)             Requested size: 416.55524pt x 196.23264pt.
+
+Overfull \hbox (26.55524pt too wide) in paragraph at lines 306--308
+ [][] 
+ []
+
+[10 </home/ania/Obrazy/Schemat blokowy ALU.jpg>] (./Dokumentacja_Projekt_Indywidualny.aux) ) 
 Here is how much of TeX's memory you used:
- 9849 strings out of 480247
- 152498 string characters out of 5896152
- 440771 words of memory out of 5000000
- 27671 multiletter control sequences out of 15000+600000
- 480454 words of font info for 54 fonts, out of 8000000 for 9000
+ 9932 strings out of 480247
+ 155668 string characters out of 5896152
+ 443773 words of memory out of 5000000
+ 27719 multiletter control sequences out of 15000+600000
+ 483677 words of font info for 59 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 74i,12n,77p,969b,393s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/ania/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1200.600pk> </home/ania/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk> </home/ania/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/ania/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/ania/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </home/ania/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/ania/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk> </home/ania/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm2074.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
-Output written on Dokumentacja_Projekt_Indywidualny.pdf (3 pages, 93199 bytes).
+ 74i,12n,77p,973b,405s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/ania/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/ania/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0700.600pk> </home/ania/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbi1440.600pk> </home/ania/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </home/ania/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk> </home/ania/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1200.600pk> </home/ania/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/ania/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/ania/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </home/ania/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/ania/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk> </home/ania/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm2074.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
+Output written on Dokumentacja_Projekt_Indywidualny.pdf (10 pages, 308245 bytes).
 PDF statistics:
- 330 PDF objects out of 1000 (max. 8388607)
- 79 compressed objects within 1 object stream
- 9 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 553 PDF objects out of 1000 (max. 8388607)
+ 162 compressed objects within 2 object streams
+ 30 named destinations out of 1000 (max. 500000)
+ 111 words of extra memory for PDF output out of 10000 (max. 10000000)
 

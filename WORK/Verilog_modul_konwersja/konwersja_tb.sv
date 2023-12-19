@@ -3,6 +3,7 @@
 module konwersja_tb;
 
     parameter BITS = 32;
+    localparam MOD_NUMBER = BITS-1;
 
     // sygnały wewnętrzne i ich atrybuty
     logic [BITS-1:0] s_i_arg_A;
@@ -45,11 +46,11 @@ module konwersja_tb;
 
         //test na ujemne zero:
         #1
-        s_i_arg_A = {1'b1, '0};
+        s_i_arg_A = {1'b1, {MOD_NUMBER{1'b0}}};
 
         //test na zero 
         #1
-        s_i_arg_A = '0;
+        s_i_arg_A = {{BITS{1'b1}}};
 
         //test na maksymalną i minimalną wartość:
         #1    

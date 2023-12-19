@@ -4,6 +4,7 @@ module ustawienie_tb;
     parameter BITS = 32;
     localparam TOP = 2**(BITS-1)-1;
     localparam BOTTOM = -(2**(BITS-1)-1);
+    localparam MOD_NUMBER = BITS-1;
 
     // sygnały wewnętrzne dla tej konketnej ławeczki testowej 
     logic [BITS-1:0] s_i_arg_A;
@@ -33,8 +34,8 @@ module ustawienie_tb;
 
     // Dostarczenie zmiennych do testu, rozpoczęcie bloku initial
     initial begin
-        s_i_arg_A = '0;
-        s_i_arg_B = '0;
+        s_i_arg_A = '1;
+        s_i_arg_B = 0;
 
         //w tym pliku zostaną zapisane zapisane sygnały zarejestrowane w symulacji
         $dumpfile("signals_ustawienie.vcd");  
@@ -63,9 +64,10 @@ module ustawienie_tb;
         //teraz zobaczymy przypadki losowe dla różnych reprezentacji 0, gdy B=0
         //zawartość A w każdym momencie tego modułu nie ma najmniejszego znaczenia
             #1  
-            s_i_arg_B = '0;
+            s_i_arg_B = {BITS{1'b0}};
             #1
-            s_i_arg_B = {1'b1, '0};
+            s_i_arg_B = {1'b1, {MOD_NUMBER{1'b0}}};
+            #1
 
         $finish;
     end

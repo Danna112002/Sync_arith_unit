@@ -1,5 +1,10 @@
-\contentsline {section}{\numberline {1}Cel i opis projektu}{1}{section.1}%
+\contentsline {section}{\numberline {1}Cel i opis projektu}{2}{section.1}%
 \contentsline {section}{\numberline {2}Realizowane przez układ operacje}{2}{section.2}%
 \contentsline {section}{\numberline {3}Porty układu}{3}{section.3}%
-\contentsline {section}{\numberline {4}Sprawozdanie z syntezy i realizacji jednostki \\ \textbf {sync\_arith\_unit\_12} }{3}{section.4}%
-\contentsline {subsection}{\numberline {4.1}}{3}{subsection.4.1}%
+\contentsline {section}{\numberline {4}Sprawozdanie z syntezy i realizacji jednostki \\ \textbf {sync\_arith\_unit\_12} }{4}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Moduł przesunięcia bitowego (\textbf \and \textit {A} $>>$ \textbf \and \textit {\raisebox {-0.5ex}{\textasciitilde } B})}{4}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Moduł porównania liczb (\textbf \and \textit {A} $>$ \textbf \and \textit {\raisebox {-0.5ex}{\textasciitilde } B})}{6}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Moduł ustawiania wartości 1 na zadanym bicie \\(\raisebox {-0.5ex}{\textasciitilde } A[B] = 1)}{6}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Moduł konwersji zapisu liczby z ZM na U2 \\(\textbf \and \textit {ZM(A)=> U2(A)})}{7}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Moduł ALU}{8}{subsection.4.5}%
+\contentsline {section}{\numberline {5}Schemat blokowy realizowanej jednostki \\\textbf {sync\_arith\_unit\_12}}{10}{section.5}%

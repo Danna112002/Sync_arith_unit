@@ -3,6 +3,7 @@ module ustawienie (i_arg_A, i_arg_B, o_result, o_error);
 
 //deklaracja parametrów
 parameter BITS = 32;
+localparam MOD_NUMBER = BITS -1;
 
 //deklaracja wejść, wyjść i flag
     input logic signed [BITS-1:0] i_arg_A;
@@ -23,7 +24,7 @@ parameter BITS = 32;
         tymczasowy_rejestr = '0;
 
         //jak B jest ujemne, to ustawiamy flagę błędu
-        if (i_arg_B_MSB == 1) begin
+        if (i_arg_B_MSB == 1 && i_arg_B != {1'b1, {MOD_NUMBER{1'b0}}}) begin
             o_error = 1;
         end
 
@@ -32,8 +33,20 @@ parameter BITS = 32;
             o_error = 1;
         end
 
+        //inna reprezentacja B, to samo postępowanie, co wpadnięcie w zakres
+        else if (i_arg_B == {MOD_NUMBER{1'b0}}) begin
+            tymczasowy_rejestr[i_arg_B] = 0;
+            o_result = tymczasowy_rejestr|(~i_arg_A);
+        end
+
+        //inna reprezentacja B, to samo postępowanie, co wpadnięcie w zakres 
+        else if (i_arg_B == {1'b1, {MOD_NUMBER{1'b0}}}) begin
+            tymczasowy_rejestr[i_arg_B] = 0;
+            o_result = tymczasowy_rejestr|(~i_arg_A);
+        end
+
         //jak B wpada w zakres, to ustawiamy tego bita
-        else if (((i_arg_B>='0) || (i_arg_B>={1'b1, '0})) && i_arg_B<BITS) begin
+        else if ((i_arg_B>0) && i_arg_B<BITS) begin
             tymczasowy_rejestr[i_arg_B] = 1;
             o_result = tymczasowy_rejestr|(~i_arg_A);
         end

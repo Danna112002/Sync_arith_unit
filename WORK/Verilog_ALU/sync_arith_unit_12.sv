@@ -1,8 +1,8 @@
 //jednostka arytmetyczno-logiczna 
-`include "ustawienie.sv"
-`include "przesuniecie.sv"
-`include "porownanie.sv"
-`include "konwersja.sv"
+`include "/home/ania/Pulpit/Studia/SCK/SCK_23Z/anna_dziezyk_sck23z_projekt_indywidualny/WORK/Verilog_modul_ustawienie/ustawienie.sv"
+`include "/home/ania/Pulpit/Studia/SCK/SCK_23Z/anna_dziezyk_sck23z_projekt_indywidualny/WORK/Verilog_modul_przesuniecie/przesuniecie.sv"
+`include "/home/ania/Pulpit/Studia/SCK/SCK_23Z/anna_dziezyk_sck23z_projekt_indywidualny/WORK/Verilog_modul_porownanie/porownanie.sv"
+`include "/home/ania/Pulpit/Studia/SCK/SCK_23Z/anna_dziezyk_sck23z_projekt_indywidualny/WORK/Verilog_modul_konwersja/konwersja.sv"
 module sync_arith_unit_12 (
     i_arg_A, 
     i_arg_B, 
