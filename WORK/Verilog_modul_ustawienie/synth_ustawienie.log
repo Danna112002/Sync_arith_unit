@@ -716,6 +716,6 @@ Dumping module `\ustawienie_rtl'.
 
    Estimated number of transistors:       1194
 
-End of script. Logfile hash: bf0bc20a37, CPU: user 0.32s system 0.00s, MEM: 22.09 MB peak
+End of script. Logfile hash: bf0bc20a37, CPU: user 0.31s system 0.01s, MEM: 22.12 MB peak
 Yosys 0.36 (git sha1 8f07a0d8404, clang 14.0.0-1ubuntu1.1 -fPIC -Os)
 Time spent: 40% 2x abc (0 sec), 16% 22x opt_expr (0 sec), ...

@@ -14,12 +14,20 @@ Implementacja synchronicznej jednostki arytmetyczno-logicznej sync_arith_unit_12
 
 ## Uruchomienie i niezbędne środowiska
 
-Działanie kodu obserwowane będzie na analizie wyników zachowania modułów *'testbench'* w analizatorze ***GTKWave***. Sprawozdanie z przeprowadzonych testów zostanie udokumentowane, w dalszej części tego pliku znajdzie się link do odpowiedniego pliku.
+Działanie kodu obserwowane będzie na analizie wyników zachowania modułów *'testbench'* w analizatorze ***GTKWave***. Sprawozdanie z przeprowadzonych testów zostało udokumentowane, znajduje się w folderze DOC. Aby po pobraniu uruchomić dany moduł i obserwować jego działanie, należy pobrać folder z modułem z folderu WORK, wejść do katalogu z modułem, następnie w terminalu wpisać kolejno:
 
-- [***Visual Studio Code***](#https://code.visualstudio.com/) - edycja oraz tworzenie kodu modułów i dokumentacji
-- [***GTKWave Analyzer***](#https://gtkwave.sourceforge.net/) - wersja v3.3.104 (w)1999-2020 BSI, analiza przebiegów sygnałów zegarowych przed syntezą i po niej
-- [***Yosys Open Synthesis Suite***](#https://yosyshq.net/yosys/) - wersja 0.9 (git sha1 1979e0b) - framework do syntezy poziomu transferu rejestru Verilog, w tym przypadku: System Verilog.
-- [***Meld(????)***](#https://meldmerge.org/) - porównywanie kodów modułów w celach bliżej mi niepoznanych, może się przyda
+$ make
+
+$ make clear
+
+$ make waves.
+
+Poniżej znajdują się wypunktowane programy rekomendowane do uruchomienia modułów.
+- ***Visual Studio Code*** - edycja oraz tworzenie kodu modułów i dokumentacji.
+- ***GTKWave Analyzer*** - wersja v3.3.104 (w)1999-2020 BSI, analiza przebiegów sygnałów zegarowych przed syntezą i po niej.
+- ***Yosys Open Synthesis Suite*** - wersja 0.36 - framework do syntezy poziomu transferu rejestru Verilog, w tym przypadku: System Verilog.
+- ***Meld*** - porównywanie kodów modułów w celach poszukiwań latchów i niedociąnięć.
+- ***Icarus Verilog*** - wersja 12.0 - implementacja kompilatora języka opisu sprzętu Verilog, która generuje listy sieci w żądanym formacie oraz symulator.
 
 ## Przeznaczenie
 
@@ -27,12 +35,7 @@ Przeznaczeniem tej niewielkiej jednostki wykonawczej jest bycie częścią więk
 
 ## Współpraca z innymi członkami
 
-Po wykonaniu indywidualnego zadania utworzenia własnej jednostki arytmetyczno-logicznej, cały zespół będzie odpowiedzialny za zaprojektowanie magistrali komunikującej się z odpowiednio zmodyfikowanymi modułami ***sync_arith_unit_12*** według zadanego przez prowadzącego protokołu komunikacyjnego.
-
-## Dokumentacja z testów jednostkowych i testu modułowego
-
-Link do dokumentu z dokumentacją dotyczącą całego modułu ***sync_arith_unit_12***
-oraz poszczególnych jednostek:
+Po wykonaniu indywidualnego zadania utworzenia własnej jednostki arytmetyczno-logicznej, cały zespół będzie odpowiedzialny za zaprojektowanie magistrali komunikującej się z odpowiednio zmodyfikowanymi modułami ***sync_arith_unit_12***  według zadanego przez prowadzącego protokołu komunikacyjnego.
 
 
 

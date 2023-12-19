@@ -24,19 +24,19 @@
 
 -- Executing script file `run.ys' --
 
-1. Executing Verilog-2005 frontend: porownanie.sv
-Parsing SystemVerilog input from `porownanie.sv' to AST representation.
-Generating RTLIL representation for module `\porownanie'.
+1. Executing Verilog-2005 frontend: konwersja.sv
+Parsing SystemVerilog input from `konwersja.sv' to AST representation.
+Generating RTLIL representation for module `\konwersja'.
 Successfully finished Verilog frontend.
 
 2. Executing HIERARCHY pass (managing design hierarchy).
 
 2.1. Analyzing design hierarchy..
-Top module:  \porownanie_rtl
+Top module:  \konwersja_rtl
 
 2.2. Analyzing design hierarchy..
-Top module:  \porownanie_rtl
-Removing unused module `\porownanie'.
+Top module:  \konwersja_rtl
+Removing unused module `\konwersja'.
 Removed 1 unused modules.
 
 3. Executing SYNTH pass.
@@ -44,10 +44,10 @@ Removed 1 unused modules.
 3.1. Executing HIERARCHY pass (managing design hierarchy).
 
 3.1.1. Analyzing design hierarchy..
-Top module:  \porownanie_rtl
+Top module:  \konwersja_rtl
 
 3.1.2. Analyzing design hierarchy..
-Top module:  \porownanie_rtl
+Top module:  \konwersja_rtl
 Removed 0 unused modules.
 
 3.2. Executing PROC pass (convert processes to netlists).
@@ -56,12 +56,12 @@ Removed 0 unused modules.
 Cleaned up 0 empty switches.
 
 3.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
-Marked 5 switch rules as full_case in process $proc$porownanie.sv:0$1 in module porownanie_rtl.
+Marked 2 switch rules as full_case in process $proc$konwersja.sv:0$1 in module konwersja_rtl.
 Removed a total of 0 dead cases.
 
 3.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
 Removed 0 redundant assignments.
-Promoted 1 assignment to connection.
+Promoted 2 assignments to connections.
 
 3.2.4. Executing PROC_INIT pass (extract init attributes).
 
@@ -69,116 +69,107 @@ Promoted 1 assignment to connection.
 
 3.2.6. Executing PROC_ROM pass (convert switches to ROMs).
 Converted 0 switches.
-<suppressed ~5 debug messages>
+<suppressed ~2 debug messages>
 
 3.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
-Creating decoders for process `\porownanie_rtl.$proc$porownanie.sv:0$1'.
-     1/5: $5\o_result[0:0]
-     2/5: $4\o_result[0:0]
-     3/5: $3\o_result[0:0]
-     4/5: $2\o_result[0:0]
-     5/5: $1\o_result[0:0]
+Creating decoders for process `\konwersja_rtl.$proc$konwersja.sv:0$1'.
+     1/4: $2\o_result[31:0]
+     2/4: $2\o_error[0:0]
+     3/4: $1\o_result[31:0]
+     4/4: $1\o_error[0:0]
 
 3.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
-No latch inferred for signal `\porownanie_rtl.\o_result' from process `\porownanie_rtl.$proc$porownanie.sv:0$1'.
+No latch inferred for signal `\konwersja_rtl.\o_result' from process `\konwersja_rtl.$proc$konwersja.sv:0$1'.
+No latch inferred for signal `\konwersja_rtl.\o_error' from process `\konwersja_rtl.$proc$konwersja.sv:0$1'.
 
 3.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
 
 3.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
 
 3.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Found and cleaned up 5 empty switches in `\porownanie_rtl.$proc$porownanie.sv:0$1'.
-Removing empty process `porownanie_rtl.$proc$porownanie.sv:0$1'.
-Cleaned up 5 empty switches.
+Found and cleaned up 2 empty switches in `\konwersja_rtl.$proc$konwersja.sv:0$1'.
+Removing empty process `konwersja_rtl.$proc$konwersja.sv:0$1'.
+Cleaned up 2 empty switches.
 
 3.2.12. Executing OPT_EXPR pass (perform const folding).
-Optimizing module porownanie_rtl.
-<suppressed ~4 debug messages>
+Optimizing module konwersja_rtl.
+<suppressed ~7 debug messages>
 
 3.3. Executing OPT_EXPR pass (perform const folding).
-Optimizing module porownanie_rtl.
+Optimizing module konwersja_rtl.
 
 3.4. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \porownanie_rtl..
-Removed 4 unused cells and 25 unused wires.
-<suppressed ~5 debug messages>
+Finding unused cells or wires in module \konwersja_rtl..
+Removed 1 unused cells and 16 unused wires.
+<suppressed ~2 debug messages>
 
 3.5. Executing CHECK pass (checking for obvious problems).
-Checking module porownanie_rtl...
+Checking module konwersja_rtl...
 Found and reported 0 problems.
 
 3.6. Executing OPT pass (performing simple optimizations).
 
 3.6.1. Executing OPT_EXPR pass (perform const folding).
-Optimizing module porownanie_rtl.
+Optimizing module konwersja_rtl.
 
 3.6.2. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\porownanie_rtl'.
-<suppressed ~12 debug messages>
-Removed a total of 4 cells.
+Finding identical cells in module `\konwersja_rtl'.
+Removed a total of 0 cells.
 
 3.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
-Running muxtree optimizer on module \porownanie_rtl..
+Running muxtree optimizer on module \konwersja_rtl..
   Creating internal representation of mux trees.
   Evaluating internal representation of mux trees.
+      Replacing known input bits on port A of cell $procmux$22: \i_arg_A -> { 1'0 \i_arg_A [30:0] }
   Analyzing evaluation results.
-    dead port 1/2 on $mux $procmux$23.
-    dead port 1/2 on $mux $procmux$26.
-    dead port 1/2 on $mux $procmux$29.
-    dead port 1/2 on $mux $procmux$32.
-    dead port 1/2 on $mux $procmux$38.
-    dead port 1/2 on $mux $procmux$41.
-    dead port 1/2 on $mux $procmux$44.
-    dead port 1/2 on $mux $procmux$50.
-    dead port 1/2 on $mux $procmux$53.
-    dead port 1/2 on $mux $procmux$59.
-Removed 10 multiplexer ports.
-<suppressed ~1 debug messages>
+    dead port 2/2 on $mux $procmux$13.
+    dead port 2/2 on $mux $procmux$19.
+Removed 2 multiplexer ports.
+<suppressed ~2 debug messages>
 
 3.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
-  Optimizing cells in module \porownanie_rtl.
-  Optimizing cells in module \porownanie_rtl.
-Performed a total of 3 changes.
+  Optimizing cells in module \konwersja_rtl.
+Performed a total of 0 changes.
 
 3.6.5. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\porownanie_rtl'.
+Finding identical cells in module `\konwersja_rtl'.
 Removed a total of 0 cells.
 
 3.6.6. Executing OPT_DFF pass (perform DFF optimizations).
 
 3.6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \porownanie_rtl..
-Removed 8 unused cells and 25 unused wires.
-<suppressed ~9 debug messages>
+Finding unused cells or wires in module \konwersja_rtl..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
 
 3.6.8. Executing OPT_EXPR pass (perform const folding).
-Optimizing module porownanie_rtl.
+Optimizing module konwersja_rtl.
 
 3.6.9. Rerunning OPT passes. (Maybe there is more to do..)
 
 3.6.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
-Running muxtree optimizer on module \porownanie_rtl..
+Running muxtree optimizer on module \konwersja_rtl..
   Creating internal representation of mux trees.
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~1 debug messages>
+<suppressed ~2 debug messages>
 
 3.6.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
-  Optimizing cells in module \porownanie_rtl.
+  Optimizing cells in module \konwersja_rtl.
 Performed a total of 0 changes.
 
 3.6.12. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\porownanie_rtl'.
+Finding identical cells in module `\konwersja_rtl'.
 Removed a total of 0 cells.
 
 3.6.13. Executing OPT_DFF pass (perform DFF optimizations).
 
 3.6.14. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \porownanie_rtl..
+Finding unused cells or wires in module \konwersja_rtl..
 
 3.6.15. Executing OPT_EXPR pass (perform const folding).
-Optimizing module porownanie_rtl.
+Optimizing module konwersja_rtl.
 
 3.6.16. Finished OPT passes. (There is nothing left to do.)
 
@@ -191,7 +182,7 @@ Optimizing module porownanie_rtl.
 3.7.3. Executing FSM_OPT pass (simple optimizations of FSMs).
 
 3.7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \porownanie_rtl..
+Finding unused cells or wires in module \konwersja_rtl..
 
 3.7.5. Executing FSM_OPT pass (simple optimizations of FSMs).
 
@@ -204,49 +195,53 @@ Finding unused cells or wires in module \porownanie_rtl..
 3.8. Executing OPT pass (performing simple optimizations).
 
 3.8.1. Executing OPT_EXPR pass (perform const folding).
-Optimizing module porownanie_rtl.
+Optimizing module konwersja_rtl.
 
 3.8.2. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\porownanie_rtl'.
+Finding identical cells in module `\konwersja_rtl'.
 Removed a total of 0 cells.
 
 3.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
-Running muxtree optimizer on module \porownanie_rtl..
+Running muxtree optimizer on module \konwersja_rtl..
   Creating internal representation of mux trees.
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~1 debug messages>
+<suppressed ~2 debug messages>
 
 3.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
-  Optimizing cells in module \porownanie_rtl.
+  Optimizing cells in module \konwersja_rtl.
 Performed a total of 0 changes.
 
 3.8.5. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\porownanie_rtl'.
+Finding identical cells in module `\konwersja_rtl'.
 Removed a total of 0 cells.
 
 3.8.6. Executing OPT_DFF pass (perform DFF optimizations).
 
 3.8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \porownanie_rtl..
+Finding unused cells or wires in module \konwersja_rtl..
 
 3.8.8. Executing OPT_EXPR pass (perform const folding).
-Optimizing module porownanie_rtl.
+Optimizing module konwersja_rtl.
 
 3.8.9. Finished OPT passes. (There is nothing left to do.)
 
 3.9. Executing WREDUCE pass (reducing word size of cells).
+Removed top 31 bits (of 32) from wire konwersja_rtl.$reduce_or$konwersja.sv:38$4_Y.
 
 3.10. Executing PEEPOPT pass (run peephole optimizers).
 
 3.11. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \porownanie_rtl..
+Finding unused cells or wires in module \konwersja_rtl..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
 
 3.12. Executing ALUMACC pass (create $alu and $macc cells).
-Extracting $alu and $macc cells in module porownanie_rtl:
-  creating $alu model for $gt$porownanie.sv:15$3 ($gt): new $alu
-  creating $alu cell for $gt$porownanie.sv:15$3: $auto$alumacc.cc:485:replace_alu$65
+Extracting $alu and $macc cells in module konwersja_rtl:
+  creating $macc model for $add$konwersja.sv:39$8 ($add).
+  creating $alu model for $macc $add$konwersja.sv:39$8.
+  creating $alu cell for $add$konwersja.sv:39$8: $auto$alumacc.cc:485:replace_alu$28
   created 1 $alu and 0 $macc cells.
 
 3.13. Executing SHARE pass (SAT-based resource sharing).
@@ -254,64 +249,64 @@ Extracting $alu and $macc cells in module porownanie_rtl:
 3.14. Executing OPT pass (performing simple optimizations).
 
 3.14.1. Executing OPT_EXPR pass (perform const folding).
-Optimizing module porownanie_rtl.
+Optimizing module konwersja_rtl.
 <suppressed ~1 debug messages>
 
 3.14.2. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\porownanie_rtl'.
+Finding identical cells in module `\konwersja_rtl'.
 Removed a total of 0 cells.
 
 3.14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
-Running muxtree optimizer on module \porownanie_rtl..
+Running muxtree optimizer on module \konwersja_rtl..
   Creating internal representation of mux trees.
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~1 debug messages>
+<suppressed ~2 debug messages>
 
 3.14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
-  Optimizing cells in module \porownanie_rtl.
+  Optimizing cells in module \konwersja_rtl.
 Performed a total of 0 changes.
 
 3.14.5. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\porownanie_rtl'.
+Finding identical cells in module `\konwersja_rtl'.
 Removed a total of 0 cells.
 
 3.14.6. Executing OPT_DFF pass (perform DFF optimizations).
 
 3.14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \porownanie_rtl..
-Removed 1 unused cells and 2 unused wires.
-<suppressed ~2 debug messages>
+Finding unused cells or wires in module \konwersja_rtl..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
 
 3.14.8. Executing OPT_EXPR pass (perform const folding).
-Optimizing module porownanie_rtl.
+Optimizing module konwersja_rtl.
 
 3.14.9. Rerunning OPT passes. (Maybe there is more to do..)
 
 3.14.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
-Running muxtree optimizer on module \porownanie_rtl..
+Running muxtree optimizer on module \konwersja_rtl..
   Creating internal representation of mux trees.
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~1 debug messages>
+<suppressed ~2 debug messages>
 
 3.14.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
-  Optimizing cells in module \porownanie_rtl.
+  Optimizing cells in module \konwersja_rtl.
 Performed a total of 0 changes.
 
 3.14.12. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\porownanie_rtl'.
+Finding identical cells in module `\konwersja_rtl'.
 Removed a total of 0 cells.
 
 3.14.13. Executing OPT_DFF pass (perform DFF optimizations).
 
 3.14.14. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \porownanie_rtl..
+Finding unused cells or wires in module \konwersja_rtl..
 
 3.14.15. Executing OPT_EXPR pass (perform const folding).
-Optimizing module porownanie_rtl.
+Optimizing module konwersja_rtl.
 
 3.14.16. Finished OPT passes. (There is nothing left to do.)
 
@@ -330,7 +325,7 @@ Performed a total of 0 transformations.
 3.15.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
 
 3.15.6. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \porownanie_rtl..
+Finding unused cells or wires in module \konwersja_rtl..
 
 3.15.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
 
@@ -338,27 +333,29 @@ Finding unused cells or wires in module \porownanie_rtl..
 Performed a total of 0 transformations.
 
 3.15.9. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \porownanie_rtl..
+Finding unused cells or wires in module \konwersja_rtl..
 
 3.15.10. Executing MEMORY_COLLECT pass (generating $mem cells).
 
 3.16. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \porownanie_rtl..
+Finding unused cells or wires in module \konwersja_rtl..
 
 3.17. Executing OPT pass (performing simple optimizations).
 
 3.17.1. Executing OPT_EXPR pass (perform const folding).
-Optimizing module porownanie_rtl.
-<suppressed ~1 debug messages>
+Optimizing module konwersja_rtl.
+<suppressed ~3 debug messages>
 
 3.17.2. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\porownanie_rtl'.
+Finding identical cells in module `\konwersja_rtl'.
 Removed a total of 0 cells.
 
 3.17.3. Executing OPT_DFF pass (perform DFF optimizations).
 
 3.17.4. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \porownanie_rtl..
+Finding unused cells or wires in module \konwersja_rtl..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
 
 3.17.5. Finished fast OPT passes.
 
@@ -367,24 +364,31 @@ Finding unused cells or wires in module \porownanie_rtl..
 3.19. Executing OPT pass (performing simple optimizations).
 
 3.19.1. Executing OPT_EXPR pass (perform const folding).
-Optimizing module porownanie_rtl.
+Optimizing module konwersja_rtl.
 
 3.19.2. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\porownanie_rtl'.
+Finding identical cells in module `\konwersja_rtl'.
 Removed a total of 0 cells.
 
 3.19.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
-Running muxtree optimizer on module \porownanie_rtl..
+Running muxtree optimizer on module \konwersja_rtl..
   Creating internal representation of mux trees.
-  No muxes found in this module.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
 Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
 
 3.19.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
-  Optimizing cells in module \porownanie_rtl.
-Performed a total of 0 changes.
+  Optimizing cells in module \konwersja_rtl.
+    Consolidated identical input bits for $mux cell $procmux$22:
+      Old ports: A={ 1'0 \i_arg_A [30:0] }, B={ 31'0000000000000000000000000000001 $2\o_result[31:0] [0] }, Y=\o_result
+      New ports: A=\i_arg_A [30:0], B={ 30'000000000000000000000000000001 $2\o_result[31:0] [0] }, Y=\o_result [30:0]
+      New connections: \o_result [31] = 1'0
+  Optimizing cells in module \konwersja_rtl.
+Performed a total of 1 changes.
 
 3.19.5. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\porownanie_rtl'.
+Finding identical cells in module `\konwersja_rtl'.
 Removed a total of 0 cells.
 
 3.19.6. Executing OPT_SHARE pass.
@@ -392,12 +396,40 @@ Removed a total of 0 cells.
 3.19.7. Executing OPT_DFF pass (perform DFF optimizations).
 
 3.19.8. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \porownanie_rtl..
+Finding unused cells or wires in module \konwersja_rtl..
 
 3.19.9. Executing OPT_EXPR pass (perform const folding).
-Optimizing module porownanie_rtl.
+Optimizing module konwersja_rtl.
 
-3.19.10. Finished OPT passes. (There is nothing left to do.)
+3.19.10. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.19.11. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \konwersja_rtl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
+
+3.19.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \konwersja_rtl.
+Performed a total of 0 changes.
+
+3.19.13. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\konwersja_rtl'.
+Removed a total of 0 cells.
+
+3.19.14. Executing OPT_SHARE pass.
+
+3.19.15. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.19.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \konwersja_rtl..
+
+3.19.17. Executing OPT_EXPR pass (perform const folding).
+Optimizing module konwersja_rtl.
+
+3.19.18. Finished OPT passes. (There is nothing left to do.)
 
 3.20. Executing TECHMAP pass (map to technology primitives).
 
@@ -430,42 +462,42 @@ Generating RTLIL representation for module `\_90_lut'.
 Successfully finished Verilog frontend.
 
 3.20.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $reduce_or.
+Using template $paramod$fc972a7a46956c1788f3cb5257b53c8f1df2d0cc\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $logic_and.
 Using extmapper simplemap for cells of type $not.
-Using extmapper simplemap for cells of type $xor.
-Using extmapper simplemap for cells of type $or.
-Using template $paramod$2653f68ddb8eab7b1907b4a20767b72a824a7a36\_90_alu for cells of type $alu.
-Using extmapper simplemap for cells of type $reduce_and.
-Using extmapper simplemap for cells of type $and.
-Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000100000 for cells of type $lcu.
-Using extmapper simplemap for cells of type $pos.
 Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000000001 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+Using extmapper simplemap for cells of type $or.
 No more expansions possible.
-<suppressed ~386 debug messages>
+<suppressed ~215 debug messages>
 
 3.21. Executing OPT pass (performing simple optimizations).
 
 3.21.1. Executing OPT_EXPR pass (perform const folding).
-Optimizing module porownanie_rtl.
-<suppressed ~67 debug messages>
+Optimizing module konwersja_rtl.
+<suppressed ~9 debug messages>
 
 3.21.2. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\porownanie_rtl'.
-<suppressed ~78 debug messages>
-Removed a total of 26 cells.
+Finding identical cells in module `\konwersja_rtl'.
+Removed a total of 0 cells.
 
 3.21.3. Executing OPT_DFF pass (perform DFF optimizations).
 
 3.21.4. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \porownanie_rtl..
-Removed 107 unused cells and 76 unused wires.
-<suppressed ~108 debug messages>
+Finding unused cells or wires in module \konwersja_rtl..
+Removed 1 unused cells and 31 unused wires.
+<suppressed ~2 debug messages>
 
 3.21.5. Finished fast OPT passes.
 
 3.22. Executing ABC pass (technology mapping using ABC).
 
-3.22.1. Extracting gate netlist of module `\porownanie_rtl' to `<abc-temp-dir>/input.blif'..
-Extracted 171 gates and 235 wires to a netlist network with 64 inputs and 1 outputs.
+3.22.1. Extracting gate netlist of module `\konwersja_rtl' to `<abc-temp-dir>/input.blif'..
+Extracted 64 gates and 98 wires to a netlist network with 32 inputs and 32 outputs.
 
 3.22.1.1. Executing ABC.
 Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
@@ -480,33 +512,28 @@ ABC: + map
 ABC: + write_blif <abc-temp-dir>/output.blif 
 
 3.22.1.2. Re-integrating ABC results.
-ABC RESULTS:             ORNOT cells:        7
-ABC RESULTS:                OR cells:        8
-ABC RESULTS:              XNOR cells:       21
-ABC RESULTS:               NOR cells:        1
-ABC RESULTS:               XOR cells:       12
-ABC RESULTS:               AND cells:        9
-ABC RESULTS:              NAND cells:       26
-ABC RESULTS:            ANDNOT cells:       75
-ABC RESULTS:        internal signals:      170
-ABC RESULTS:           input signals:       64
-ABC RESULTS:          output signals:        1
+ABC RESULTS:               MUX cells:        1
+ABC RESULTS:                OR cells:       31
+ABC RESULTS:            ANDNOT cells:       30
+ABC RESULTS:        internal signals:       34
+ABC RESULTS:           input signals:       32
+ABC RESULTS:          output signals:       32
 Removing temp directory.
 
 3.23. Executing OPT pass (performing simple optimizations).
 
 3.23.1. Executing OPT_EXPR pass (perform const folding).
-Optimizing module porownanie_rtl.
+Optimizing module konwersja_rtl.
 
 3.23.2. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\porownanie_rtl'.
+Finding identical cells in module `\konwersja_rtl'.
 Removed a total of 0 cells.
 
 3.23.3. Executing OPT_DFF pass (perform DFF optimizations).
 
 3.23.4. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \porownanie_rtl..
-Removed 0 unused cells and 138 unused wires.
+Finding unused cells or wires in module \konwersja_rtl..
+Removed 0 unused cells and 71 unused wires.
 <suppressed ~1 debug messages>
 
 3.23.5. Finished fast OPT passes.
@@ -514,41 +541,36 @@ Removed 0 unused cells and 138 unused wires.
 3.24. Executing HIERARCHY pass (managing design hierarchy).
 
 3.24.1. Analyzing design hierarchy..
-Top module:  \porownanie_rtl
+Top module:  \konwersja_rtl
 
 3.24.2. Analyzing design hierarchy..
-Top module:  \porownanie_rtl
+Top module:  \konwersja_rtl
 Removed 0 unused modules.
 
 3.25. Printing statistics.
 
-=== porownanie_rtl ===
+=== konwersja_rtl ===
 
-   Number of wires:                161
-   Number of wire bits:            223
-   Number of public wires:           3
-   Number of public wire bits:      65
+   Number of wires:                 36
+   Number of wire bits:            128
+   Number of public wires:           6
+   Number of public wire bits:      98
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                159
-     $_ANDNOT_                      75
-     $_AND_                          9
-     $_NAND_                        26
-     $_NOR_                          1
-     $_ORNOT_                        7
-     $_OR_                           8
-     $_XNOR_                        21
-     $_XOR_                         12
+   Number of cells:                 62
+     $_ANDNOT_                      30
+     $_MUX_                          1
+     $_OR_                          31
 
 3.26. Executing CHECK pass (checking for obvious problems).
-Checking module porownanie_rtl...
+Checking module konwersja_rtl...
 Found and reported 0 problems.
 
 4. Executing ABC pass (technology mapping using ABC).
 
-4.1. Extracting gate netlist of module `\porownanie_rtl' to `<abc-temp-dir>/input.blif'..
-Extracted 159 gates and 223 wires to a netlist network with 64 inputs and 1 outputs.
+4.1. Extracting gate netlist of module `\konwersja_rtl' to `<abc-temp-dir>/input.blif'..
+Extracted 62 gates and 94 wires to a netlist network with 32 inputs and 32 outputs.
 
 4.1.1. Executing ABC.
 Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
@@ -573,18 +595,17 @@ ABC: + &put
 ABC: + write_blif <abc-temp-dir>/output.blif 
 
 4.1.2. Re-integrating ABC results.
-ABC RESULTS:               XOR cells:       27
-ABC RESULTS:                OR cells:       50
+ABC RESULTS:                OR cells:       29
 ABC RESULTS:               NOT cells:        6
-ABC RESULTS:               AND cells:       97
-ABC RESULTS:        internal signals:      158
-ABC RESULTS:           input signals:       64
-ABC RESULTS:          output signals:        1
+ABC RESULTS:               AND cells:       35
+ABC RESULTS:        internal signals:       30
+ABC RESULTS:           input signals:       32
+ABC RESULTS:          output signals:       32
 Removing temp directory.
 
 5. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \porownanie_rtl..
-Removed 0 unused cells and 223 unused wires.
+Finding unused cells or wires in module \konwersja_rtl..
+Removed 0 unused cells and 94 unused wires.
 <suppressed ~1 debug messages>
 
 6. Executing Verilog backend.
@@ -592,27 +613,26 @@ Removed 0 unused cells and 223 unused wires.
 6.1. Executing BMUXMAP pass.
 
 6.2. Executing DEMUXMAP pass.
-Dumping module `\porownanie_rtl'.
+Dumping module `\konwersja_rtl'.
 
 7. Printing statistics.
 
-=== porownanie_rtl ===
+=== konwersja_rtl ===
 
-   Number of wires:                182
-   Number of wire bits:            244
-   Number of public wires:           3
-   Number of public wire bits:      65
+   Number of wires:                 44
+   Number of wire bits:            136
+   Number of public wires:           6
+   Number of public wire bits:      98
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                180
-     $_AND_                         97
+   Number of cells:                 70
+     $_AND_                         35
      $_NOT_                          6
-     $_OR_                          50
-     $_XOR_                         27
+     $_OR_                          29
 
-   Estimated number of transistors:       1218
+   Estimated number of transistors:        396
 
-End of script. Logfile hash: 4835b6b34c, CPU: user 0.09s system 0.01s, MEM: 16.75 MB peak
+End of script. Logfile hash: 389ef99172, CPU: user 0.07s system 0.01s, MEM: 15.00 MB peak
 Yosys 0.36 (git sha1 8f07a0d8404, clang 14.0.0-1ubuntu1.1 -fPIC -Os)
-Time spent: 50% 2x abc (0 sec), 11% 17x opt_expr (0 sec), ...
+Time spent: 68% 2x abc (0 sec), 7% 18x opt_expr (0 sec), ...
